@@ -1,0 +1,1007 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box !important;
+}
+
+body {
+    color: #0F1111;
+    font-family: "Amazon Ember", Arial, sans-serif;
+    background-color: rgb(207, 210, 213);
+}
+
+.size-up {
+    font-size: 40px;
+    color: #131921;
+    text-shadow: 4px 0px 0px white;
+}
+
+.navbar-my {
+    display: flex;
+    flex-direction: column;
+    height: 100px;
+}
+
+.nav-belt-my {
+    display: flex;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 60px;
+    position: fixed;
+    background-color: #131921;
+    z-index: 999999;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+#po-po {
+    border: 2px solid #131921;
+    background-color: #131921;
+    color: white;
+}
+
+#cancel-offcanvas {
+    font-size: 50px;
+    position: relative;
+    left: 60px;
+    border: 2px solid transparent;
+    color: white;
+    background: transparent;
+}
+
+.logo-my {
+    height: 100%;
+    min-width: 150px;
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+.amazon-logo-my {
+    width: 120px;
+    height: 80%;
+    margin-top: 13px;
+    margin-left: 6px;
+    padding: 5px;
+}
+
+a {
+    text-decoration: none;
+}
+
+.navbar-my a {
+    color: white;
+}
+
+.nav-main-my {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: left;
+    width: 100%;
+    height: 40px;
+    position: absolute;
+    padding: 5px;
+    top: 60px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    background-color: #232f3e;
+}
+
+.nav-main-my::-webkit-scrollbar {
+    display: none;
+}
+
+.nav-image {
+    height: 100%;
+    margin-left: 190px;
+}
+
+.main-belt-item {
+    color: white;
+    font-size: 15px;
+    margin-left: 15px;
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+    flex-wrap: nowrap;
+    position: relative;
+    z-index: 3;
+}
+
+.address-my {
+    color: white;
+    min-width: 155px;
+    overflow: hidden;
+    height: 100%;
+    display: grid;
+    grid-template-areas: 'one two two two ' 'one three three three ';
+    font-size: 13px;
+    padding: 5px;
+}
+
+#img {
+    object-fit: cover;
+}
+
+#imG-container {
+    grid-area: one;
+    width: 100%;
+    height: 100%;
+}
+
+#temperature-here {
+    grid-area: two;
+    width: 100%;
+    height: 100%;
+}
+
+#address-me {
+    grid-area: three;
+    white-space: nowrap;
+    width: 100%;
+    height: 100%;
+}
+
+.quick-search-my {
+    height: 40px;
+    width: 70%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+.form-search-my {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+#select-category {
+    height: 100%;
+    width: 50px;
+    padding: 5px;
+    border-top-left-radius: 10%;
+    border-bottom-left-radius: 10%;
+}
+
+.input-text-my {
+    height: 100%;
+    width: 94%;
+}
+
+.input-text-my input {
+    height: 100%;
+    width: 100%;
+    font-size: 15px;
+}
+
+.nav-search-my {
+    display: inline-block;
+}
+
+.search-submit-my {
+    width: 50px;
+    height: 102%;
+    background-color: #febd69;
+    border-top-right-radius: 15%;
+    border-bottom-right-radius: 15%;
+    cursor: pointer;
+}
+
+.region-my {
+    min-width: 50px;
+    height: 40px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    position: relative;
+    margin-left: 10px;
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.dropdown-region-lan-menu-my {
+    display: none;
+    background-color: white;
+    height: 450px;
+    width: 250px;
+    position: absolute;
+    top: 40px;
+    left: 0px;
+    text-align: left;
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 12px;
+}
+
+#in-in {
+    position: relative;
+    top: 2px;
+    left: -9px;
+}
+
+.dropdown-region-lan-menu-my input {
+    margin: 5px;
+}
+
+.dropdown-region-lan-menu-my label {
+    cursor: pointer;
+}
+
+.region-my:hover .dropdown-region-lan-menu-my {
+    display: block;
+}
+
+input[type=radio] {
+    border: 0px;
+    height: 15px;
+    width: 15px;
+}
+
+.change-region-my {
+    margin: 10px;
+    padding: 10px;
+}
+
+.Accounts-my {
+    width: 120px;
+    height: 40px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+}
+
+.order-returns-my {
+    min-width: 70px;
+    height: 40px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 13px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 10px;
+}
+
+.cart-my {
+    min-width: 70px;
+    height: 40px;
+    font-size: 30px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    position: relative;
+}
+
+.nn-kk {
+    position: absolute;
+    top: 0px;
+    left: 12px;
+    z-index: 2;
+}
+
+.number-of-items-my {
+    margin-left: 20px;
+    color: orange;
+    margin-top: 6px;
+    position: relative;
+    z-index: 3;
+}
+/* Main css*/
+
+main a {
+    color: black;
+}
+
+main a:hover {
+    color: black;
+}
+
+.scroller-navigation {
+    width: 100%;
+    height: 50px;
+    position: absolute;
+    z-index: 3;
+}
+
+.scroller {
+    display: flex;
+    width: 100%;
+    height: 200px;
+    position: relative;
+    z-index: 1;
+    padding: 10px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    background: linear-gradient( to bottom, rgba(217, 210, 210, 0), rgba(207, 210, 213, 1));
+}
+
+#scroll-nav-right {
+    font-size: 30px;
+    background-color: white;
+    position: absolute;
+    z-index: 3;
+    top: 70px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    right: 0;
+}
+
+#scroll-nav-left {
+    font-size: 30px;
+    display: none;
+    background-color: white;
+    position: absolute;
+    z-index: 3;
+    top: 70px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    left: 0;
+}
+/* width */
+
+.scroller::-webkit-scrollbar {
+    width: 1em;
+    display: none;
+}
+/* Track */
+
+.scroller::-webkit-scrollbar-track {
+    background: white;
+    height: 2px !important;
+}
+/* Handle */
+
+.scroller::-webkit-scrollbar-thumb {
+    background: rgb(189, 186, 186);
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    width: 2px !important;
+}
+/* Handle on hover */
+
+.scroller::-webkit-scrollbar-thumb:hover {
+    background: rgb(190, 188, 188);
+}
+
+.scroll-items {
+    background-color: white;
+    min-width: 150px;
+    text-align: center;
+    padding: 5px;
+    margin-right: 5px;
+}
+
+.scroll-items-type-full {
+    background-color: white;
+    min-width: 150px;
+    max-height: 185px;
+    text-align: center;
+    margin-right: 5px;
+    position: relative;
+    overflow: hidden;
+}
+
+.scroll-items p {
+    width: 100%;
+    height: 40px;
+    font-size: 15px;
+}
+
+.scroll-items-type-full p {
+    width: 100%;
+    height: 40px;
+    padding: 5px;
+    font-size: 15px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.car-me-container {
+    padding: 10px;
+    position: relative;
+    z-index: 3;
+}
+
+#bas-is-ke-liye {
+    background-color: rgb(207, 210, 213);
+}
+
+.car-me {
+    background: white;
+    position: relative;
+    z-index: 3;
+}
+
+.car-me h2 {
+    padding: 10px;
+}
+
+.increase-carousel-h {
+    height: 225px;
+    width: 200px;
+}
+
+.partial-screen-car-img {
+    width: 100%;
+    height: 80%;
+    object-fit: contain;
+}
+
+.increase-carousel-h p {
+    width: 100%;
+    height: 45px;
+    text-align: center;
+    padding: 5px;
+    font-size: 15px;
+    position: relative;
+}
+
+.demo-2 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    font-size: 12px;
+    width: 100%;
+    text-align: center;
+}
+
+.normal-carousel-h {
+    height: 200px;
+    width: 200px;
+}
+
+.full-screen-car-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.scroll-items img {
+    width: 100%;
+    max-width: 150px;
+    height: 125px;
+    object-fit: contain;
+}
+
+.scroll-items-type-full img {
+    width: 100%;
+    height: 100%;
+    max-width: 150px;
+    min-height: 200px;
+    object-fit: cover;
+}
+
+.offer-segment {
+    background-color: white;
+    height: 380px;
+    width: 406px;
+    padding: 10px;
+}
+
+.carousel-inner {
+    overflow: hidden;
+}
+
+.carousel-inner img {
+    width: 100%;
+    height: 100%;
+    min-height: 275px;
+    min-width: 300px;
+    object-fit: cover;
+}
+
+.goto-top {
+    display: flex;
+    background-color: #37475a;
+    text-align: center;
+    color: white;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+}
+
+.foot-three-parts {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    color: white;
+    background-color: #232f3e;
+    padding: 10px;
+    border-bottom: 1px solid grey;
+    font-size: calc(8px + 0.5vw);
+}
+
+.foot-parts {
+    text-align: left;
+    padding: 10px;
+}
+
+.foot-parts p {
+    color: #959fa9;
+}
+
+.country-avail {
+    display: block;
+    background-color: #232f3e;
+}
+
+.country-avail a {
+    color: #959fa9;
+}
+
+.amazon-country {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    align-content: center;
+    justify-content: space-evenly;
+    padding: 10px;
+    background-color: #232f3e;
+}
+
+.amazon-image-me {
+    height: 40px;
+    width: 100px;
+}
+
+.language-select {
+    border: 1px solid rgb(194, 188, 188);
+    border-radius: 3px;
+    height: 40px;
+    width: 150px;
+    padding: 5px;
+    font-size: 20px;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    align-content: center;
+    justify-content: space-evenly;
+    color: rgb(162, 160, 160);
+}
+
+.language-select:hover .dropdown-region-lan-menu-my-2 {
+    display: block;
+}
+
+.dropdown-region-lan-menu-my-2 {
+    display: none;
+    background-color: white;
+    height: 450px;
+    width: 250px;
+    z-index: 2;
+    position: absolute;
+    top: -455px;
+    left: -100px;
+    text-align: left;
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 12px;
+}
+
+.countries {
+    padding: 10px;
+    text-align: center;
+    font-size: calc(8px + 0.5vw);
+    max-width: 1100px;
+    margin: auto;
+}
+
+.countries a {
+    color: #959fa9;
+}
+
+.country-name {
+    display: inline-block;
+    margin: 4px;
+}
+
+.foot-sub-head {
+    font-size: calc(8px + 0.8vw);
+    color: white !important;
+}
+
+.last-foot {
+    background-color: #131921;
+    font-size: 12px;
+    text-align: center;
+    color: #959fa9;
+    padding: 10px;
+}
+
+.last-foot-child {
+    display: inline-block;
+    margin: 4px;
+}
+
+.service-head-foot {
+    color: white;
+    white-space: nowrap;
+}
+
+.amazon-more-services {
+    width: 100%;
+    display: flex;
+    text-align: left;
+    max-width: 1100px;
+    margin: auto;
+    justify-content: left;
+    font-size: 10px;
+    flex-wrap: wrap;
+}
+
+.service-name {
+    max-width: 100px;
+    margin-right: 10vw;
+}
+
+.offcanvas-body a {
+    text-decoration: none;
+    color: black;
+}
+
+.offcanvas-body h3 {
+    border-bottom: 1px solid black;
+    margin-top: 20px;
+}
+
+.offcanvas-body h3 span {
+    float: right;
+}
+
+.last-foot a {
+    color: #959fa9;
+}
+
+.coupon-container {
+    position: fixed;
+    z-index: 100;
+    width: 100%;
+    top: 15vh;
+    left: 0;
+}
+
+.coupon-big-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 99;
+    background-color: black;
+    opacity: 0.6;
+    width: 100vw;
+    height: 100vh;
+}
+
+.coupon {
+    width: 60vw;
+    min-width: 320px;
+    min-height: 240px;
+    height: 45vw;
+    max-width: 800px;
+    max-height: 600px;
+    margin: auto;
+    position: relative;
+}
+
+.coupon video {
+    object-fit: cover;
+}
+
+.day-n-night {
+    position: fixed;
+    z-index: 25;
+    bottom: 10vh;
+    right: 0px;
+    width: 50px;
+    height: 50px;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    color: gold;
+    font-size: 30px;
+    text-align: center;
+    padding-top: 5px;
+    background-color: #131921;
+}
+
+.edit-button {
+    width: 50px;
+    height: 50px;
+    background-color: transparent;
+    border: 1px solid transparent;
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 30px;
+}
+
+.card-container {
+    display: grid;
+    gap: 20px;
+    padding: 10px;
+    grid-template-areas: 'one two three four';
+}
+
+.card-type-one {
+    grid-area: one;
+}
+
+.card-type-two {
+    grid-area: two;
+}
+
+.card-type-three {
+    grid-area: three;
+}
+
+.card-type-four {
+    grid-area: four;
+}
+
+.my-card {
+    display: grid;
+    grid-template-areas: 'oo tt' 'th fo';
+    padding: 10px;
+    gap: 10px;
+    background-color: white;
+    padding-top: 70px;
+    padding-bottom: 70px;
+    position: relative;
+}
+
+.my-card-2 {
+    display: grid;
+    grid-template-areas: 'one';
+    padding: 10px;
+    gap: 10px;
+    background-color: white;
+    padding-top: 70px;
+    padding-bottom: 70px;
+    position: relative;
+}
+
+.my-card-3 {
+    display: grid;
+    grid-template-areas: 'one' 'one' 'one' 'two';
+    padding: 10px;
+    gap: 10px;
+    background-color: white;
+    padding-top: 70px;
+    position: relative;
+}
+/*My card 3*/
+
+.card-3-pic-1 {
+    grid-area: one;
+}
+
+.card-3-pic-2 {
+    grid-area: one;
+    display: none;
+}
+
+.card-3-pic-3 {
+    grid-area: one;
+    display: none;
+}
+
+.card-3-pic-4 {
+    display: none;
+    grid-area: one;
+}
+
+.fit-img-2 {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.fit-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    margin-bottom: 30px;
+}
+
+.button-to-change {
+    grid-area: two;
+}
+
+.get-part {
+    width: 100%;
+    height: 160px;
+    margin-bottom: 10px;
+}
+
+.get-part-2 {
+    width: 100%;
+    font-size: 15px;
+}
+
+.price-in-part-2 {
+    font-size: 20px;
+}
+
+.button-to-change {
+    grid-area: two;
+}
+
+.button-to-change button {
+    width: 21.5%;
+    height: 70px;
+    margin: 2.5px;
+    border: 2px solid rgb(215, 211, 211);
+}
+/*My card 2*/
+
+.im-full {
+    grid-area: one;
+}
+
+.im-full img {
+    width: 100%;
+    height: 100%;
+}
+
+.card-title {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px;
+    text-align: left;
+    font-size: 22px;
+}
+
+.card-item-title {
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 100%;
+    height: 20px;
+    text-align: center;
+    padding-top: 5px;
+}
+/*my-card*/
+
+.im1 {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    grid-area: oo;
+}
+
+.im2 {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    grid-area: tt;
+}
+
+.im3 {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    grid-area: th;
+}
+
+.im4 {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    grid-area: fo;
+}
+
+.see-more {
+    position: absolute;
+    left: 20px;
+    bottom: 20px;
+    color: rgb(67, 67, 194);
+}
+
+.image-show-case-two {
+    display: grid;
+    grid-template-areas: 'one' 'two';
+}
+
+.half-image-1 {
+    grid-area: one;
+    height: 100%;
+    width: 100%;
+}
+
+.show-case-one {
+    width: 100%;
+    margin: auto;
+}
+
+.full-image-1 {
+    width: 100%;
+    height: 100%;
+}
+
+@media screen and (max-width:436px) {
+    .logo-my {
+        display: none;
+    }
+}
+
+@media screen and (max-width:600px) {
+    .card-container {
+        grid-template-areas: 'one' 'two' 'three' 'four';
+    }
+}
+
+@media screen and (min-width:600px) {
+    .card-container {
+        grid-template-areas: 'one two' 'three four';
+    }
+}
+
+@media screen and (max-width: 836px) {
+    #myCarousel {
+        max-height: 150px;
+    }
+}
+
+@media screen and (min-width: 836px) {
+    #myCarousel {
+        max-height: 200px;
+    }
+    .image-show-case-two {
+        grid-template-areas: 'one two';
+    }
+}
+
+@media screen and (max-width:1000px) {
+    .address-my {
+        display: none;
+    }
+    .Accounts-my {
+        display: none;
+    }
+    .region-my {
+        display: none;
+    }
+    .order-returns-my {
+        display: none;
+    }
+    .logo-my {
+        display: none;
+    }
+    .quick-search-my {
+        width: 90%;
+    }
+}
+
+@media screen and (min-width:1000px) {
+    #po-po {
+        display: none;
+    }
+    #myCarousel {
+        max-height: 200px;
+    }
+    .card-container {
+        grid-template-areas: 'one two three four';
+    }
+    .scroller-navigation {
+        display: none;
+    }
+}
+
+@media screen and (min-width:1306px) {
+    #myCarousel {
+        max-height: 350px;
+    }
+}
