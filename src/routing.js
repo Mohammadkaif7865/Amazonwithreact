@@ -7,7 +7,7 @@ export default function Routing(){
     return(
         <Routes>
             <Header/>
-            <Route path="/" component={Home} />
+            <Route exact path="/" component={Home} />
             <Footer/>
         </Routes>
     )
