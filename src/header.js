@@ -1,8 +1,22 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "./myCss.css";
 import "./myScr";
 export default function Header() {
+  let [temp, setTemp] = useState("");
+  let [city, setCity] = useState("");
+  let [src, setSrc] = useState("");
+  navigator.geolocation.getCurrentPosition(position);
+  async function position(data) {
+    const url = `https://api.openweathermap.org/data/2.5/forecast/daily?lat=${data.coords.latitude}&lon=${data.coords.longitude}&mode=json&units=metric&cnt=1&appid=fbf712a5a83d7305c3cda4ca8fe7ef29`;
+    let response = await fetch(`${url}`);
+    let info = await response.json();
+    setTemp(info.list[0].temp.day);
+    setCity(info.city.name);
+    setSrc(
+      "http://openweathermap.org/img/w/" + info.list[0].weather[0].icon + ".png"
+    );
+  }
   return (
     <header className="navbar-my">
       <div className="nav-belt-my">
@@ -126,15 +140,16 @@ export default function Header() {
         <Link to="/" style={{ display: "contents" }}>
           <div className="address-my">
             <div id="imG-container">
-              <img src="" alt="" id="imG" />
+              <img src={src} alt="" id="imG" />
             </div>
             <span id="temperature-here">
-              <span className="temp-display"></span>&deg; C
+              <span className="temp-display"></span>
+              {temp}&deg; C
             </span>
 
             <span id="address-me">
-              <span className="temp-display"></span>
               <i className="bi bi-geo-alt-fill"></i>
+              {city}
             </span>
           </div>
         </Link>
@@ -223,46 +238,46 @@ export default function Header() {
             ></i>
             <div className="language">
               <input type="radio" name="language" id="English" checked />
-              <label for="English">English</label>
+              <label htmlFor="English">English</label>
             </div>
             <div className="language">
               <input type="radio" name="language" id="Hindi" />
-              <label for="Hindi">Hindi</label>
+              <label htmlFor="Hindi">Hindi</label>
             </div>
             <div className="language">
               <input type="radio" name="language" id="Marathi" />
-              <label for="Marathi">Marathi</label>
+              <label htmlFor="Marathi">Marathi</label>
             </div>
             <div className="language">
               <input type="radio" name="language" id="Tamil" />
-              <label for="Tamil">Tamil</label>
+              <label htmlFor="Tamil">Tamil</label>
             </div>
             <div className="language">
               <input type="radio" name="language" id="Bangoli" />
-              <label for="Bangoli">Bangoli</label>
+              <label htmlFor="Bangoli">Bangoli</label>
             </div>
             <div className="language">
               <input type="radio" name="language" id="kannad" />
-              <label for="kannad">Kannada</label>
+              <label htmlFor="kannad">Kannada</label>
             </div>
             <div className="language">
               <input type="radio" name="language" id="Urdu" />
-              <label for="Urdu">Urdu</label>
+              <label htmlFor="Urdu">Urdu</label>
             </div>
             <div className="language">
               <input type="radio" name="language" id="Arabic" />
-              <label for="Arabic">Arabic</label>
+              <label htmlFor="Arabic">Arabic</label>
             </div>
             <div className="language">
               <input type="radio" name="language" id="Malyali" />
-              <label for="Malyali">Malyali</label>
+              <label htmlFor="Malyali">Malyali</label>
             </div>
             <div
               className="language-my"
               style={{ borderBottom: "2px solid rgb(189, 169, 169)" }}
             >
               <input type="radio" name="language" id="Gujrati" />
-              <label for="Gujrati">Gujarati</label>
+              <label htmlFor="Gujrati">Gujarati</label>
             </div>
             <div className="change-region-my">
               <img
@@ -285,7 +300,7 @@ export default function Header() {
           <div className="Accounts-my">
             <div className="Greet-my">
               <span style={{ color: "#959fa9" }}>Hello, Mohammad </span>
-              
+
               <b>
                 <span>Account & Lists</span>
               </b>
