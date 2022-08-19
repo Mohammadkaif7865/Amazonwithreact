@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./myCss.css";
+import "./myScr";
 export default function Header() {
   return (
     <header className="navbar-my">
@@ -65,14 +66,14 @@ export default function Header() {
           <div className="offcanvas-body">
             <Link to="/">
               <h2>
-                <b>Amazon Home</b>{" "}
+                <b>Amazon Home</b>
                 <i className="bi bi-house-door" style={{ float: "right" }}></i>
               </h2>
             </Link>
             <Link to="/">
               <h3>
-                Change language & country{" "}
-                <span className="glyphicon glyphicon-chevron-right"></span>{" "}
+                Change language & country
+                <span className="glyphicon glyphicon-chevron-right"></span>
                 <img
                   src="https://img.icons8.com/color/25/000000/india.png"
                   alt="img"
@@ -81,13 +82,13 @@ export default function Header() {
             </Link>
             <Link to="/">
               <h3>
-                Orders and returns{" "}
+                Orders and returns
                 <span className="glyphicon glyphicon-chevron-right"></span>
               </h3>
             </Link>
             <Link to="/">
               <h3>
-                Accounts{" "}
+                Accounts
                 <span className="glyphicon glyphicon-chevron-right"></span>
               </h3>
             </Link>
@@ -113,9 +114,8 @@ export default function Header() {
 
         <div className="logo-my">
           <Link to="/">
-            {" "}
             <img
-              src="img/amazon.png"
+              src="https://i.ibb.co/YTryjzf/amazon.png"
               alt="amazon"
               className="amazon-logo-my"
               id="amazon-logo"
@@ -133,7 +133,7 @@ export default function Header() {
             </span>
 
             <span id="address-me">
-              <span className="temp-display"></span>{" "}
+              <span className="temp-display"></span>
               <i className="bi bi-geo-alt-fill"></i>
             </span>
           </div>
@@ -268,12 +268,12 @@ export default function Header() {
               <img
                 src="https://img.icons8.com/color/25/000000/india.png"
                 alt="img"
-              />{" "}
+              />
               You are shopping at Amazon.in
               <p style={{ marginTop: "20px", marginLeft: "10px" }}>
                 <Link
                   to="/"
-                  style={{textDecoration:"none", color:"blue !important"}}
+                  style={{ textDecoration: "none", color: "blue !important" }}
                 >
                   Change Country/Region
                 </Link>
@@ -284,7 +284,8 @@ export default function Header() {
         <Link to="/">
           <div className="Accounts-my">
             <div className="Greet-my">
-              <span style={{ color: "#959fa9" }}>Hello, Mohammad</span>
+              <span style={{ color: "#959fa9" }}>Hello, Mohammad </span>
+              
               <b>
                 <span>Account & Lists</span>
               </b>
@@ -299,7 +300,6 @@ export default function Header() {
           <div className="order-returns-my">
             <p style={{ color: "#959fa9", marginTop: "20px" }}>Returns</p>
             <p style={{ position: "relative", top: "-10px" }}>
-              {" "}
               <b> & Orders</b>
             </p>
           </div>
@@ -320,7 +320,7 @@ export default function Header() {
               className="bi bi-funnel-fill"
               id="top-item"
               style={{ fontSize: "22px" }}
-            ></i>{" "}
+            ></i>
             Filter
           </div>
         </Link>
