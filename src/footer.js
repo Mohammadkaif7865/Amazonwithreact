@@ -105,7 +105,11 @@ export default function Footer() {
       <div className="country-avail">
         <div className="amazon-country">
           <Link to="/">
-            <img src="https://i.ibb.co/YTryjzf/amazon.png" alt="img" className="amazon-image-me" />
+            <img
+              src="https://i.ibb.co/YTryjzf/amazon.png"
+              alt="img"
+              className="amazon-image-me"
+            />
           </Link>
 
           <Link to="/" style={{ display: "contents" }}>
@@ -130,46 +134,46 @@ export default function Footer() {
                   }}
                 ></i>
                 <div className="language">
-                  <input type="radio" name="language" id="English-2" checked />
+                  <input type="radio" name="language" id="English-2"   value="English"/>
                   <label htmlFor="English-2">English</label>
                 </div>
                 <div className="language">
-                  <input type="radio" name="language" id="Hindi-2" />
+                  <input type="radio" name="language" id="Hindi-2" value="Hindi"/>
                   <label htmlFor="Hindi-2">Hindi</label>
                 </div>
                 <div className="language">
-                  <input type="radio" name="language" id="Marathi-2" />
+                  <input type="radio" name="language" id="Marathi-2" value="Marathi"/>
                   <label htmlFor="Marathi-2">Marathi</label>
                 </div>
                 <div className="language">
-                  <input type="radio" name="language" id="Tamil-2" />
+                  <input type="radio" name="language" id="Tamil-2" value="Telugu"/>
                   <label htmlFor="Tamil-2">Tamil</label>
                 </div>
                 <div className="language">
-                  <input type="radio" name="language" id="Bangoli-2" />
+                  <input type="radio" name="language" id="Bangoli-2"  value="Bangoli"/>
                   <label htmlFor="Bangoli-2">Bangoli</label>
                 </div>
                 <div className="language">
-                  <input type="radio" name="language" id="kannada" />
+                  <input type="radio" name="language" id="kannada"  value="kannada"/>
                   <label htmlFor="kannada">Kannada</label>
                 </div>
                 <div className="language">
-                  <input type="radio" name="language" id="Urdu-2" />
+                  <input type="radio" name="language" id="Urdu-2"  value="Urdu"/>
                   <label htmlFor="Urdu-2">Urdu</label>
                 </div>
                 <div className="language">
-                  <input type="radio" name="language" id="Arabic-2" />
-                  <label htmlFor="Arabic-2">Arabic</label>
+                  <input type="radio" name="language" id="Arabic-2" value="Arabic"/>
+                  <label htmlFor="Arabic-2">Arabic</label> 
                 </div>
                 <div className="language">
-                  <input type="radio" name="language" id="Malyali-2" />
+                  <input type="radio" name="language" id="Malyali-2"  value="Malyali"/>
                   <label htmlFor="Malyali-2">Malyali</label>
                 </div>
                 <div
                   className="language-my"
                   style={{ borderBottom: "2px solid rgb(189, 169, 169)" }}
                 >
-                  <input type="radio" name="language" id="Gujrati-2" />
+                  <input type="radio" name="language" id="Gujrati-2"  value="Gujrati"/>
                   <label htmlFor="Gujrati-2">Gujarati</label>
                 </div>
                 <div className="change-region-my">
@@ -179,15 +183,8 @@ export default function Footer() {
                   />
                   You are shopping at Amazon.in
                   <p style={{ marginTop: "20px", marginLeft: "10px" }}>
-                    <Link
-                      to="/"
-                      style={{
-                        textDecoration: "none",
-                        color: "blue !important",
-                      }}
-                    >
-                      Change Country/Region
-                    </Link>{/* //! Here is the anchor in the anchor problem lies */}
+                    Change Country/Region
+                    {/* //! Here is the anchor in the anchor problem lies */}
                   </p>
                 </div>
               </div>

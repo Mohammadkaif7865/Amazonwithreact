@@ -6,6 +6,7 @@ export default function Header() {
   let [temp, setTemp] = useState("");
   let [city, setCity] = useState("");
   let [src, setSrc] = useState("");
+  let [lang, setLanguage] = useState("");
   navigator.geolocation.getCurrentPosition(position);
   async function position(data) {
     const url = `https://api.openweathermap.org/data/2.5/forecast/daily?lat=${data.coords.latitude}&lon=${data.coords.longitude}&mode=json&units=metric&cnt=1&appid=fbf712a5a83d7305c3cda4ca8fe7ef29`;
@@ -36,7 +37,7 @@ export default function Header() {
           id="demo"
           style={{ width: "70vw" }}
           data-bs-scroll="true"
-          tabindex="-1"
+          tabIndex="-1"
         >
           <div
             className="offcanvas-header"
@@ -237,46 +238,71 @@ export default function Header() {
               }}
             ></i>
             <div className="language">
-              <input type="radio" name="language" id="English" checked />
+              <input
+                type="radio"
+                name="language"
+                id="English"
+                value="English"
+              />
               <label htmlFor="English">English</label>
             </div>
             <div className="language">
-              <input type="radio" name="language" id="Hindi" />
+              <input type="radio" name="language" id="Hindi" value="Hindi" />
               <label htmlFor="Hindi">Hindi</label>
             </div>
             <div className="language">
-              <input type="radio" name="language" id="Marathi" />
+              <input
+                type="radio"
+                name="language"
+                id="Marathi"
+                value="Marathi"
+              />
               <label htmlFor="Marathi">Marathi</label>
             </div>
             <div className="language">
-              <input type="radio" name="language" id="Tamil" />
+              <input type="radio" name="language" id="Tamil" value="Tamil" />
               <label htmlFor="Tamil">Tamil</label>
             </div>
             <div className="language">
-              <input type="radio" name="language" id="Bangoli" />
+              <input
+                type="radio"
+                name="language"
+                id="Bangoli"
+                value="Bangoli"
+              />
               <label htmlFor="Bangoli">Bangoli</label>
             </div>
             <div className="language">
-              <input type="radio" name="language" id="kannad" />
+              <input type="radio" name="language" id="kannad" value="kannad" />
               <label htmlFor="kannad">Kannada</label>
             </div>
             <div className="language">
-              <input type="radio" name="language" id="Urdu" />
+              <input type="radio" name="language" id="Urdu" value="Urdu" />
               <label htmlFor="Urdu">Urdu</label>
             </div>
             <div className="language">
-              <input type="radio" name="language" id="Arabic" />
+              <input type="radio" name="language" id="Arabic" value="Arabic" />
               <label htmlFor="Arabic">Arabic</label>
             </div>
             <div className="language">
-              <input type="radio" name="language" id="Malyali" />
+              <input
+                type="radio"
+                name="language"
+                id="Malyali"
+                value="Malyali"
+              />
               <label htmlFor="Malyali">Malyali</label>
             </div>
             <div
               className="language-my"
               style={{ borderBottom: "2px solid rgb(189, 169, 169)" }}
             >
-              <input type="radio" name="language" id="Gujrati" />
+              <input
+                type="radio"
+                name="language"
+                id="Gujrati"
+                value="Gujrati"
+              />
               <label htmlFor="Gujrati">Gujarati</label>
             </div>
             <div className="change-region-my">
@@ -286,12 +312,7 @@ export default function Header() {
               />
               You are shopping at Amazon.in
               <p style={{ marginTop: "20px", marginLeft: "10px" }}>
-                <Link
-                  to="/"
-                  style={{ textDecoration: "none", color: "blue !important" }}
-                >
-                  Change Country/Region
-                </Link>
+                Change Country/Region
               </p>
             </div>
           </div>

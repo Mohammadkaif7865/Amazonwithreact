@@ -3,15 +3,6 @@ function close_coupon() {
     document.getElementById("coupon-2").style.display = "none";
 }
 
-function hide_me_right() {
-    document.getElementById("scroll-nav-right").style.display = "none";
-    document.getElementById("scroll-nav-left").style.display = "inline-block";
-}
-
-function hide_me_left() {
-    document.getElementById("scroll-nav-left").style.display = "none";
-    document.getElementById("scroll-nav-right").style.display = "inline-block";
-}
 // Set the date we're counting down to
 var countDownDate = new Date("June 19, 2022 15:37:25").getTime();
 
