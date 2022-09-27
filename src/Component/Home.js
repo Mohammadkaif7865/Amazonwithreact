@@ -1,7 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import OwlCarousel from 'react-owl-carousel';
+import 'owl.carousel/dist/assets/owl.carousel.css';
+import 'owl.carousel/dist/assets/owl.theme.default.css';
 import "../myCss.css";
-import "../myScr";
+import "./Home.css";
 export default function Home() {
   function hide_me_right() {
     document.getElementById("scroll-nav-right").style.display = "none";
@@ -18,6 +21,29 @@ export default function Home() {
       m[i].style.display = "none";
     }
     document.getElementById(`pic-swap-${x}`).style.display = "block";
+  }
+  const owlSet = {
+    loop: false,
+    nav: true,
+    dots: false,
+    navText: [`<i class="bi bi-chevron-left" style='background-color:white; border-radius: 10px;position: absolute; top: 25%; font-size:min(5vw,40px);  left: 0px; color:black; border: 2px solid  rgb(207, 210, 213); '></i>`, `<i class="bi bi-chevron-right" style='background-color:white; border-radius: 10px;position: absolute; top: 25%; font-size:min(5vw,40px);  right: 0px; color:black; border: 2px solid  rgb(207, 210, 213); '></i>`],
+    responsive: {
+      0: {
+        items: 2
+      },
+      600: {
+        items: 3
+      },
+      800: {
+        items: 4
+      },
+      1000: {
+        items: 5
+      },
+      1200: {
+        items: 6
+      },
+    }
   }
   return (
     <main>
@@ -102,10 +128,10 @@ export default function Home() {
       </div>
 
       <div className="scroller-navigation">
-        <Link to="#last-scroller" onClick={()=>hide_me_right()}>
+        <Link to="#last-scroller" onClick={() => hide_me_right()}>
           <i className="bi bi-chevron-right" id="scroll-nav-right"></i>
         </Link>
-        <Link to="#first-scroller" onClick={()=>hide_me_left()}>
+        <Link to="#first-scroller" onClick={() => hide_me_left()}>
           <i className="bi bi-chevron-left" id="scroll-nav-left"></i>
         </Link>
       </div>
@@ -162,215 +188,17 @@ export default function Home() {
           <h2>
             <b>Today’s Deals</b>
           </h2>
-          <div className="owl-carousel owl-theme car-me" id="display-item-1">
-            <div className="item increase-carousel-h">
-              <Link to="/">
-                <img
-                  src="https://i.ibb.co/b3TXr4s/ipone.jpg"
-                  alt="img"
-                  className="partial-screen-car-img"
-                />
-                <p>
-                  ₹65,990 <s>₹99,990</s>
-                  <span className="demo-2"></span>
-                </p>
-              </Link>
-            </div>
-            <div className="item increase-carousel-h">
-              <Link to="/">
-                <img
-                  src="https://i.ibb.co/RcfTV23/pt3.jpg"
-                  alt="img"
-                  className="partial-screen-car-img"
-                />
-                <p>
-                  ₹158.00 - ₹19,799.00<span className="demo-2"></span>
-                </p>
-              </Link>
-            </div>
-            <div className="item increase-carousel-h">
-              <Link to="/">
-                <img
-                  src="https://i.ibb.co/Fws9g9F/pt1.jpg"
-                  alt="img"
-                  className="partial-screen-car-img"
-                />
-                <p>
-                  ₹39,990 <s>₹74,999.00</s>
-                  <span className="demo-2"></span>
-                </p>
-              </Link>
-            </div>
-            <div className="item increase-carousel-h">
-              <Link to="/">
-                <img
-                  src="https://i.ibb.co/HYDZMsZ/pt2.jpg"
-                  alt="img"
-                  className="partial-screen-car-img"
-                />
-                <p>
-                  21,999 <s>₹28,999</s>
-                  <span className="demo-2"></span>
-                </p>
-              </Link>
-            </div>
-            <div className="item increase-carousel-h">
-              <Link to="/">
-                <img
-                  src="https://i.ibb.co/CKjZBdp/pt4.jpg"
-                  alt="img"
-                  className="partial-screen-car-img"
-                />
-                <p>
-                  ₹124.00 - ₹7,803.00<span className="demo-2"></span>
-                </p>
-              </Link>
-            </div>
-            <div className="item increase-carousel-h">
-              <Link to="/">
-                <img
-                  src="https://i.ibb.co/CHzW44k/pt5.jpg"
-                  alt="img"
-                  className="partial-screen-car-img"
-                />
-                <p>
-                  ₹159.00 - ₹989.00<span className="demo-2"></span>
-                </p>
-              </Link>
-            </div>
-            <div className="item increase-carousel-h">
-              <Link to="/">
-                <img
-                  src="https://i.ibb.co/zR6x0bz/pt6.jpg"
-                  alt="img"
-                  className="partial-screen-car-img"
-                />
-                <p>
-                  ₹2,184.00 - ₹12,870.00<span className="demo-2"></span>
-                </p>
-              </Link>
-            </div>
-            <div className="item increase-carousel-h">
-              <Link to="/">
-                <img
-                  src="https://i.ibb.co/XYY1fkw/pt7.jpg"
-                  alt="img"
-                  className="partial-screen-car-img"
-                />
-                <p>
-                  ₹100.00 - ₹7,818.00<span className="demo-2"></span>
-                </p>
-              </Link>
-            </div>
-            <div className="item increase-carousel-h">
-              <Link to="/">
-                <img
-                  src="https://i.ibb.co/3dfCBQc/pt8.jpg"
-                  alt="img"
-                  className="partial-screen-car-img"
-                />
-                <p>
-                  ₹99.00 - ₹3,155.00<span className="demo-2"></span>
-                </p>
-              </Link>
-            </div>
-            <div className="item increase-carousel-h">
-              <Link to="/">
-                <img
-                  src="https://i.ibb.co/Gk5YYP9/pt9.jpg"
-                  alt="img"
-                  className="partial-screen-car-img"
-                />
-                <p>
-                  ₹132.00 - ₹5,377.00<span className="demo-2"></span>
-                </p>
-              </Link>
-            </div>
-            <div className="item increase-carousel-h">
-              <Link to="/">
-                <img
-                  src="https://i.ibb.co/QPpmsnq/pt10.jpg"
-                  alt="img"
-                  className="partial-screen-car-img"
-                />
-                <p>
-                  ₹331.00 - ₹4,701.00<span className="demo-2"></span>
-                </p>
-              </Link>
-            </div>
-            <div className="item increase-carousel-h">
-              <Link to="/">
-                <img
-                  src="https://i.ibb.co/SX4dr1y/pt11.jpg"
-                  alt="img"
-                  className="partial-screen-car-img"
-                />
-                <p>
-                  ₹126.00 - ₹6,721.00<span className="demo-2"></span>
-                </p>
-              </Link>
-            </div>
-            <div className="item increase-carousel-h">
-              <Link to="/">
-                <img
-                  src="https://i.ibb.co/W0mQftP/pt12.jpg"
-                  alt="img"
-                  className="partial-screen-car-img"
-                />
-                <p>
-                  ₹325.00 - ₹4,499.00<span className="demo-2"></span>
-                </p>
-              </Link>
-            </div>
-            <div className="item increase-carousel-h">
-              <Link to="/">
-                <img
-                  src="https://i.ibb.co/Jk4HM8W/pt13.jpg"
-                  alt="img"
-                  className="partial-screen-car-img"
-                />
-                <p>
-                  ₹499.00 - ₹996.00<span className="demo-2"></span>
-                </p>
-              </Link>
-            </div>
-            <div className="item increase-carousel-h">
-              <Link to="/">
-                <img
-                  src="https://i.ibb.co/w67KFn5/pt14.jpg"
-                  alt="img"
-                  className="partial-screen-car-img"
-                />
-                <p>
-                  ₹331.00 - ₹35,039.00<span className="demo-2"></span>
-                </p>
-              </Link>
-            </div>
-            <div className="item increase-carousel-h">
-              <Link to="/">
-                <img
-                  src="https://i.ibb.co/2kgqJpQ/pt15.jpg"
-                  alt="img"
-                  className="partial-screen-car-img"
-                />
-                <p>
-                  ₹262.00 - ₹1,012.00<span className="demo-2"></span>
-                </p>
-              </Link>
-            </div>
-            <div className="item increase-carousel-h">
-              <Link to="/">
-                <img
-                  src="https://i.ibb.co/Jr0V7n6/pt16.jpg"
-                  alt="img"
-                  className="partial-screen-car-img"
-                />
-                <p>
-                  ₹190.00 - ₹9,725.00<span className="demo-2"></span>
-                </p>
-              </Link>
-            </div>
-          </div>
+          <OwlCarousel
+            className="owl-theme"
+            {...owlSet} >
+            <img className="img imgDmy" src="https://i.ibb.co/b3TXr4s/ipone.jpg" />
+            <img className="img imgDmy" src="https://i.ibb.co/RcfTV23/pt3.jpg" />
+            <img className="img imgDmy" src="https://i.ibb.co/Fws9g9F/pt1.jpg" />
+            <img className="img imgDmy" src="https://i.ibb.co/HYDZMsZ/pt2.jpg" />
+            <img className="img imgDmy" src="https://i.ibb.co/CKjZBdp/pt4.jpg" />
+            <img className="img imgDmy" src="https://i.ibb.co/CHzW44k/pt5.jpg" />
+            <img className="img imgDmy" src="https://i.ibb.co/zR6x0bz/pt6.jpg" />
+          </OwlCarousel>
         </div>
       </div>
       <div className="card-container">
@@ -726,7 +554,7 @@ export default function Home() {
             <button
               type="button"
               className="btn btn-light"
-              onClick={()=>change_the(0)}
+              onClick={() => change_the(0)}
             >
               <img
                 src="https://i.ibb.co/TMwv4bC/mouse1.jpg"
@@ -737,7 +565,7 @@ export default function Home() {
             <button
               type="button"
               className="btn btn-light"
-              onClick={()=>change_the(1)}
+              onClick={() => change_the(1)}
             >
               <img
                 src="https://i.ibb.co/NF40krx/m2.jpg"
@@ -748,7 +576,7 @@ export default function Home() {
             <button
               type="button"
               className="btn btn-light"
-              onClick={()=>change_the(2)}
+              onClick={() => change_the(2)}
             >
               <img
                 src="https://i.ibb.co/Lxbr1Ts/w1.jpg"
@@ -759,7 +587,7 @@ export default function Home() {
             <button
               type="button"
               className="btn btn-light"
-              onClick={()=>change_the(3)}
+              onClick={() => change_the(3)}
             >
               <img
                 src="https://i.ibb.co/Hrx2vL0/pen1.jpg"
@@ -775,269 +603,17 @@ export default function Home() {
           <h2>
             <b>Inspired by your shopping trends</b>
           </h2>
-          <div className="owl-carousel owl-theme car-me" id="display-item-1">
-            <div className="item normal-carousel-h">
-              <Link to="/">
-                <img
-                  src="https://i.ibb.co/mqp5rRb/ys1.jpg"
-                  alt="img"
-                  className="full-screen-car-img"
-                />
-              </Link>
-            </div>
-            <div className="item normal-carousel-h">
-              <Link to="/">
-                <img
-                  src="https://i.ibb.co/syhRRjN/ys2.jpg"
-                  alt="img"
-                  className="full-screen-car-img"
-                />
-              </Link>
-            </div>
-            <div className="item normal-carousel-h">
-              <Link to="/">
-                <img
-                  src="https://i.ibb.co/rf8739V/ys3.jpg"
-                  alt="img"
-                  className="full-screen-car-img"
-                />
-              </Link>
-            </div>
-            <div className="item normal-carousel-h">
-              <Link to="/">
-                <img
-                  src="https://i.ibb.co/Q86m0DL/ys4.jpg"
-                  alt="img"
-                  className="full-screen-car-img"
-                />
-              </Link>
-            </div>
-            <div className="item normal-carousel-h">
-              <Link to="/">
-                <img
-                  src="https://i.ibb.co/nntfSvv/ys5.jpg"
-                  alt="img"
-                  className="full-screen-car-img"
-                />
-              </Link>
-            </div>
-            <div className="item normal-carousel-h">
-              <Link to="/">
-                <img
-                  src="https://i.ibb.co/0QFzhHS/ys6.jpg"
-                  alt="img"
-                  className="full-screen-car-img"
-                />
-              </Link>
-            </div>
-            <div className="item normal-carousel-h">
-              <Link to="/">
-                <img
-                  src="https://i.ibb.co/M5VHxJt/ys7.jpg"
-                  alt="img"
-                  className="full-screen-car-img"
-                />
-              </Link>
-            </div>
-            <div className="item normal-carousel-h">
-              <Link to="/">
-                <img
-                  src="https://i.ibb.co/4Py5Lsm/ys8.jpg"
-                  alt="img"
-                  className="full-screen-car-img"
-                />
-              </Link>
-            </div>
-            <div className="item normal-carousel-h">
-              <Link to="/">
-                <img
-                  src="https://i.ibb.co/ZMW1ygf/ys9.jpg"
-                  alt="img"
-                  className="full-screen-car-img"
-                />
-              </Link>
-            </div>
-            <div className="item normal-carousel-h">
-              <Link to="/">
-                <img
-                  src="https://i.ibb.co/fCkdcrz/ys11.jpg"
-                  alt="img"
-                  className="full-screen-car-img"
-                />
-              </Link>
-            </div>
-            <div className="item normal-carousel-h">
-              <Link to="/">
-                <img
-                  src="https://i.ibb.co/RH3TGJP/ys12.jpg"
-                  alt="img"
-                  className="full-screen-car-img"
-                />
-              </Link>
-            </div>
-            <div className="item normal-carousel-h">
-              <Link to="/">
-                <img
-                  src="https://i.ibb.co/LCgsYZX/ys13.jpg"
-                  alt="img"
-                  className="full-screen-car-img"
-                />
-              </Link>
-            </div>
-            <div className="item normal-carousel-h">
-              <Link to="/">
-                <img
-                  src="https://i.ibb.co/ZmhQyyV/ys14.jpg"
-                  alt="img"
-                  className="full-screen-car-img"
-                />
-              </Link>
-            </div>
-            <div className="item normal-carousel-h">
-              <Link to="/">
-                <img
-                  src="https://i.ibb.co/4Mq6YGN/ys15.jpg"
-                  alt="img"
-                  className="full-screen-car-img"
-                />
-              </Link>
-            </div>
-            <div className="item normal-carousel-h">
-              <Link to="/">
-                <img
-                  src="https://i.ibb.co/zXZzZB5/ys16.jpg"
-                  alt="img"
-                  className="full-screen-car-img"
-                />
-              </Link>
-            </div>
-            <div className="item normal-carousel-h">
-              <Link to="/">
-                <img
-                  src="https://i.ibb.co/kX5LLfk/ys17.jpg"
-                  alt="img"
-                  className="full-screen-car-img"
-                />
-              </Link>
-            </div>
-            <div className="item normal-carousel-h">
-              <Link to="/">
-                <img
-                  src="https://i.ibb.co/q1Zh1WY/ys18.jpg"
-                  alt="img"
-                  className="full-screen-car-img"
-                />
-              </Link>
-            </div>
-            <div className="item normal-carousel-h">
-              <Link to="/">
-                <img
-                  src="https://i.ibb.co/BCjL0YS/ys19.jpg"
-                  alt="img"
-                  className="full-screen-car-img"
-                />
-              </Link>
-            </div>
-            <div className="item normal-carousel-h">
-              <Link to="/">
-                <img
-                  src="https://i.ibb.co/CJxR6hf/ys20.jpg"
-                  alt="img"
-                  className="full-screen-car-img"
-                />
-              </Link>
-            </div>
-            <div className="item normal-carousel-h">
-              <Link to="/">
-                <img
-                  src="https://i.ibb.co/zQ4L60h/ys21.jpg"
-                  alt="img"
-                  className="full-screen-car-img"
-                />
-              </Link>
-            </div>
-            <div className="item normal-carousel-h">
-              <Link to="/">
-                <img
-                  src="https://i.ibb.co/YhjH89x/ys22.jpg"
-                  alt="img"
-                  className="full-screen-car-img"
-                />
-              </Link>
-            </div>
-            <div className="item normal-carousel-h">
-              <Link to="/">
-                <img
-                  src="https://i.ibb.co/6B6DzTL/ys23.jpg"
-                  alt="img"
-                  className="full-screen-car-img"
-                />
-              </Link>
-            </div>
-            <div className="item normal-carousel-h">
-              <Link to="/">
-                <img
-                  src="https://i.ibb.co/Q8ZBbBR/ys24.jpg"
-                  alt="img"
-                  className="full-screen-car-img"
-                />
-              </Link>
-            </div>
-            <div className="item normal-carousel-h">
-              <Link to="/">
-                <img
-                  src="https://i.ibb.co/2FLnd5s/ys25.jpg"
-                  alt="img"
-                  className="full-screen-car-img"
-                />
-              </Link>
-            </div>
-            <div className="item normal-carousel-h">
-              <Link to="/">
-                <img
-                  src="https://i.ibb.co/Q8Y3vf5/ys26.jpg"
-                  alt="img"
-                  className="full-screen-car-img"
-                />
-              </Link>
-            </div>
-            <div className="item normal-carousel-h">
-              <Link to="/">
-                <img
-                  src="https://i.ibb.co/QKWhSq4/ys27.jpg"
-                  alt="img"
-                  className="full-screen-car-img"
-                />
-              </Link>
-            </div>
-            <div className="item normal-carousel-h">
-              <Link to="/">
-                <img
-                  src="https://i.ibb.co/ydk2Hn5/ys28.jpg"
-                  alt="img"
-                  className="full-screen-car-img"
-                />
-              </Link>
-            </div>
-            <div className="item normal-carousel-h">
-              <Link to="/">
-                <img
-                  src="https://i.ibb.co/Wz9H9Ld/ys29.jpg"
-                  alt="img"
-                  className="full-screen-car-img"
-                />
-              </Link>
-            </div>
-            <div className="item normal-carousel-h">
-              <Link to="/">
-                <img
-                  src="https://i.ibb.co/Dt7fkqs/ys30.jpg"
-                  alt="img"
-                  className="full-screen-car-img"
-                />
-              </Link>
-            </div>
-          </div>
+          <OwlCarousel
+            className="owl-theme"
+            {...owlSet} >
+            <img className="img imgDmy" src="https://i.ibb.co/b3TXr4s/ipone.jpg" />
+            <img className="img imgDmy" src="https://i.ibb.co/RcfTV23/pt3.jpg" />
+            <img className="img imgDmy" src="https://i.ibb.co/Fws9g9F/pt1.jpg" />
+            <img className="img imgDmy" src="https://i.ibb.co/HYDZMsZ/pt2.jpg" />
+            <img className="img imgDmy" src="https://i.ibb.co/CKjZBdp/pt4.jpg" />
+            <img className="img imgDmy" src="https://i.ibb.co/CHzW44k/pt5.jpg" />
+            <img className="img imgDmy" src="https://i.ibb.co/zR6x0bz/pt6.jpg" />
+          </OwlCarousel>
         </div>
       </div>
       <div className="image-show-case-two">
@@ -1061,161 +637,17 @@ export default function Home() {
           <h2>
             <b>More top picks for you</b>
           </h2>
-          <div className="owl-carousel owl-theme car-me" id="display-item-1">
-            <div className="item normal-carousel-h">
-              <Link to="/">
-                <img
-                  src="https://i.ibb.co/b3TXr4s/ipone.jpg"
-                  alt="img"
-                  className="full-screen-car-img"
-                />
-              </Link>
-            </div>
-            <div className="item normal-carousel-h">
-              <Link to="/">
-                <img
-                  src="https://i.ibb.co/M5T6gfd/ipad.jpg"
-                  alt="img"
-                  className="full-screen-car-img"
-                />
-              </Link>
-            </div>
-            <div className="item normal-carousel-h">
-              <Link to="/">
-                <img
-                  src="https://i.ibb.co/44Kc2cF/w2.jpg"
-                  alt="img"
-                  className="full-screen-car-img"
-                />
-              </Link>
-            </div>
-            <div className="item normal-carousel-h">
-              <Link to="/">
-                <img
-                  src="https://i.ibb.co/R9xfXzk/ipod.jpg"
-                  alt="img"
-                  className="full-screen-car-img"
-                />
-              </Link>
-            </div>
-            <div className="item normal-carousel-h">
-              <Link to="/">
-                <img
-                  src="https://i.ibb.co/xFR2fGB/kyborad.jpg"
-                  alt="img"
-                  className="full-screen-car-img"
-                />
-              </Link>
-            </div>
-            <div className="item normal-carousel-h">
-              <Link to="/">
-                <img
-                  src="https://i.ibb.co/nb2X9xs/charger.jpg"
-                  alt="img"
-                  className="full-screen-car-img"
-                />
-              </Link>
-            </div>
-            <div className="item normal-carousel-h">
-              <Link to="/">
-                <img
-                  src="https://i.ibb.co/whCsNbz/zit1.jpg"
-                  alt="img"
-                  className="full-screen-car-img"
-                />
-              </Link>
-            </div>
-            <div className="item normal-carousel-h">
-              <Link to="/">
-                <img
-                  src="https://i.ibb.co/cNvK3fq/zit2.jpg"
-                  alt="img"
-                  className="full-screen-car-img"
-                />
-              </Link>
-            </div>
-            <div className="item normal-carousel-h">
-              <Link to="/">
-                <img
-                  src="https://i.ibb.co/2h8D1qy/z3.jpg"
-                  alt="img"
-                  className="full-screen-car-img"
-                />
-              </Link>
-            </div>
-            <div className="item normal-carousel-h">
-              <Link to="/">
-                <img
-                  src="https://i.ibb.co/fY2btW9/z4.jpg"
-                  alt="img"
-                  className="full-screen-car-img"
-                />
-              </Link>
-            </div>
-            <div className="item normal-carousel-h">
-              <Link to="/">
-                <img
-                  src="https://i.ibb.co/0YbwvjD/z5.jpg"
-                  alt="img"
-                  className="full-screen-car-img"
-                />
-              </Link>
-            </div>
-            <div className="item normal-carousel-h">
-              <Link to="/">
-                <img
-                  src="https://i.ibb.co/TMP50Tx/z8.jpg"
-                  alt="img"
-                  className="full-screen-car-img"
-                />
-              </Link>
-            </div>
-            <div className="item normal-carousel-h">
-              <Link to="/">
-                <img
-                  src="https://i.ibb.co/LpdLXJY/z10.jpg"
-                  alt="img"
-                  className="full-screen-car-img"
-                />
-              </Link>
-            </div>
-            <div className="item normal-carousel-h">
-              <Link to="/">
-                <img
-                  src="https://i.ibb.co/PWwc1Kt/watches.jpg"
-                  alt="img"
-                  className="full-screen-car-img"
-                />
-              </Link>
-            </div>
-            <div className="item normal-carousel-h">
-              <Link to="/">
-                <img
-                  src="https://i.ibb.co/c3hy8xM/laptop.jpg"
-                  alt="img"
-                  className="full-screen-car-img"
-                />
-              </Link>
-            </div>
-            <div className="item normal-carousel-h">
-              <Link to="/">
-                <img
-                  src="https://i.ibb.co/7QPs9KN/z6.jpg"
-                  alt="img"
-                  className="full-screen-car-img"
-                />
-              </Link>
-            </div>
-            <div className="item normal-carousel-h">
-              <Link to="/">
-                <img
-                  src="https://i.ibb.co/hfJFJCd/coverpink.jpg"
-                  alt="img"
-                  className="full-screen-car-img"
-                />
-              </Link>
-            </div>
-          </div>
+          <OwlCarousel
+            className="owl-theme"
+            {...owlSet} >
+            <img className="img imgDmy" src="https://i.ibb.co/b3TXr4s/ipone.jpg" />
+            <img className="img imgDmy" src="https://i.ibb.co/RcfTV23/pt3.jpg" />
+            <img className="img imgDmy" src="https://i.ibb.co/Fws9g9F/pt1.jpg" />
+            <img className="img imgDmy" src="https://i.ibb.co/HYDZMsZ/pt2.jpg" />
+            <img className="img imgDmy" src="https://i.ibb.co/CKjZBdp/pt4.jpg" />
+            <img className="img imgDmy" src="https://i.ibb.co/CHzW44k/pt5.jpg" />
+            <img className="img imgDmy" src="https://i.ibb.co/zR6x0bz/pt6.jpg" />
+          </OwlCarousel>
         </div>
       </div>
 
