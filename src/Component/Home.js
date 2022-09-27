@@ -6,27 +6,11 @@ import 'owl.carousel/dist/assets/owl.theme.default.css';
 import "../myCss.css";
 import "./Home.css";
 export default function Home() {
-  function hide_me_right() {
-    document.getElementById("scroll-nav-right").style.display = "none";
-    document.getElementById("scroll-nav-left").style.display = "inline-block";
-  }
-
-  function hide_me_left() {
-    document.getElementById("scroll-nav-left").style.display = "none";
-    document.getElementById("scroll-nav-right").style.display = "inline-block";
-  }
-  function change_the(x) {
-    let m = document.getElementsByClassName("array-class-me");
-    for (let i = 0, len = m.length; i < len; i++) {
-      m[i].style.display = "none";
-    }
-    document.getElementById(`pic-swap-${x}`).style.display = "block";
-  }
   const owlSet = {
     loop: false,
     nav: true,
     dots: false,
-    navText: [`<i class="bi bi-chevron-left" style='background-color:white; border-radius: 10px;position: absolute; top: 25%; font-size:min(5vw,40px);  left: 0px; color:black; border: 2px solid  rgb(207, 210, 213); '></i>`, `<i class="bi bi-chevron-right" style='background-color:white; border-radius: 10px;position: absolute; top: 25%; font-size:min(5vw,40px);  right: 0px; color:black; border: 2px solid  rgb(207, 210, 213); '></i>`],
+    navText: [`<i class="bi bi-chevron-left" style='background-color:white; border-radius: 10%;position: absolute; top: 25%; font-size:min(5vw,40px);  left: 0px; color:black; border: 2px solid  rgb(207, 210, 213); '></i>`, `<i class="bi bi-chevron-right" style='background-color:white; border-radius: 10%;position: absolute; top: 25%; font-size:min(5vw,40px);  right: 0px; color:black; border: 2px solid  rgb(207, 210, 213); '></i>`],
     responsive: {
       0: {
         items: 2
@@ -127,14 +111,6 @@ export default function Home() {
         </button>
       </div>
 
-      <div className="scroller-navigation">
-        <Link to="#last-scroller" onClick={() => hide_me_right()}>
-          <i className="bi bi-chevron-right" id="scroll-nav-right"></i>
-        </Link>
-        <Link to="#first-scroller" onClick={() => hide_me_left()}>
-          <i className="bi bi-chevron-left" id="scroll-nav-left"></i>
-        </Link>
-      </div>
       <div className="scroller">
         <Link to="/">
           <div className="scroll-items" id="first-scroller">
@@ -554,7 +530,6 @@ export default function Home() {
             <button
               type="button"
               className="btn btn-light"
-              onClick={() => change_the(0)}
             >
               <img
                 src="https://i.ibb.co/TMwv4bC/mouse1.jpg"
@@ -565,7 +540,6 @@ export default function Home() {
             <button
               type="button"
               className="btn btn-light"
-              onClick={() => change_the(1)}
             >
               <img
                 src="https://i.ibb.co/NF40krx/m2.jpg"
@@ -576,7 +550,6 @@ export default function Home() {
             <button
               type="button"
               className="btn btn-light"
-              onClick={() => change_the(2)}
             >
               <img
                 src="https://i.ibb.co/Lxbr1Ts/w1.jpg"
@@ -587,7 +560,6 @@ export default function Home() {
             <button
               type="button"
               className="btn btn-light"
-              onClick={() => change_the(3)}
             >
               <img
                 src="https://i.ibb.co/Hrx2vL0/pen1.jpg"

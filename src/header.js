@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "./myCss.css";
-import "./myScr";
 export default function Header() {
   let [temp, setTemp] = useState("");
   let [city, setCity] = useState("");
