@@ -781,6 +781,7 @@ main a:hover {
   grid-area: one;
   min-height: 0;
   min-width: 0;
+  max-height: 255px;
 }
 
 .fit-img-2 {
