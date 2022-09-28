@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import OwlCarousel from 'react-owl-carousel';
 import 'owl.carousel/dist/assets/owl.carousel.css';
@@ -6,6 +6,7 @@ import 'owl.carousel/dist/assets/owl.theme.default.css';
 import "../myCss.css";
 import "./Home.css";
 export default function Home() {
+  const [whichOne, setWhichOne] = useState(1);
   const owlSet = {
     loop: false,
     nav: true,
@@ -167,13 +168,13 @@ export default function Home() {
           <OwlCarousel
             className="owl-theme"
             {...owlSet} >
-            <img className="img imgDmy" src="https://i.ibb.co/b3TXr4s/ipone.jpg" />
-            <img className="img imgDmy" src="https://i.ibb.co/RcfTV23/pt3.jpg" />
-            <img className="img imgDmy" src="https://i.ibb.co/Fws9g9F/pt1.jpg" />
-            <img className="img imgDmy" src="https://i.ibb.co/HYDZMsZ/pt2.jpg" />
-            <img className="img imgDmy" src="https://i.ibb.co/CKjZBdp/pt4.jpg" />
-            <img className="img imgDmy" src="https://i.ibb.co/CHzW44k/pt5.jpg" />
-            <img className="img imgDmy" src="https://i.ibb.co/zR6x0bz/pt6.jpg" />
+            <img className="img imgDmy" alt="img" src="https://i.ibb.co/b3TXr4s/ipone.jpg" />
+            <img className="img imgDmy" alt="img" src="https://i.ibb.co/RcfTV23/pt3.jpg" />
+            <img className="img imgDmy" alt="img" src="https://i.ibb.co/Fws9g9F/pt1.jpg" />
+            <img className="img imgDmy" alt="img" src="https://i.ibb.co/HYDZMsZ/pt2.jpg" />
+            <img className="img imgDmy" alt="img" src="https://i.ibb.co/CKjZBdp/pt4.jpg" />
+            <img className="img imgDmy" alt="img" src="https://i.ibb.co/CHzW44k/pt5.jpg" />
+            <img className="img imgDmy" alt="img" src="https://i.ibb.co/zR6x0bz/pt6.jpg" />
           </OwlCarousel>
         </div>
       </div>
@@ -455,81 +456,90 @@ export default function Home() {
           <h2 className="card-title">
             Best Sellers in Computers & Accessories
           </h2>
-          <div className="card-3-pic-1 array-className-me " id="pic-swap-0">
-            <Link to="/">
-              <div className="get-part">
-                <img
-                  src="https://i.ibb.co/TMwv4bC/mouse1.jpg"
-                  alt="img"
-                  className="fit-img-2"
-                />
-              </div>
-              <p className="get-part-2">
-                Logitech B170 Wireless Mouse, 2.4 GHz with USB Nano Receiver,
-                Optical Tracking, 12-M…
-                <p className="price-in-part-2">
-                  ₹545.00 <s>₹656.00</s>
+          {
+            whichOne === 1 ? <div className="card-3-pic-1 array-className-me " id="pic-swap-0">
+              <Link to="/">
+                <div className="get-part">
+                  <img
+                    src="https://i.ibb.co/TMwv4bC/mouse1.jpg"
+                    alt="img"
+                    className="fit-img-2"
+                  />
+                </div>
+                <div className="get-part-2">
+                  Logitech B170 Wireless Mouse, 2.4 GHz with USB Nano Receiver,
+                  Optical Tracking, 12-M…
+                  <p className="price-in-part-2">
+                    ₹545.00 <s>₹656.00</s>
+                  </p>
+                </div>
+              </Link>
+            </div> : null
+          }
+          {
+            whichOne === 2 ? <div className="card-3-pic-2 array-className-me" id="pic-swap-1">
+              <Link to="/">
+                <div className="get-part">
+                  <img
+                    src="https://i.ibb.co/4F1vK8f/img2.jpg"
+                    alt="img"
+                    className="fit-img-2"
+                  />
+                </div>
+                <p className="get-part-2">
+                  HP X1000 Wired Mouse with 3 Handy Buttons, Fast-Moving Scroll
+                  Wheel and Optical Sensor works on…
                 </p>
-              </p>
-            </Link>
-          </div>
-          <div className="card-3-pic-2 array-className-me" id="pic-swap-1">
-            <Link to="/">
-              <div className="get-part">
-                <img
-                  src="https://i.ibb.co/4F1vK8f/img2.jpg"
-                  alt="img"
-                  className="fit-img-2"
-                />
-              </div>
-              <p className="get-part-2">
-                HP X1000 Wired Mouse with 3 Handy Buttons, Fast-Moving Scroll
-                Wheel and Optical Sensor works on…
-              </p>
-              <p className="price-in-part-2">
-                ₹270.00 <s>₹399.00</s>
-              </p>
-            </Link>
-          </div>
-          <div className="card-3-pic-3 array-className-me" id="pic-swap-2">
-            <Link to="/">
-              <div className="get-part">
-                <img
-                  src="https://i.ibb.co/RSSHRy9/img3.jpg"
-                  alt="img"
-                  className="fit-img-2"
-                />
-              </div>
-              <p className="get-part-2">
-                Portronics Konnect L 1.2M POR-1401 Fast Charging 3A 8 Pin USB
-                Cable with Charge & Sync Function (…
-              </p>
-              <p className="price-in-part-2">
-                ₹139.00 <s>₹399.00</s>
-              </p>
-            </Link>
-          </div>
-          <div className="card-3-pic-4 array-className-me" id="pic-swap-3">
-            <Link to="/">
-              <div className="get-part">
-                <img
-                  src="https://i.ibb.co/xSxSpx5/img4.jpg"
-                  alt="img"
-                  className="fit-img-2"
-                />
-              </div>
-              <p className="get-part-2">
-                Sandisk v236w 64GB USB 2.0 Pen Drive,with 2 year warranty
-              </p>
-              <p className="price-in-part-2">
-                ₹489.00 <s>1,500.00</s>
-              </p>
-            </Link>
-          </div>
+                <p className="price-in-part-2">
+                  ₹270.00 <s>₹399.00</s>
+                </p>
+              </Link>
+            </div> : null
+          }
+          {
+            whichOne === 3 ? <div className="card-3-pic-3 array-className-me" id="pic-swap-2">
+              <Link to="/">
+                <div className="get-part">
+                  <img
+                    src="https://i.ibb.co/RSSHRy9/img3.jpg"
+                    alt="img"
+                    className="fit-img-2"
+                  />
+                </div>
+                <p className="get-part-2">
+                  Portronics Konnect L 1.2M POR-1401 Fast Charging 3A 8 Pin USB
+                  Cable with Charge & Sync Function (…
+                </p>
+                <p className="price-in-part-2">
+                  ₹139.00 <s>₹399.00</s>
+                </p>
+              </Link>
+            </div> : null
+          }
+          {
+            whichOne === 4 ? <div className="card-3-pic-4 array-className-me" id="pic-swap-3">
+              <Link to="/">
+                <div className="get-part">
+                  <img
+                    src="https://i.ibb.co/xSxSpx5/img4.jpg"
+                    alt="img"
+                    className="fit-img-2"
+                  />
+                </div>
+                <p className="get-part-2">
+                  Sandisk v236w 64GB USB 2.0 Pen Drive,with 2 year warranty
+                </p>
+                <p className="price-in-part-2">
+                  ₹489.00 <s>1,500.00</s>
+                </p>
+              </Link>
+            </div> : null
+          }
           <div className="button-to-change">
             <button
               type="button"
               className="btn btn-light"
+              onClick={()=> setWhichOne(1)}
             >
               <img
                 src="https://i.ibb.co/TMwv4bC/mouse1.jpg"
@@ -540,6 +550,7 @@ export default function Home() {
             <button
               type="button"
               className="btn btn-light"
+              onClick={()=> setWhichOne(2)}
             >
               <img
                 src="https://i.ibb.co/NF40krx/m2.jpg"
@@ -550,6 +561,7 @@ export default function Home() {
             <button
               type="button"
               className="btn btn-light"
+              onClick={()=> setWhichOne(3)}
             >
               <img
                 src="https://i.ibb.co/Lxbr1Ts/w1.jpg"
@@ -560,6 +572,7 @@ export default function Home() {
             <button
               type="button"
               className="btn btn-light"
+              onClick={()=> setWhichOne(4)}
             >
               <img
                 src="https://i.ibb.co/Hrx2vL0/pen1.jpg"
@@ -578,13 +591,13 @@ export default function Home() {
           <OwlCarousel
             className="owl-theme"
             {...owlSet} >
-            <img className="img imgDmy" src="https://i.ibb.co/b3TXr4s/ipone.jpg" />
-            <img className="img imgDmy" src="https://i.ibb.co/RcfTV23/pt3.jpg" />
-            <img className="img imgDmy" src="https://i.ibb.co/Fws9g9F/pt1.jpg" />
-            <img className="img imgDmy" src="https://i.ibb.co/HYDZMsZ/pt2.jpg" />
-            <img className="img imgDmy" src="https://i.ibb.co/CKjZBdp/pt4.jpg" />
-            <img className="img imgDmy" src="https://i.ibb.co/CHzW44k/pt5.jpg" />
-            <img className="img imgDmy" src="https://i.ibb.co/zR6x0bz/pt6.jpg" />
+            <img className="img imgDmy" alt="img" src="https://i.ibb.co/b3TXr4s/ipone.jpg" />
+            <img className="img imgDmy" alt="img" src="https://i.ibb.co/RcfTV23/pt3.jpg" />
+            <img className="img imgDmy" alt="img" src="https://i.ibb.co/Fws9g9F/pt1.jpg" />
+            <img className="img imgDmy" alt="img" src="https://i.ibb.co/HYDZMsZ/pt2.jpg" />
+            <img className="img imgDmy" alt="img" src="https://i.ibb.co/CKjZBdp/pt4.jpg" />
+            <img className="img imgDmy" alt="img" src="https://i.ibb.co/CHzW44k/pt5.jpg" />
+            <img className="img imgDmy" alt="img" src="https://i.ibb.co/zR6x0bz/pt6.jpg" />
           </OwlCarousel>
         </div>
       </div>
@@ -612,13 +625,13 @@ export default function Home() {
           <OwlCarousel
             className="owl-theme"
             {...owlSet} >
-            <img className="img imgDmy" src="https://i.ibb.co/b3TXr4s/ipone.jpg" />
-            <img className="img imgDmy" src="https://i.ibb.co/RcfTV23/pt3.jpg" />
-            <img className="img imgDmy" src="https://i.ibb.co/Fws9g9F/pt1.jpg" />
-            <img className="img imgDmy" src="https://i.ibb.co/HYDZMsZ/pt2.jpg" />
-            <img className="img imgDmy" src="https://i.ibb.co/CKjZBdp/pt4.jpg" />
-            <img className="img imgDmy" src="https://i.ibb.co/CHzW44k/pt5.jpg" />
-            <img className="img imgDmy" src="https://i.ibb.co/zR6x0bz/pt6.jpg" />
+            <img className="img imgDmy" alt="img" src="https://i.ibb.co/b3TXr4s/ipone.jpg" />
+            <img className="img imgDmy" alt="img" src="https://i.ibb.co/RcfTV23/pt3.jpg" />
+            <img className="img imgDmy" alt="img" src="https://i.ibb.co/Fws9g9F/pt1.jpg" />
+            <img className="img imgDmy" alt="img" src="https://i.ibb.co/HYDZMsZ/pt2.jpg" />
+            <img className="img imgDmy" alt="img" src="https://i.ibb.co/CKjZBdp/pt4.jpg" />
+            <img className="img imgDmy" alt="img" src="https://i.ibb.co/CHzW44k/pt5.jpg" />
+            <img className="img imgDmy" alt="img" src="https://i.ibb.co/zR6x0bz/pt6.jpg" />
           </OwlCarousel>
         </div>
       </div>
