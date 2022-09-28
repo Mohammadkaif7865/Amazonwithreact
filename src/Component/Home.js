@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import OwlCarousel from 'react-owl-carousel';
 import 'owl.carousel/dist/assets/owl.carousel.css';
@@ -7,6 +7,9 @@ import "../myCss.css";
 import "./Home.css";
 export default function Home() {
   const [whichOne, setWhichOne] = useState(1);
+  // useEffect(() => {
+  //   console.log(whichOne);
+  // }, [whichOne])
   const owlSet = {
     loop: false,
     nav: true,
@@ -539,7 +542,7 @@ export default function Home() {
             <button
               type="button"
               className="btn btn-light"
-              onClick={()=> setWhichOne(1)}
+              onClick={() => setWhichOne(1)}
             >
               <img
                 src="https://i.ibb.co/TMwv4bC/mouse1.jpg"
@@ -550,7 +553,7 @@ export default function Home() {
             <button
               type="button"
               className="btn btn-light"
-              onClick={()=> setWhichOne(2)}
+              onClick={() => setWhichOne(2)}
             >
               <img
                 src="https://i.ibb.co/NF40krx/m2.jpg"
@@ -561,7 +564,7 @@ export default function Home() {
             <button
               type="button"
               className="btn btn-light"
-              onClick={()=> setWhichOne(3)}
+              onClick={() => setWhichOne(3)}
             >
               <img
                 src="https://i.ibb.co/Lxbr1Ts/w1.jpg"
@@ -572,7 +575,7 @@ export default function Home() {
             <button
               type="button"
               className="btn btn-light"
-              onClick={()=> setWhichOne(4)}
+              onClick={() => setWhichOne(4)}
             >
               <img
                 src="https://i.ibb.co/Hrx2vL0/pen1.jpg"

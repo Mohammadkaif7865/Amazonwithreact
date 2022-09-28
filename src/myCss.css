@@ -767,16 +767,13 @@ main a:hover {
 
 .card-3-pic-2 {
   grid-area: one;
-  display: none;
 }
 
 .card-3-pic-3 {
   grid-area: one;
-  display: none;
 }
 
 .card-3-pic-4 {
-  display: none;
   grid-area: one;
 }
 
