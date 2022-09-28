@@ -714,18 +714,34 @@ main a:hover {
 
 .card-type-one {
   grid-area: one;
+  min-height: 0;
+  min-width: 0;
 }
 
 .card-type-two {
   grid-area: two;
+  min-height: 0;
+  min-width: 0;
 }
 
 .card-type-three {
   grid-area: three;
+  min-height: 0;
+  min-width: 0;
 }
+/* 
+ ! I've found the resource on CSS Tricks
+
+ * It is because the minimimum width of a flex or grid item is auto, so it takes as much space as it want's as it's minimum width
+
+ * I can’t promise I’m explaining this 100% accurately, but the way I understand it, the minimum width of a grid column is auto. (The same is true for flex items, by the way.)
+
+ * It can be easily solved by setting the min-width and min-height of the children of the grid element */
 
 .card-type-four {
   grid-area: four;
+  min-height: 0;
+  min-width: 0;
 }
 
 .my-card {
@@ -763,8 +779,9 @@ main a:hover {
 
 .card-3-pic-1 {
   grid-area: one;
+  min-height: 0;
+  min-width: 0;
 }
-
 
 .fit-img-2 {
   width: 100%;
@@ -800,6 +817,8 @@ main a:hover {
 
 .button-to-change {
   grid-area: two;
+  min-height: 0;
+  min-width: 0;
 }
 
 .button-to-change button {
@@ -892,7 +911,7 @@ main a:hover {
 }
 
 .full-image-1 {
-  width:100%;
+  width: 100%;
 }
 
 @media screen and (max-width: 436px) {
