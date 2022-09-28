@@ -460,7 +460,7 @@ export default function Home() {
             Best Sellers in Computers & Accessories
           </h2>
           {
-            whichOne === 1 ? <div className="card-3-pic-1 array-className-me " id="pic-swap-0">
+            whichOne === 1 ? <div className="card-3-pic  " id="pic-swap-0">
               <Link to="/">
                 <div className="get-part">
                   <img
@@ -480,7 +480,7 @@ export default function Home() {
             </div> : null
           }
           {
-            whichOne === 2 ? <div className="card-3-pic-2 array-className-me" id="pic-swap-1">
+            whichOne === 2 ? <div className="card-3-pic " id="pic-swap-1">
               <Link to="/">
                 <div className="get-part">
                   <img
@@ -500,7 +500,7 @@ export default function Home() {
             </div> : null
           }
           {
-            whichOne === 3 ? <div className="card-3-pic-3 array-className-me" id="pic-swap-2">
+            whichOne === 3 ? <div className="card-3-pic " id="pic-swap-2">
               <Link to="/">
                 <div className="get-part">
                   <img
@@ -520,7 +520,7 @@ export default function Home() {
             </div> : null
           }
           {
-            whichOne === 4 ? <div className="card-3-pic-4 array-className-me" id="pic-swap-3">
+            whichOne === 4 ? <div className="card-3-pic " id="pic-swap-3">
               <Link to="/">
                 <div className="get-part">
                   <img
