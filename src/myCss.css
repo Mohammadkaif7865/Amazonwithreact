@@ -810,6 +810,9 @@ main a:hover {
 .get-part-2 {
   width: 100%;
   font-size: 15px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .price-in-part-2 {
