@@ -469,13 +469,13 @@ export default function Home() {
                     className="fit-img-2"
                   />
                 </div>
-                <div className="get-part-2">
+                <p className="get-part-2">
                   Logitech B170 Wireless Mouse, 2.4 GHz with USB Nano Receiver,
                   Optical Tracking, 12-M…
+                </p>
                   <p className="price-in-part-2">
                     ₹545.00 <s>₹656.00</s>
                   </p>
-                </div>
               </Link>
             </div> : null
           }
