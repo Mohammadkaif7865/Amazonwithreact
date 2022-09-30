@@ -408,10 +408,6 @@ main a:hover {
   padding: 10px;
 }
 
-.increase-carousel-h {
-  height: 225px;
-  width: 200px;
-}
 
 .partial-screen-car-img {
   width: 100%;
@@ -419,14 +415,6 @@ main a:hover {
   object-fit: contain;
 }
 
-.increase-carousel-h p {
-  width: 100%;
-  height: 45px;
-  text-align: center;
-  padding: 5px;
-  font-size: 15px;
-  position: relative;
-}
 
 .demo-2 {
   position: absolute;
@@ -437,16 +425,6 @@ main a:hover {
   text-align: center;
 }
 
-.normal-carousel-h {
-  height: 200px;
-  width: 200px;
-}
-
-.full-screen-car-img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-}
 
 .scroll-items img {
   width: 100%;
@@ -643,67 +621,15 @@ main a:hover {
   color: #959fa9;
 }
 
-.coupon-container {
-  position: fixed;
-  z-index: 100;
-  width: 100%;
-  top: 15vh;
-  left: 0;
-}
 
-.coupon-big-container {
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 99;
-  background-color: black;
-  opacity: 0.6;
-  width: 100vw;
-  height: 100vh;
-}
 
-.coupon {
-  width: 60vw;
-  min-width: 320px;
-  min-height: 240px;
-  height: 45vw;
-  max-width: 800px;
-  max-height: 600px;
-  margin: auto;
-  position: relative;
-}
 
-.coupon video {
-  object-fit: cover;
-}
 
-.day-n-night {
-  position: fixed;
-  z-index: 25;
-  bottom: 10vh;
-  right: 0px;
-  width: 50px;
-  height: 50px;
-  border-top-left-radius: 20px;
-  border-bottom-left-radius: 20px;
-  color: gold;
-  font-size: 30px;
-  text-align: center;
-  padding-top: 5px;
-  background-color: #131921;
-}
 
-.edit-button {
-  width: 50px;
-  height: 50px;
-  background-color: transparent;
-  border: 1px solid transparent;
-  border-radius: 50%;
-  position: absolute;
-  top: 0;
-  right: 0;
-  font-size: 30px;
-}
+
+
+
+
 
 .card-container {
   display: grid;

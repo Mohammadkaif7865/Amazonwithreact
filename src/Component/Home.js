@@ -171,13 +171,28 @@ export default function Home() {
           <OwlCarousel
             className="owl-theme"
             {...owlSet} >
-            <img className="img imgDmy" alt="img" src="https://i.ibb.co/b3TXr4s/ipone.jpg" />
-            <img className="img imgDmy" alt="img" src="https://i.ibb.co/RcfTV23/pt3.jpg" />
-            <img className="img imgDmy" alt="img" src="https://i.ibb.co/Fws9g9F/pt1.jpg" />
-            <img className="img imgDmy" alt="img" src="https://i.ibb.co/HYDZMsZ/pt2.jpg" />
-            <img className="img imgDmy" alt="img" src="https://i.ibb.co/CKjZBdp/pt4.jpg" />
-            <img className="img imgDmy" alt="img" src="https://i.ibb.co/CHzW44k/pt5.jpg" />
-            <img className="img imgDmy" alt="img" src="https://i.ibb.co/zR6x0bz/pt6.jpg" />
+            <div>
+              <img className="img imgDmy" alt="img" src="https://i.ibb.co/b3TXr4s/ipone.jpg" />
+
+            </div>
+            <div>
+              <img className="img imgDmy" alt="img" src="https://i.ibb.co/RcfTV23/pt3.jpg" />
+            </div>
+            <div>
+              <img className="img imgDmy" alt="img" src="https://i.ibb.co/Fws9g9F/pt1.jpg" />
+            </div>
+            <div>
+              <img className="img imgDmy" alt="img" src="https://i.ibb.co/HYDZMsZ/pt2.jpg" />
+            </div>
+            <div>
+              <img className="img imgDmy" alt="img" src="https://i.ibb.co/CKjZBdp/pt4.jpg" />
+            </div>
+            <div>
+              <img className="img imgDmy" alt="img" src="https://i.ibb.co/CHzW44k/pt5.jpg" />
+            </div>
+            <div>
+              <img className="img imgDmy" alt="img" src="https://i.ibb.co/zR6x0bz/pt6.jpg" />
+            </div>
           </OwlCarousel>
         </div>
       </div>
@@ -473,9 +488,9 @@ export default function Home() {
                   Logitech B170 Wireless Mouse, 2.4 GHz with USB Nano Receiver,
                   Optical Tracking, 12-M…
                 </p>
-                  <p className="price-in-part-2">
-                    ₹545.00 <s>₹656.00</s>
-                  </p>
+                <p className="price-in-part-2">
+                  ₹545.00 <s>₹656.00</s>
+                </p>
               </Link>
             </div> : null
           }
@@ -594,13 +609,27 @@ export default function Home() {
           <OwlCarousel
             className="owl-theme"
             {...owlSet} >
-            <img className="img imgDmy" alt="img" src="https://i.ibb.co/b3TXr4s/ipone.jpg" />
-            <img className="img imgDmy" alt="img" src="https://i.ibb.co/RcfTV23/pt3.jpg" />
-            <img className="img imgDmy" alt="img" src="https://i.ibb.co/Fws9g9F/pt1.jpg" />
-            <img className="img imgDmy" alt="img" src="https://i.ibb.co/HYDZMsZ/pt2.jpg" />
-            <img className="img imgDmy" alt="img" src="https://i.ibb.co/CKjZBdp/pt4.jpg" />
-            <img className="img imgDmy" alt="img" src="https://i.ibb.co/CHzW44k/pt5.jpg" />
-            <img className="img imgDmy" alt="img" src="https://i.ibb.co/zR6x0bz/pt6.jpg" />
+            <div>
+              <img className="img imgDmy" alt="img" src="https://i.ibb.co/b3TXr4s/ipone.jpg" />
+            </div>
+            <div>
+              <img className="img imgDmy" alt="img" src="https://i.ibb.co/RcfTV23/pt3.jpg" />
+            </div>
+            <div>
+              <img className="img imgDmy" alt="img" src="https://i.ibb.co/Fws9g9F/pt1.jpg" />
+            </div>
+            <div>
+              <img className="img imgDmy" alt="img" src="https://i.ibb.co/HYDZMsZ/pt2.jpg" />
+            </div>
+            <div>
+              <img className="img imgDmy" alt="img" src="https://i.ibb.co/CKjZBdp/pt4.jpg" />
+            </div>
+            <div>
+              <img className="img imgDmy" alt="img" src="https://i.ibb.co/CHzW44k/pt5.jpg" />
+            </div>
+            <div>
+              <img className="img imgDmy" alt="img" src="https://i.ibb.co/zR6x0bz/pt6.jpg" />
+            </div>
           </OwlCarousel>
         </div>
       </div>
