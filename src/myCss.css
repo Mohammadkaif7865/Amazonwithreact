@@ -408,13 +408,11 @@ main a:hover {
   padding: 10px;
 }
 
-
 .partial-screen-car-img {
   width: 100%;
   height: 80%;
   object-fit: contain;
 }
-
 
 .demo-2 {
   position: absolute;
@@ -424,7 +422,6 @@ main a:hover {
   width: 100%;
   text-align: center;
 }
-
 
 .scroll-items img {
   width: 100%;
@@ -620,16 +617,6 @@ main a:hover {
 .last-foot a {
   color: #959fa9;
 }
-
-
-
-
-
-
-
-
-
-
 
 .card-container {
   display: grid;
