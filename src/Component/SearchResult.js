@@ -19,7 +19,6 @@ function SearchResult(props) {
       .then((response) => response.json())
       .then((data) => setProducts(data));
   }, [props.match.params]);
-  console.log(products);
   return (
     <>
       <h1>This is Search result</h1>
