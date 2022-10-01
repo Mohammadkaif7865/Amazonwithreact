@@ -1,5 +1,8 @@
-import React, { useEffect } from 'react';
-function SearchResult() {
+import React, { useEffect, useState } from 'react';
+import { Link, withRouter } from 'react-router-dom';
+const url = 'https://amazoncloneserver.herokuapp.com/products_match';
+function SearchResult(props) {
+  let [products, setProducts] = useState("");
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
@@ -8,7 +11,18 @@ function SearchResult() {
                in place of 'smooth' */
     });
   };
-  useEffect(() => scrollToTop(), [])
+  useEffect(() => {
+    scrollToTop();
+    fetch(`${url}/${props.match.params.category}`, { method: 'GET' })
+      .then((response) => response.json())
+      .then((data) => setProducts(data));
+  }, []);
+  useEffect(() => {
+    fetch(`${url}/${props.match.params.category}`, { method: 'GET' })
+      .then((response) => response.json())
+      .then((data) => setProducts(data));
+  }, [props.match.params]);
+  console.log(products);
   return (
     <>
       <h1>This is Search result</h1>
@@ -18,4 +32,4 @@ function SearchResult() {
     </>
   )
 }
-export default SearchResult;
+export default withRouter(SearchResult);
