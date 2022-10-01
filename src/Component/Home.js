@@ -10,6 +10,15 @@ export default function Home() {
   // useEffect(() => {
   //   console.log(whichOne);
   // }, [whichOne])
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+      /* you can also use 'auto' behaviour
+               in place of 'smooth' */
+    });
+  };
+  useEffect(() => scrollToTop(), [])
   const owlSet = {
     loop: false,
     nav: true,

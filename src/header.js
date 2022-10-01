@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, withRouter } from "react-router-dom";
 import "./myCss.css";
 const catUrl = "https://amazoncloneserver.herokuapp.com/category";
-export default function Header() {
+function Header(props) {
   let [temp, setTemp] = useState("");
   let [city, setCity] = useState("");
   let [src, setSrc] = useState("");
-  let [lang, setLanguage] = useState("");
   let [cat, setCat] = useState("");
+  let [search, setSearch] = useState("");
   navigator.geolocation.getCurrentPosition(position);
   async function position(data) {
     const url = `https://api.openweathermap.org/data/2.5/forecast/daily?lat=${data.coords.latitude}&lon=${data.coords.longitude}&mode=json&units=metric&cnt=1&appid=fbf712a5a83d7305c3cda4ca8fe7ef29`;
@@ -26,8 +26,14 @@ export default function Header() {
       })
     }
   }
+  
   function handleChange(value) {
-     console.log(value);
+    props.history.push(`/search_result/${value}`);
+  }
+  function inputChange(e) {
+    e.preventDefault();
+    props.history.push(`/search_result/${search}`);
+
   }
   useEffect(() => {
     fetch(catUrl, { method: "GET" }).then((response) => response.json()).then((data) => setCat(data));
@@ -169,15 +175,15 @@ export default function Header() {
           </div>
         </Link>
         <div className="quick-search-my">
-          <form action="search-input" className="form-search-my">
+          <form onSubmit={inputChange} className="form-search-my">
             <div className="select-cat-my nav-search-my">
-              <select name="category" id="select-category" onChange={(e)=> handleChange(e.target.value) }>
+              <select name="category" id="select-category" onChange={(e) => handleChange(e.target.value)}>
                 <option value="----">category</option>
                 {catShow()}
               </select>
             </div>
             <div className="input-text-my nav-search-my">
-              <input type="text" />
+              <input type="text" value={search} onChange={(e) => setSearch(e.target.value)} />
             </div>
             <button type="submit" className="search-submit-my">
               <i className="bi bi-search" style={{ fontSize: "23px" }}></i>
@@ -379,3 +385,4 @@ export default function Header() {
     </header>
   );
 }
+export default withRouter(Header);
