@@ -18,18 +18,19 @@ export default function Header() {
     setSrc(
       "http://openweathermap.org/img/w/" + info.list[0].weather[0].icon + ".png"
     );
-    function catShow() {
-      if (cat) {
-        cat.map((data) => {
-          return <option value={data.category}>{data.category}</option>
-        })
-      }
-    }
-
-    useEffect(() => {
-      fetch(catUrl, { method: "GET" }).then((response) => response.json()).then((data) => setCat(data));
-    }, [])
   }
+  function catShow() {
+    console.log(cat);
+    if (cat) {
+     return cat.map((data) => {
+        return <option value={data.category}>{data.category}</option>
+      })
+    }
+  }
+
+  useEffect(() => {
+    fetch(catUrl, { method: "GET" }).then((response) => response.json()).then((data) => setCat(data));
+  }, [])
   return (
     <header className="navbar-my">
       <div className="nav-belt-my">
@@ -170,7 +171,8 @@ export default function Header() {
           <form action="search-input" className="form-search-my">
             <div className="select-cat-my nav-search-my">
               <select name="category" id="select-category">
-                {() => catShow()}
+                <option value="----">category</option>
+                {catShow}
               </select>
             </div>
             <div className="input-text-my nav-search-my">
