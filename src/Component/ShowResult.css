@@ -1,12 +1,12 @@
-.top-search-result{
-    padding: 3px;
+.top-search-result {
+  padding: 3px;
 }
 .imgCard {
   height: 300px;
   min-width: 200px;
   display: inline-block;
-  margin: 10px;
-  border-radius: 10px;
+  border: 2px solid rgb(220, 218, 218);
+
 }
 
 .colorGold {
@@ -30,9 +30,11 @@
   width: 100%;
   height: 20px;
   padding-left: 5px;
+  font-size: 16px;
 }
 
 .rating {
+  font-size: 16px;
   text-align: left;
   width: 100%;
   height: 20px;
@@ -41,7 +43,6 @@
 
 .dis {
   width: 100%;
-  border-top: 2px solid rgb(229, 229, 229);
   padding: 5px;
   overflow: hidden;
   white-space: nowrap;
@@ -56,24 +57,19 @@
 
 @media screen and (min-width: 500px) {
   .imgCard {
-    width: 46%;
+    width: 48%;
   }
 }
 
 @media screen and (min-width: 768px) {
   .imgCard {
-    width: 30%;
+    width: 32%;
   }
 }
 
 @media screen and (min-width: 1000px) {
   .imgCard {
-    width: 23%;
+    width: 24%;
   }
 }
 
-@media screen and (min-width: 1444px) {
-  .imgCard {
-    width: 18%;
-  }
-}

@@ -23,7 +23,7 @@ function SearchResult(props) {
   }, [props.match.params]);
   return (
     <>
-      <h1 className="top-search-result">{products.length} result for {props.match.params.category}</h1>
+      <h4 className="top-search-result">{products.length} result for {props.match.params.category}</h4>
       <div className="container">
         {products.length === 0 ? (
           <h1>No match found</h1>
