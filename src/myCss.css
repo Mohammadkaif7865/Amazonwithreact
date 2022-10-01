@@ -7,7 +7,7 @@
 body {
   color: #0f1111;
   font-family: "Amazon Ember", Arial, sans-serif;
-  background-color: rgb(207, 210, 213);
+  background-color: white;
 }
 
 .size-up {
@@ -175,6 +175,7 @@ a {
 .input-text-my input {
   height: 100%;
   width: 100%;
+  padding-left: 3px;
   font-size: 15px;
 }
 
