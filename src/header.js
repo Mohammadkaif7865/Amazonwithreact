@@ -1,11 +1,13 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "./myCss.css";
+const catUrl = "https://amazoncloneserver.herokuapp.com/category";
 export default function Header() {
   let [temp, setTemp] = useState("");
   let [city, setCity] = useState("");
   let [src, setSrc] = useState("");
   let [lang, setLanguage] = useState("");
+  let [cat, setCat] = useState("");
   navigator.geolocation.getCurrentPosition(position);
   async function position(data) {
     const url = `https://api.openweathermap.org/data/2.5/forecast/daily?lat=${data.coords.latitude}&lon=${data.coords.longitude}&mode=json&units=metric&cnt=1&appid=fbf712a5a83d7305c3cda4ca8fe7ef29`;
@@ -16,6 +18,17 @@ export default function Header() {
     setSrc(
       "http://openweathermap.org/img/w/" + info.list[0].weather[0].icon + ".png"
     );
+    function catShow() {
+      if (cat) {
+        cat.map((data) => {
+          return <option value={data.category}>{data.category}</option>
+        })
+      }
+    }
+
+    useEffect(() => {
+      fetch(catUrl, { method: "GET" }).then((response) => response.json()).then((data) => setCat(data));
+    }, [])
   }
   return (
     <header className="navbar-my">
@@ -157,51 +170,7 @@ export default function Header() {
           <form action="search-input" className="form-search-my">
             <div className="select-cat-my nav-search-my">
               <select name="category" id="select-category">
-                <option value="All">All</option>
-                <option value="alexa-skills">Alexa Skills</option>
-                <option value="amazon-devices">Amazon Devices</option>
-                <option value="fashion">Amazon Fashion</option>
-                <option value="nowstore">Amazon Fresh</option>
-                <option value="amazon-pharmacy">Amazon Pharmacy</option>
-                <option value="appliances">Appliances</option>
-                <option value="mobile-apps">Apps &amp; Games</option>
-                <option value="baby">Baby</option>
-                <option value="beauty">Beauty</option>
-                <option value="stripbooks">Books</option>
-                <option value="automotive">Car &amp; Motorbike</option>
-                <option value="apparel">Clothing &amp; Accessories</option>
-                <option value="collectibles">Collectibles</option>
-                <option value="computers">Computers &amp; Accessories</option>
-                <option value="todays-deals">Deals</option>
-                <option value="electronics">Electronics</option>
-                <option value="furniture">Furniture</option>
-                <option value="lawngarden">Garden &amp; Outdoors</option>
-                <option value="gift-cards">Gift Cards</option>
-                <option value="grocery">Grocery &amp; Gourmet Foods</option>
-                <option value="hpc">Health &amp; Personal Care</option>
-                <option value="kitchen">Home &amp; Kitchen</option>
-                <option value="industrial">Industrial &amp; Scientific</option>
-                <option value="jewelry">Jewellery</option>
-                <option value="digital-text">Kindle Store</option>
-                <option value="luggage">Luggage &amp; Bags</option>
-                <option value="luxury-beauty">Luxury Beauty</option>
-                <option value="dvd">Movies &amp; TV Shows</option>
-                <option value="popular">Music</option>
-                <option value="mi">Musical Instruments</option>
-                <option value="office-products">Office Products</option>
-                <option value="pets">Pet Supplies</option>
-                <option value="instant-video">Prime Video</option>
-                <option value="shoes">Shoes &amp; Handbags</option>
-                <option value="software">Software</option>
-                <option value="sporting">Sports, Fitness &amp; Outdoors</option>
-                <option value="specialty-aps-sns">Subscribe &amp; Save</option>
-                <option value="home-improvement">
-                  Tools &amp; Home Improvement
-                </option>
-                <option value="toys">Toys &amp; Games</option>
-                <option value="under-ten-dollars">Under ₹500</option>
-                <option value="videogames">Video Games</option>
-                <option value="watches">Watches</option>
+                {() => catShow()}
               </select>
             </div>
             <div className="input-text-my nav-search-my">
