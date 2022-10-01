@@ -13,9 +13,6 @@ function SearchResult(props) {
   };
   useEffect(() => {
     scrollToTop();
-    fetch(`${url}/${props.match.params.category}`, { method: 'GET' })
-      .then((response) => response.json())
-      .then((data) => setProducts(data));
   }, []);
   useEffect(() => {
     fetch(`${url}/${props.match.params.category}`, { method: 'GET' })
