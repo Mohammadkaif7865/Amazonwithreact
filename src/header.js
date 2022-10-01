@@ -20,9 +20,8 @@ export default function Header() {
     );
   }
   function catShow() {
-    console.log(cat);
     if (cat) {
-     return cat.map((data) => {
+      return cat.map((data) => {
         return <option value={data.category}>{data.category}</option>
       })
     }
@@ -31,6 +30,7 @@ export default function Header() {
   useEffect(() => {
     fetch(catUrl, { method: "GET" }).then((response) => response.json()).then((data) => setCat(data));
   }, [])
+  console.log(cat);
   return (
     <header className="navbar-my">
       <div className="nav-belt-my">
