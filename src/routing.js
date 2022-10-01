@@ -9,7 +9,7 @@ const Routing = () => {
     <BrowserRouter>
       <Header />
       <Route exact path="/" component={Home} />
-      <Route path='/search_result' component={SearchResult} />
+      <Route path='/search_result/:category' component={SearchResult} />
       <Footer />
     </BrowserRouter>
   );

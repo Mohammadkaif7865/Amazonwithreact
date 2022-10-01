@@ -22,15 +22,16 @@ export default function Header() {
   function catShow() {
     if (cat) {
       return cat.map((data) => {
-        return <option value={data.category}>{data.category}</option>
+        return <option value={data.category} key={data._id}>{data.category}</option>
       })
     }
   }
-
+  function handleChange(value) {
+     console.log(value);
+  }
   useEffect(() => {
     fetch(catUrl, { method: "GET" }).then((response) => response.json()).then((data) => setCat(data));
   }, [])
-  console.log(cat);
   return (
     <header className="navbar-my">
       <div className="nav-belt-my">
@@ -170,9 +171,9 @@ export default function Header() {
         <div className="quick-search-my">
           <form action="search-input" className="form-search-my">
             <div className="select-cat-my nav-search-my">
-              <select name="category" id="select-category">
+              <select name="category" id="select-category" onChange={(e)=> handleChange(e.target.value) }>
                 <option value="----">category</option>
-                {catShow}
+                {catShow()}
               </select>
             </div>
             <div className="input-text-my nav-search-my">
