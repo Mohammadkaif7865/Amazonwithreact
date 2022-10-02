@@ -5,6 +5,7 @@ import '../myCss.css';
 const url = 'https://amazoncloneserver.herokuapp.com/products_match';
 function SearchResult(props) {
   let [products, setProducts] = useState("");
+  let [toDisplay, setToDisplay] = useState("");
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
@@ -19,7 +20,10 @@ function SearchResult(props) {
   useEffect(() => {
     fetch(`${url}/${props.match.params.category}`, { method: 'GET' })
       .then((response) => response.json())
-      .then((data) => setProducts(data));
+      .then((data) => {
+        setProducts(data);
+        setToDisplay(data);
+      });
   }, [props.match.params]);
   return (
     <>
@@ -29,11 +33,11 @@ function SearchResult(props) {
           <h2>This is filter coloumns</h2>
         </div>
         <div className="products-display">
-          {products.length === 0 ? (
+          {toDisplay.length === 0 ? (
             <h1>No match found</h1>
           ) : (
-            products.map((item, i) => (
-              <Link to={`/details/:${item.id}`} key={i}>
+            toDisplay.map((item, i) => (
+              <Link to={`/details/${item.id}`} key={i}>
                 <div className="imgCard" >
                   <img src={item.images.img1.link} alt="img" className="imgInCard" />
                   <h3 className="dis">{item.name}</h3>
