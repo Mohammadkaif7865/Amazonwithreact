@@ -6,7 +6,6 @@
   min-width: 200px;
   display: inline-block;
   border: 2px solid rgb(220, 218, 218);
-
 }
 
 .colorGold {
@@ -45,8 +44,12 @@
   width: 100%;
   padding: 5px;
   overflow: hidden;
-  white-space: nowrap;
+  /* white-space: nowrap; */
   text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  /* # This is to limit the number of lines */
+  -webkit-box-orient: vertical;
 }
 
 @media screen and (min-width: 0px) {
@@ -72,4 +75,3 @@
     width: 24%;
   }
 }
-

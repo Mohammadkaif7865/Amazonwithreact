@@ -31,7 +31,7 @@ function SearchResult(props) {
           products.map((item, i) => (
             <div className="imgCard" key={i}>
               <img src={item.images.img1.link} alt="img" className="imgInCard" />
-              <h2 className="dis">{item.name}</h2>
+              <h3 className="dis">{item.name}</h3>
               <div className="rating">
                 Rating: {item.rating}{" "}
                 <i className="bi bi-star-fill colorGold"></i>
