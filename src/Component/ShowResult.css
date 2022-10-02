@@ -51,7 +51,11 @@
   /* # This is to limit the number of lines */
   -webkit-box-orient: vertical;
 }
-
+.grid-display{
+  display: grid;
+  grid-template-areas: "filter display display display";
+  
+}
 @media screen and (min-width: 0px) {
   .imgCard {
     width: 100%;

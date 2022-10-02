@@ -24,7 +24,7 @@ function SearchResult(props) {
   return (
     <>
       <h4 className="top-search-result">{products.length} result for {props.match.params.category}</h4>
-      <div className="container">
+      <div className='grid-display'>
         {products.length === 0 ? (
           <h1>No match found</h1>
         ) : (
