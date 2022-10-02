@@ -1,4 +1,3 @@
-import { param } from 'jquery';
 import React, { useEffect, useState } from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import './ShowResult.css';
@@ -34,15 +33,15 @@ function SearchResult(props) {
             <h1>No match found</h1>
           ) : (
             products.map((item, i) => (
-              <Link to={`/details/:${item.id}`}>
-                <div className="imgCard" key={i}>
+              <Link to={`/details/:${item.id}`} key={i}>
+                <div className="imgCard" >
                   <img src={item.images.img1.link} alt="img" className="imgInCard" />
                   <h3 className="dis">{item.name}</h3>
                   <div className="rating">
                     Rating: {item.rating}{" "}
                     <i className="bi bi-star-fill colorGold"></i>
                   </div>
-                  <div className="price">Price : ₹ {item.cost}</div>
+                  <div className="price">Price : ₹ <span className='price-tag'>{item.cost}</span> </div>
                 </div>
               </Link>
             ))
