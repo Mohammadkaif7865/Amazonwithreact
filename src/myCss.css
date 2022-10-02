@@ -3,7 +3,9 @@
   padding: 0px;
   box-sizing: border-box !important;
 }
-
+.cursorP{
+  cursor: pointer;
+}
 body {
   color: #0f1111;
   font-family: "Amazon Ember", Arial, sans-serif;
@@ -176,6 +178,7 @@ a:hover {
   height: 100%;
   width: 94%;
 }
+
 
 .input-text-my input {
   height: 100%;

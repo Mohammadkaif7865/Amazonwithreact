@@ -6,6 +6,8 @@ const url = 'https://amazoncloneserver.herokuapp.com/products_match';
 function SearchResult(props) {
   let [products, setProducts] = useState("");
   let [toDisplay, setToDisplay] = useState("");
+  let [cheapestCost, setCheapestCost] = useState("");
+  let [expensiveCost, setExpensiveCost] = useState("");
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
@@ -18,6 +20,14 @@ function SearchResult(props) {
     scrollToTop();
   }, []);
   useEffect(() => {
+    if (products) {
+      let sortedProducts = products;
+      sortedProducts.sort((a, b) => a.cost - b.cost);
+      setCheapestCost(sortedProducts[0].cost);
+      setExpensiveCost(sortedProducts[sortedProducts.length - 1].cost);
+    }
+  }, [products]);
+  useEffect(() => {
     fetch(`${url}/${props.match.params.category}`, { method: 'GET' })
       .then((response) => response.json())
       .then((data) => {
@@ -25,12 +35,34 @@ function SearchResult(props) {
         setToDisplay(data);
       });
   }, [props.match.params]);
+  function costFilter(value) {
+    let lcost = Number(value.split('-')[0]);
+    let hcost = Number(value.split('-')[1]);
+    let newProducts = products.filter((value) => {
+      return value.cost > lcost && value.cost < hcost;
+    })
+    setToDisplay(newProducts);
+  }
+  function noFilter(value) {
+    setToDisplay(products);
+    return value;
+  }
   return (
     <>
       <h4 className="top-search-result">{products.length} result for {props.match.params.category}</h4>
       <div className='grid-display'>
         <div className="filter">
           <h2>This is filter coloumns</h2>
+          <form>
+            <p>
+              <input name='costFilter' id='200-500' type="radio" value="200-500" onChange={(e) => costFilter(e.target.value)} />
+              <label htmlFor="200-500">200-500</label>
+            </p>
+            <p>
+              <input name='costFilter' id='nofilter' type="radio" value='nofilter' onChange={(e) => noFilter(e.target.value)} />
+              <label htmlFor="nofilter">no filter</label>
+            </p>
+          </form>
         </div>
         <div className="products-display">
           {toDisplay.length === 0 ? (
