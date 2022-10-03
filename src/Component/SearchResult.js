@@ -55,8 +55,8 @@ function SearchResult(props) {
           <h2>This is filter coloumns</h2>
           <form>
             <p>
-              <input name='costFilter' id='200-500' type="radio" value="200-500" onChange={(e) => costFilter(e.target.value)} />
-              <label htmlFor="200-500">200-500</label>
+              <input name='costFilter' id='200-500' type="radio" value={cheapestCost - expensiveCost} onChange={(e) => costFilter(e.target.value)} />
+              <label htmlFor="200-500">{cheapestCost - expensiveCost}</label>
             </p>
             <p>
               <input name='costFilter' id='nofilter' type="radio" value='nofilter' onChange={(e) => noFilter(e.target.value)} />
