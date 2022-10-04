@@ -21,7 +21,7 @@ function SearchResult(props) {
     scrollToTop();
   }, []);
   useEffect(() => {
-    if (products) {
+    if (products.length > 0) {
       let sortedProducts = products;
       sortedProducts.sort((a, b) => a.cost - b.cost);
       setCheapestCost(sortedProducts[0].cost);
@@ -39,7 +39,6 @@ function SearchResult(props) {
   useEffect(() => {
     if (cheapestCost && expensiveCost) {
       setMargin(expensiveCost - cheapestCost);
-      console.log(Math.round(margin + cheapestCost));
     }
   }, [cheapestCost, expensiveCost])
   function costFilter(value) {
@@ -59,7 +58,7 @@ function SearchResult(props) {
       <h4 className="top-search-result">{products.length} result for {props.match.params.category}</h4>
       <div className='grid-display'>
         <div className="filter">
-          <h2>This is filter coloumns</h2>
+          <h2>Cost FIlter</h2>
           <form>
             <p>
               <input name='costFilter' id='one' type="radio" value={`${Math.round(cheapestCost)}-${Math.round(0.25 * margin + cheapestCost)}`} onChange={(e) => costFilter(e.target.value)} />
@@ -75,7 +74,7 @@ function SearchResult(props) {
             </p>
             <p>
               <input name='costFilter' id='four' type="radio" value={`${Math.round(cheapestCost + 0.75 * margin)}-${Math.round(margin + cheapestCost)}`} onChange={(e) => costFilter(e.target.value)} />
-              <label className='marginTh' htmlFor="four">{`${Math.round(cheapestCost + 0.75 * margin)} - ${Math.round(margin + cheapestCost)} +`}</label>
+              <label className='marginTh' htmlFor="four">{`${Math.round(cheapestCost + 0.75 * margin)} - ${Math.round(margin + cheapestCost)}+`}</label>
             </p>
             <p>
               <input name='costFilter' id='nofilter' type="radio" value='nofilter' onChange={(e) => noFilter(e.target.value)} />

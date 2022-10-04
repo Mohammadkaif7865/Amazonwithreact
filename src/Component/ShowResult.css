@@ -85,6 +85,14 @@
     width: 100%;
   }
 }
+@media screen and (max-width: 768px) {
+  .filter{
+    display: none;
+  }
+  .grid-display{
+    grid-template-areas: "display display ";
+  }
+}
 
 @media screen and (min-width: 500px) {
   .imgCard {
@@ -92,13 +100,13 @@
   }
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 900px) {
   .imgCard {
     width: 32%;
   }
 }
 
-@media screen and (min-width: 1000px) {
+@media screen and (min-width: 1150px) {
   .imgCard {
     width: 23.5%;
   }
