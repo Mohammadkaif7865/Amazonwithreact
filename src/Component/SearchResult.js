@@ -49,7 +49,7 @@ function SearchResult(props) {
     setToDisplay(products);
     return value;
   }
-  console.log(cheapestCost, expensiveCost, margin);
+  console.log(Math.round( margin + cheapestCost));
   return (
     <>
       <h4 className="top-search-result">{products.length} result for {props.match.params.category}</h4>
