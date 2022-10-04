@@ -8,6 +8,7 @@ function SearchResult(props) {
   let [toDisplay, setToDisplay] = useState("");
   let [cheapestCost, setCheapestCost] = useState("");
   let [expensiveCost, setExpensiveCost] = useState("");
+  let [margin, setMargin] = useState("");
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
@@ -25,6 +26,7 @@ function SearchResult(props) {
       sortedProducts.sort((a, b) => a.cost - b.cost);
       setCheapestCost(sortedProducts[0].cost);
       setExpensiveCost(sortedProducts[sortedProducts.length - 1].cost);
+      setMargin(expensiveCost - cheapestCost);
     }
   }, [products]);
   useEffect(() => {
@@ -47,7 +49,7 @@ function SearchResult(props) {
     setToDisplay(products);
     return value;
   }
-  console.log(cheapestCost, expensiveCost);
+  console.log(cheapestCost, expensiveCost, margin);
   return (
     <>
       <h4 className="top-search-result">{products.length} result for {props.match.params.category}</h4>
@@ -56,20 +58,20 @@ function SearchResult(props) {
           <h2>This is filter coloumns</h2>
           <form>
             <p>
-              <input name='costFilter' id='one' type="radio" value={`${Math.round(cheapestCost)}-${Math.round(0.25 * expensiveCost)}`} onChange={(e) => costFilter(e.target.value)} />
-              <label htmlFor="one">{`${Math.round(cheapestCost)} - ${Math.round(0.25 * expensiveCost)}`}</label>
+              <input name='costFilter' id='one' type="radio" value={`${Math.round(cheapestCost)}-${Math.round(0.25 * margin + cheapestCost)}`} onChange={(e) => costFilter(e.target.value)} />
+              <label htmlFor="one">{`${Math.round(cheapestCost)} - ${Math.round(0.25 * margin + cheapestCost)}`}</label>
             </p>
             <p>
-              <input name='costFilter' id='two' type="radio" value={`${Math.round(cheapestCost + 0.25 * expensiveCost)}-${Math.round(0.5 * expensiveCost)}`} onChange={(e) => costFilter(e.target.value)} />
-              <label htmlFor="two">{`${Math.round(cheapestCost + 0.25 * expensiveCost)} - ${Math.round(0.5 * expensiveCost)}`}</label>
+              <input name='costFilter' id='two' type="radio" value={`${Math.round(cheapestCost + 0.25 * margin)}-${Math.round(0.5 * margin + cheapestCost)}`} onChange={(e) => costFilter(e.target.value)} />
+              <label htmlFor="two">{`${Math.round(cheapestCost + 0.25 * margin)} - ${Math.round(0.5 * margin + cheapestCost)}`}</label>
             </p>
             <p>
-              <input name='costFilter' id='three' type="radio" value={`${Math.round(cheapestCost + 0.5 * expensiveCost)}-${Math.round(0.75 * expensiveCost)}`} onChange={(e) => costFilter(e.target.value)} />
-              <label htmlFor="three">{`${Math.round(cheapestCost + 0.5 * expensiveCost)} - ${Math.round(0.75 * expensiveCost)}`}</label>
+              <input name='costFilter' id='three' type="radio" value={`${Math.round(cheapestCost + 0.5 * margin)}-${Math.round(0.75 * margin + cheapestCost)}`} onChange={(e) => costFilter(e.target.value)} />
+              <label htmlFor="three">{`${Math.round(cheapestCost + 0.5 * margin)} - ${Math.round(0.75 * margin + cheapestCost)}`}</label>
             </p>
             <p>
-              <input name='costFilter' id='four' type="radio" value={`${Math.round(cheapestCost + 0.75 * expensiveCost)}-${Math.round(expensiveCost)}`} onChange={(e) => costFilter(e.target.value)} />
-              <label htmlFor="four">{`${Math.round(cheapestCost + 0.75 * expensiveCost)} - ${Math.round(expensiveCost)}`}</label>
+              <input name='costFilter' id='four' type="radio" value={`${Math.round(cheapestCost + 0.75 * margin)}-${Math.round(margin + cheapestCost)}`} onChange={(e) => costFilter(e.target.value)} />
+              <label htmlFor="four">{`${Math.round(cheapestCost + 0.75 * margin)} - ${Math.round(margin + cheapestCost)} +`}</label>
             </p>
             <p>
               <input name='costFilter' id='nofilter' type="radio" value='nofilter' onChange={(e) => noFilter(e.target.value)} />
