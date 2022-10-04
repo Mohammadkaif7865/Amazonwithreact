@@ -55,10 +55,20 @@ function SearchResult(props) {
   }
   return (
     <>
-      <h4 className="top-search-result">{products.length} result for {props.match.params.category}</h4>
+      <div className="filter-show" style={{ marginLeft: "5px" }}>
+        <h4 className="top-search-result">{products.length} result for <span className='impo'>"{props.match.params.category}"</span></h4>
+        <span className='dd'>
+          <i
+            className="bi bi-funnel-fill"
+            id="top-item"
+
+          ></i>
+          Filter
+        </span>
+      </div>
       <div className='grid-display'>
         <div className="filter">
-          <h2>Cost FIlter</h2>
+          <b>  <h2>Cost FIlter</h2></b>
           <form>
             <p>
               <input name='costFilter' id='one' type="radio" value={`${Math.round(cheapestCost)}-${Math.round(0.25 * margin + cheapestCost)}`} onChange={(e) => costFilter(e.target.value)} />
@@ -81,6 +91,10 @@ function SearchResult(props) {
               <label className='marginTh' htmlFor="nofilter">no filter</label>
             </p>
           </form>
+          <b><h2>Custmor Rating</h2></b>
+          <div>
+            <p><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></p>
+          </div>
         </div>
         <div className="products-display">
           {toDisplay.length === 0 ? (

@@ -327,17 +327,8 @@ function Header(props) {
         </Link>
       </div>
       <div className="nav-main-my">
-        <Link to="/">
-          <div className="main-belt-item" style={{ marginLeft: "5px" }}>
-            <i
-              className="bi bi-funnel-fill"
-              id="top-item"
-              style={{ fontSize: "22px" }}
-            ></i>
-            Filter
-          </div>
-        </Link>
-        <Link to="/">
+       <div className="inner-nav-main">
+       <Link to="/">
           <div className="main-belt-item">All</div>
         </Link>
         <Link to="/">
@@ -374,6 +365,7 @@ function Header(props) {
         <Link to="/">
           <div className="main-belt-item">Gift Cards</div>
         </Link>
+       </div>
         <Link to="/">
           <img
             src="https://i.ibb.co/RbjbNRx/nav-img.jpg"

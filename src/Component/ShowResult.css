@@ -68,7 +68,7 @@
   border-right: 1px solid rgb(235, 235, 235);
   padding: 5px;
 }
-.filter p{
+.filter p {
   display: flex;
   font-size: 15px;
   width: 100%;
@@ -77,8 +77,21 @@
 .price-tag {
   font-size: calc(13px + 0.75vw);
 }
-.marginTh{
+.marginTh {
   margin-left: 5px;
+}
+.filter-show {
+  font-size: 22px;
+  color: black;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.dd{
+  display: none;
+}
+.impo{
+  color: #ff5b5e;
 }
 @media screen and (min-width: 0px) {
   .imgCard {
@@ -86,10 +99,13 @@
   }
 }
 @media screen and (max-width: 768px) {
-  .filter{
+  .filter {
     display: none;
   }
-  .grid-display{
+  .dd {
+    display: inline;
+  }
+  .grid-display {
     grid-template-areas: "display display ";
   }
 }
