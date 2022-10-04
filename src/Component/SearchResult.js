@@ -49,6 +49,12 @@ function SearchResult(props) {
     })
     setToDisplay(newProducts);
   }
+  function ratingFilter(value) {
+    let newProducts = products.filter((item) => {
+      return item.rating >= value;
+    })
+    setToDisplay(newProducts);
+  }
   function noFilter(value) {
     setToDisplay(products);
     return value;
@@ -93,7 +99,10 @@ function SearchResult(props) {
           </form>
           <b><h2>Custmor Rating</h2></b>
           <div>
-            <p><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></p>
+            <p className='cursorP' onClick={() => ratingFilter(4)}><i className="bi bi-star-fill colorGold"></i><i className="bi bi-star-fill colorGold"></i><i className="bi bi-star-fill colorGold"></i><i className="bi bi-star-fill colorGold"></i><i className="bi bi-star colorGold"></i> & Up</p>
+            <p className='cursorP' onClick={() => ratingFilter(3)}><i className="bi bi-star-fill colorGold"></i><i className="bi bi-star-fill colorGold"></i><i className="bi bi-star-fill colorGold"></i><i className="bi bi-star colorGold"></i><i className="bi bi-star colorGold"></i> & Up</p>
+            <p className='cursorP' onClick={() => ratingFilter(2)}><i className="bi bi-star-fill colorGold"></i><i className="bi bi-star-fill colorGold"></i><i className="bi bi-star colorGold"></i><i className="bi bi-star colorGold"></i><i className="bi bi-star colorGold"></i> & Up</p>
+            <p className='cursorP' onClick={() => ratingFilter(1)}><i className="bi bi-star-fill colorGold"></i><i className="bi bi-star colorGold"></i><i className="bi bi-star colorGold"></i><i className="bi bi-star colorGold"></i><i className="bi bi-star colorGold"></i> & Up</p>
           </div>
         </div>
         <div className="products-display">
