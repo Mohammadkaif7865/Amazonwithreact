@@ -55,8 +55,20 @@ function SearchResult(props) {
           <h2>This is filter coloumns</h2>
           <form>
             <p>
-              <input name='costFilter' id='200-500' type="radio" value={cheapestCost + "-" + expensiveCost} onChange={(e) => costFilter(e.target.value)} />
-              <label htmlFor="200-500">{cheapestCost + " " + "-" + " " + expensiveCost}</label>
+              <input name='costFilter' id='one' type="radio" value={`${Math.round(cheapestCost)}-${Math.round(0.25 * expensiveCost)}`} onChange={(e) => costFilter(e.target.value)} />
+              <label htmlFor="one">{`${Math.round(cheapestCost)} - ${Math.round(0.25 * expensiveCost)}`}</label>
+            </p>
+            <p>
+              <input name='costFilter' id='two' type="radio" value={`${Math.round(cheapestCost + 0.25 * expensiveCost)}-${Math.round(0.5 * expensiveCost)}`} onChange={(e) => costFilter(e.target.value)} />
+              <label htmlFor="two">{`${Math.round(cheapestCost + 0.25 * expensiveCost)} - ${Math.round(0.5 * expensiveCost)}`}</label>
+            </p>
+            <p>
+              <input name='costFilter' id='three' type="radio" value={`${Math.round(cheapestCost + 0.5 * expensiveCost)}-${Math.round(0.75 * expensiveCost)}`} onChange={(e) => costFilter(e.target.value)} />
+              <label htmlFor="three">{`${Math.round(cheapestCost + 0.5 * expensiveCost)} - ${Math.round(0.75 * expensiveCost)}`}</label>
+            </p>
+            <p>
+              <input name='costFilter' id='four' type="radio" value={`${Math.round(cheapestCost + 0.75 * expensiveCost)}-${Math.round(expensiveCost)}`} onChange={(e) => costFilter(e.target.value)} />
+              <label htmlFor="four">{`${Math.round(cheapestCost + 0.75 * expensiveCost)} - ${Math.round(expensiveCost)}`}</label>
             </p>
             <p>
               <input name='costFilter' id='nofilter' type="radio" value='nofilter' onChange={(e) => noFilter(e.target.value)} />
