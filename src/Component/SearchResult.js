@@ -105,6 +105,10 @@ function SearchResult(props) {
             <p className='cursorP' onClick={() => ratingFilter(1)}><i className="bi bi-star-fill colorGold"></i><i className="bi bi-star colorGold"></i><i className="bi bi-star colorGold"></i><i className="bi bi-star colorGold"></i><i className="bi bi-star colorGold"></i> & Up</p>
           </div>
           <b><h2>Sorted by</h2></b>
+          <div>
+            <p class="cusorP">Price high to low</p>
+            <p class="cusorP">Price low to high</p>
+          </div>
         </div>
         <div className="products-display">
           {toDisplay.length === 0 ? (
