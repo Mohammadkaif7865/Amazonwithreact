@@ -59,10 +59,11 @@ function SearchResult(props) {
     setToDisplay(products);
     return value;
   }
-  function decreaseOrder(){
-    let newProducts = products.sort((a, b) => b.cost - a.cost);
+  function decreaseOrder() {
+    let newProducts = products;
+    newProducts.sort((a, b) => b.cost - a.cost);
     setToDisplay(newProducts);
-  } 
+  }
   console.log(products);
   return (
     <>
