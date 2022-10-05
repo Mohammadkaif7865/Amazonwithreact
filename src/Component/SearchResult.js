@@ -59,7 +59,8 @@ function SearchResult(props) {
     setToDisplay(products);
     return value;
   }
-console.table(products);
+  setProducts(products.sort((a, b) => a.cost - b.cost));
+  console.log(products);
   return (
     <>
       <div className="filter-show" style={{ marginLeft: "5px" }}>
