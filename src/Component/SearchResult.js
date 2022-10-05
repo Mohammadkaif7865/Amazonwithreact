@@ -59,8 +59,13 @@ function SearchResult(props) {
     setToDisplay(products);
     return value;
   }
-  setProducts(products.sort((a, b) => a.cost - b.cost));
-  console.log(products);
+  function ascend() {
+    setToDisplay(toDisplay.sort((a, b) => a.cost - b.cost));
+  }
+  function descend() {
+    setToDisplay(toDisplay.sort((a, b) => b.cost - a.cost));
+  }
+  console.table(products);
   return (
     <>
       <div className="filter-show" style={{ marginLeft: "5px" }}>
@@ -108,8 +113,8 @@ function SearchResult(props) {
           </div>
           <b><h2>Sorted by</h2></b>
           <div>
-            <p className="cursorP" >Price low to high <i className="bi bi-arrow-up"></i></p>
-            <p className="cursorP" >Price high to low <i className="bi bi-arrow-down"></i></p>
+            <p className="cursorP" onClick={() => ascend()} >Price low to high <i className="bi bi-arrow-up"></i></p>
+            <p className="cursorP" onClick={() => descend()} >Price high to low <i className="bi bi-arrow-down"></i></p>
           </div>
         </div>
         <div className="products-display">
