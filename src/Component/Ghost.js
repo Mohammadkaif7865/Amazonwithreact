@@ -4,7 +4,7 @@ const Ghost = () => {
   //console.log(props)
   return (
     <div className="container">
-      <div className="panel panel-success">
+      <div className="panel panel-danger">
         <div className="panel-heading">
           <h3>404 Not Found</h3>
         </div>
