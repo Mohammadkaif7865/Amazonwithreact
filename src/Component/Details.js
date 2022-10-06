@@ -2,14 +2,16 @@ import React, { useEffect, useState } from 'react';
 import { withRouter } from 'react-router-dom';
 const url = 'https://amazoncloneserver.herokuapp.com/details';
 function Details(props) {
-    const [detail, setDetail] = useState('');
+    const [details, setDetails] = useState('');
     useEffect(() => {
-        fetch(`${url}/${props.match.params.id}`, { method: 'GET' }).then((response) => response.json()).then((data) => setDetail(data));
+        fetch(`${url}/${props.match.params.id}`, { method: 'GET' }).then((response) => response.json()).then((data) => setDetails(data[0]));
     }, [props.match.params.id])
-    console.log(detail);
+    console.log(details.images.img1.link);
     return (
         <>
-            <h1>This is detail page</h1>
+            <div className="container">
+              
+            </div>
         </>
     )
 }
