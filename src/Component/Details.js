@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { withRouter } from 'react-router-dom';
 const url = 'https://amazoncloneserver.herokuapp.com/details';
+const defaultImg = "https://i.ibb.co/G3gRQ34/defaultimg.jpg";
 function Details(props) {
     const [details, setDetails] = useState('');
     useEffect(() => {
@@ -11,13 +12,7 @@ function Details(props) {
     return (
         <>
             <div className="container">
-                {
-
-                    details ?
-                        <img src={details[0].images.img1.link} alt={details[0].images.img1.description} title={details[0].images.img1.description} />
-                       
-                : null
-                }
+                <img src={details.length > 0 && details[0].images.img1.link ? details[0].images.img1.link : defaultImg} alt="img" />
             </div>
         </>
     )
