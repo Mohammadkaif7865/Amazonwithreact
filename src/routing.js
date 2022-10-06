@@ -2,6 +2,7 @@ import { BrowserRouter, Route,Switch } from "react-router-dom";
 import Footer from "./footer";
 import Home from "./Component/Home";
 import Header from "./header";
+import Details from "./Component/Details";
 import Ghost from "./Component/Ghost";
 import SearchResult from "./Component/SearchResult";
 
@@ -12,6 +13,7 @@ const Routing = () => {
       <Switch>
       <Route exact path="/" component={Home} />
       <Route path='/search_result/:category' component={SearchResult} />
+      <Route path='/details/:id' component={Details} />
       <Route path="*" component={Ghost} />
       </Switch>
       <Footer />
