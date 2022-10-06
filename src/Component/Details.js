@@ -6,7 +6,7 @@ function Details(props) {
     useEffect(() => {
         fetch(`${url}/${props.match.params.id}`, { method: 'GET' }).then((response) => response.json()).then((data) => setDetails(data[0]));
     }, [props.match.params.id])
-    console.log(details.images.img1.link);
+    console.log(details);
     return (
         <>
             <div className="container">

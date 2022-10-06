@@ -10,6 +10,7 @@ function SearchResult(props) {
   let [cheapestCost, setCheapestCost] = useState("");
   let [expensiveCost, setExpensiveCost] = useState("");
   let [margin, setMargin] = useState("");
+  let [filterShow, setFilterShow] = useState("none");
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
@@ -78,7 +79,7 @@ function SearchResult(props) {
     <>
       <div className="filter-show" style={{ marginLeft: "5px" }}>
         <h4 className="top-search-result">{products.length} result for <span className='impo'>"{props.match.params.category}"</span></h4>
-        <span className='dd'>
+        <span className='dd cursorP' onClick={() => setFilterShow("block")}>
           <i
             className="bi bi-funnel-fill"
             id="top-item"
@@ -110,6 +111,45 @@ function SearchResult(props) {
             <p>
               <input name='costFilter' id='nofilter' type="radio" value='nofilter' onChange={(e) => noFilter(e.target.value)} />
               <label className='marginTh' htmlFor="nofilter">no filter</label>
+            </p>
+          </form>
+          <b><h2>Custmor Rating</h2></b>
+          <div>
+            <p className='cursorP' onClick={() => ratingFilter(4)}><i className="bi bi-star-fill colorGold"></i><i className="bi bi-star-fill colorGold"></i><i className="bi bi-star-fill colorGold"></i><i className="bi bi-star-fill colorGold"></i><i className="bi bi-star colorGold"></i> & Up</p>
+            <p className='cursorP' onClick={() => ratingFilter(3)}><i className="bi bi-star-fill colorGold"></i><i className="bi bi-star-fill colorGold"></i><i className="bi bi-star-fill colorGold"></i><i className="bi bi-star colorGold"></i><i className="bi bi-star colorGold"></i> & Up</p>
+            <p className='cursorP' onClick={() => ratingFilter(2)}><i className="bi bi-star-fill colorGold"></i><i className="bi bi-star-fill colorGold"></i><i className="bi bi-star colorGold"></i><i className="bi bi-star colorGold"></i><i className="bi bi-star colorGold"></i> & Up</p>
+            <p className='cursorP' onClick={() => ratingFilter(1)}><i className="bi bi-star-fill colorGold"></i><i className="bi bi-star colorGold"></i><i className="bi bi-star colorGold"></i><i className="bi bi-star colorGold"></i><i className="bi bi-star colorGold"></i> & Up</p>
+          </div>
+          <b><h2>Sorted by</h2></b>
+          <div>
+            <p className="cursorP" onClick={() => changeOrder(1)}>Price low to high <i className="bi bi-arrow-up"></i></p>
+            <p className="cursorP" onClick={() => changeOrder(-1)}>Price high to low <i className="bi bi-arrow-down"></i></p>
+          </div>
+        </div>
+        <div className='hiddenFilter' style={{ display: filterShow }}>
+          <i className="bi bi-x-lg" style={{ float: "right", fontSize: "40px", cursor: "pointer" }} onClick={() => setFilterShow("none")}></i>
+          <h1>Filter</h1>
+          <b>  <h2>Cost FIlter</h2></b>
+          <form>
+            <p>
+              <input name='costFilter2' id='2one' type="radio" value={`${Math.round(cheapestCost)}-${Math.round(0.25 * margin + cheapestCost)}`} onChange={(e) => costFilter(e.target.value)} />
+              <label className='marginTh cursorP' onClick={() => setFilterShow("none")} htmlFor="2one">{`${Math.round(cheapestCost)} - ${Math.round(0.25 * margin + cheapestCost)}`}</label>
+            </p>
+            <p>
+              <input name='costFilter2' id='2two' type="radio" value={`${Math.round(cheapestCost + 0.25 * margin)}-${Math.round(0.5 * margin + cheapestCost)}`} onChange={(e) => costFilter(e.target.value)} />
+              <label className='marginTh cursorP' onClick={() => setFilterShow("none")} htmlFor="2two">{`${Math.round(cheapestCost + 0.25 * margin)} - ${Math.round(0.5 * margin + cheapestCost)}`}</label>
+            </p>
+            <p>
+              <input name='costFilter2' id='2three' type="radio" value={`${Math.round(cheapestCost + 0.5 * margin)}-${Math.round(0.75 * margin + cheapestCost)}`} onChange={(e) => costFilter(e.target.value)} />
+              <label className='marginTh cursorP' onClick={() => setFilterShow("none")} htmlFor="2three">{`${Math.round(cheapestCost + 0.5 * margin)} - ${Math.round(0.75 * margin + cheapestCost)}`}</label>
+            </p>
+            <p>
+              <input name='costFilter2' id='2four' type="radio" value={`${Math.round(cheapestCost + 0.75 * margin)}-${Math.round(margin + cheapestCost)}`} onChange={(e) => costFilter(e.target.value)} />
+              <label className='marginTh cursorP' onClick={() => setFilterShow("none")} htmlFor="2four">{`${Math.round(cheapestCost + 0.75 * margin)} - ${Math.round(margin + cheapestCost)}+`}</label>
+            </p>
+            <p>
+              <input name='costFilter2' id='2nofilter' type="radio" value='nofilter' onChange={(e) => noFilter(e.target.value)} />
+              <label className='marginTh cursorP' onClick={() => setFilterShow("none")} htmlFor="2nofilter">no filter</label>
             </p>
           </form>
           <b><h2>Custmor Rating</h2></b>

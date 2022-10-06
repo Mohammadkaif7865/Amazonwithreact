@@ -93,6 +93,17 @@
 .impo{
   color: #ff5b5e;
 }
+.hiddenFilter{
+  position: fixed;
+  height: 100vh;
+  z-index: 10;
+  width: calc(200px + 20vw);
+  top: 0;
+  left: 0px;
+  background-color: white;
+  font-size: 15px;
+
+}
 @media screen and (min-width: 0px) {
   .imgCard {
     width: 100%;

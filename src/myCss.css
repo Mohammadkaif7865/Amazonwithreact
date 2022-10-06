@@ -31,7 +31,7 @@ body {
   height: 60px;
   position: fixed;
   background-color: #131921;
-  z-index: 999999;
+  z-index: 9;
   flex-direction: row;
   align-items: center;
   justify-content: space-evenly;
