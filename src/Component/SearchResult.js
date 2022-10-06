@@ -83,7 +83,6 @@ function SearchResult(props) {
           <i
             className="bi bi-funnel-fill"
             id="top-item"
-
           ></i>
           Filter
         </span>
