@@ -5,7 +5,7 @@ function Details(props) {
     const [detail, setDetail] = useState('');
     useEffect(() => {
         fetch(`${url}/${props.match.params.id}`, { method: 'GET' }).then((response) => response.json()).then((data) => setDetail(data));
-    }, [])
+    }, [props.match.params.id])
     console.log(detail);
     return (
         <>
