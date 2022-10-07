@@ -12,7 +12,10 @@ function Details(props) {
     return (
         <>
             <div className="container">
-                <img src={details.length > 0 && details[0].images.img1.link ? details[0].images.img1.link : defaultImg} alt="img" />
+                <img src={details.length > 0 && details[0].images.img1 ? details[0].images.img1.link : defaultImg} alt="img" />
+                <img src={details.length > 0 && details[0].images.img2 ? details[0].images.img2.link : defaultImg} alt="img" />
+                <img src={details.length > 0 && details[0].images.img3 ? details[0].images.img3.link : defaultImg} alt="img" />
+                <img src={details.length > 0 && details[0].images.img4 ? details[0].images.img4.link : defaultImg} alt="img" />
             </div>
         </>
     )
