@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { withRouter } from 'react-router-dom';
+import './detail.css';
 const url = 'https://amazoncloneserver.herokuapp.com/details';
 const defaultImg = "https://i.ibb.co/G3gRQ34/defaultimg.jpg";
 function Details(props) {
     const [details, setDetails] = useState('');
+    const [whichOne, setWhichOne] = useState(1);
     useEffect(() => {
         fetch(`${url}/${props.match.params.id}`, { method: 'GET' }).then((response) => response.json()).then((data) => setDetails(data));
     }, [props.match.params.id]);
@@ -11,11 +13,44 @@ function Details(props) {
 
     return (
         <>
-            <div className="container">
-                <img src={details.length > 0 && details[0].images.img1 ? details[0].images.img1.link : defaultImg} alt="img" />
-                <img src={details.length > 0 && details[0].images.img2 ? details[0].images.img2.link : defaultImg} alt="img" />
+            <div className='details-pro'>
+
+                <div className='detail-pic'>
+                    <div className="bigOne">
+                        {
+                            whichOne === 1 ? <img src={details.length > 0 && details[0].images.img1 ? details[0].images.img1.link : defaultImg} alt="img" /> : null
+                        }
+                        {
+                            whichOne === 2 ? <img src={details.length > 0 && details[0].images.img2 ? details[0].images.img2.link : defaultImg} alt="img" /> : null
+                        }
+                        {
+                            whichOne === 3 ? <img src={details.length > 0 && details[0].images.img3 ? details[0].images.img3.link : defaultImg} alt="img" /> : null
+                        }
+                        {
+                            whichOne === 4 ? <img src={details.length > 0 && details[0].images.img4 ? details[0].images.img4.link : defaultImg} alt="img" /> : null
+                        }
+                    </div>
+                    <div className="button-pics">
+                        <button onClick={() => setWhichOne(1)}>
+                            <img className='button-img' src={details.length > 0 && details[0].images.img1 ? details[0].images.img1.link : defaultImg} alt="img" />
+                        </button>
+                        <button onClick={() => setWhichOne(2)}>
+                            <img className='button-img' src={details.length > 0 && details[0].images.img2 ? details[0].images.img2.link : defaultImg} alt="img" />
+                        </button>
+                        <button onClick={() => setWhichOne(3)}>
+                            <img className='button-img' src={details.length > 0 && details[0].images.img3 ? details[0].images.img3.link : defaultImg} alt="img" />
+                        </button>
+                        <button onClick={() => setWhichOne(4)}>
+                            <img className='button-img' src={details.length > 0 && details[0].images.img4 ? details[0].images.img4.link : defaultImg} alt="img" />
+                        </button>
+                    </div>
+                    {/* <img src={details.length > 0 && details[0].images.img2 ? details[0].images.img2.link : defaultImg} alt="img" />
                 <img src={details.length > 0 && details[0].images.img3 ? details[0].images.img3.link : defaultImg} alt="img" />
-                <img src={details.length > 0 && details[0].images.img4 ? details[0].images.img4.link : defaultImg} alt="img" />
+                <img src={details.length > 0 && details[0].images.img4 ? details[0].images.img4.link : defaultImg} alt="img" /> */}
+                </div>
+                <div className="description">
+                    
+                </div>
             </div>
         </>
     )
