@@ -1,16 +1,18 @@
 .details-pro {
+  background-color: white;
   display: grid;
   width: 100%;
   grid-template-areas: "pic dis";
 }
 .description {
   grid-area: dis;
+  width: 0;
+  min-width: 100%;
 }
 .detail-pic {
   display: grid;
   grid-area: pic;
   gap: 5px;
-  background-color: white;
   padding: 10px;
   grid-template-areas:
     "one one one one"

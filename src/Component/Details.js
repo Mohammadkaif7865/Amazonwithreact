@@ -49,7 +49,7 @@ function Details(props) {
                 <img src={details.length > 0 && details[0].images.img4 ? details[0].images.img4.link : defaultImg} alt="img" /> */}
                 </div>
                 <div className="description">
-                    
+                    <h1>{details[0].name}</h1>
                 </div>
             </div>
         </>
