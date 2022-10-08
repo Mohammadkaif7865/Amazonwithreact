@@ -44,9 +44,6 @@ function Details(props) {
                             <img className='button-img' src={details.length > 0 && details[0].images.img4 ? details[0].images.img4.link : defaultImg} alt="img" />
                         </button>
                     </div>
-                    {/* <img src={details.length > 0 && details[0].images.img2 ? details[0].images.img2.link : defaultImg} alt="img" />
-                <img src={details.length > 0 && details[0].images.img3 ? details[0].images.img3.link : defaultImg} alt="img" />
-                <img src={details.length > 0 && details[0].images.img4 ? details[0].images.img4.link : defaultImg} alt="img" /> */}
                 </div>
                 <div className="description">
                     <h1>{details[0].name}</h1>
