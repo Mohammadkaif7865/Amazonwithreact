@@ -6,10 +6,13 @@
 }
 .topOfdetail {
   display: flex;
-  justify-content: space-between;
-  padding: 5px;
+  justify-content: flex-start;
+  padding: 0px 5px 0px 5px;
   align-items: center;
-  font-size: calc(12px + 1vw);
+  font-size: calc(10px + 0.75vw);
+}
+.topOfdetail p {
+  margin: 5px;
 }
 .description {
   grid-area: dis;
