@@ -46,7 +46,7 @@ function Details(props) {
                     </div>
                 </div>
                 <div className="description">
-                    <h1>{details[0].name}</h1>
+                   
                 </div>
             </div>
         </>
