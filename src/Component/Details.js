@@ -1,3 +1,4 @@
+import { data } from 'jquery';
 import React, { useEffect, useState } from 'react';
 import { withRouter } from 'react-router-dom';
 import './detail.css';
@@ -46,7 +47,7 @@ function Details(props) {
                     </div>
                 </div>
                 <div className="description">
-                   
+                    <h1>{details.length > 0 ? details[0].name : "-----"}</h1>
                 </div>
             </div>
         </>
