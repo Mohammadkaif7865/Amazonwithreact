@@ -59,7 +59,7 @@ function Details(props) {
                 <div className="description">
                     <h1>{details.length > 0 ? details[0].name : "-----"}</h1>
                     <h3>
-                        {details.length > 0 ? details[0].rating : "-----"} <i className='bi bi-star-fill colorGold'></i> | {details.length > 1 ? details[0].sales : "-----"}
+                        {details.length > 0 ? details[0].rating : "-----"} <i className='bi bi-star-fill colorGold'></i> | {details.length > 0 ? details[0].sales : "-----"} customer reviews
                     </h3>
                 </div>
             </div>
