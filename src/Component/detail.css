@@ -4,10 +4,18 @@
   width: 100%;
   grid-template-areas: "pic dis";
 }
+.topOfdetail {
+  display: flex;
+  justify-content: space-between;
+  padding: 5px;
+  align-items: center;
+  font-size: calc(12px + 1vw);
+}
 .description {
   grid-area: dis;
   width: 0;
   min-width: 100%;
+  padding: 10px;
 }
 .detail-pic {
   display: grid;

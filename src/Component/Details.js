@@ -1,4 +1,3 @@
-import { data } from 'jquery';
 import React, { useEffect, useState } from 'react';
 import { withRouter } from 'react-router-dom';
 import './detail.css';
@@ -11,11 +10,21 @@ function Details(props) {
         fetch(`${url}/${props.match.params.id}`, { method: 'GET' }).then((response) => response.json()).then((data) => setDetails(data));
     }, [props.match.params.id]);
 
-
+    console.log(details);
     return (
         <>
+            <div className='topOfdetail'>
+                <p>
+                    {details.length > 0 ? details[0].category : "-----"}
+                </p>
+                <p>
+                    {details.length > 0 ? details[0].sub_category : "-----"}
+                </p>
+                <p>
+                    {details.length > 0 ? details[0].brand : "-----"}
+                </p>
+            </div>
             <div className='details-pro'>
-
                 <div className='detail-pic'>
                     <div className="bigOne">
                         {
