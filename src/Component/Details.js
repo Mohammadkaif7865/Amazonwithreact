@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { withRouter } from 'react-router-dom';
 import './detail.css';
+import '../myCss.css';
 const url = 'https://amazoncloneserver.herokuapp.com/details';
 const defaultImg = "https://i.ibb.co/G3gRQ34/defaultimg.jpg";
 function Details(props) {
@@ -57,6 +58,9 @@ function Details(props) {
                 </div>
                 <div className="description">
                     <h1>{details.length > 0 ? details[0].name : "-----"}</h1>
+                    <p>
+                        <i className='bi bi-star-fill'></i>
+                    </p>
                 </div>
             </div>
         </>
