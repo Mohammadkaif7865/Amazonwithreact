@@ -11,7 +11,9 @@ body {
   font-family: "Amazon Ember", Arial, sans-serif;
   background-color: rgb(224, 223, 223);
 }
-
+.colorGold {
+  color: gold;
+}
 .size-up {
   font-size: calc(20px + 2vw);
   color: #131921;
