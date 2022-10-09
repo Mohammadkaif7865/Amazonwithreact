@@ -73,6 +73,8 @@ function Details(props) {
                     <h1>
                         <sup>₹</sup>{details.length > 0 ? details[0].cost : "-----"}
                     </h1>
+                    <button className='btn btn-warning'>Add to cart</button>
+                    <button className='btn btn-warning'>Buy now</button>
                 </div>
             </div>
         </>
