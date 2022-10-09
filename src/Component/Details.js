@@ -41,8 +41,8 @@ function Details(props) {
                         {
                             whichOne === 4 ? <img src={details.length > 0 && details[0].images.img4 ? details[0].images.img4.link : defaultImg} alt="img" /> : null
                         }
-                        <i class="bi bi-heart-fill shareA" onClick={() => setFavourites(!favourites)} style={favourites? { color: "red" }: null}></i>
-                        <i class="bi bi-share-fill favourite"></i>
+                        <i className="bi bi-heart-fill shareA" onClick={() => setFavourites(!favourites)} style={favourites? { color: "red" }: null}></i>
+                        <i className="bi bi-share-fill favourite"></i>
                     </div>
                     <div className="button-pics">
                         <button onClick={() => setWhichOne(1)}>
