@@ -91,6 +91,9 @@
   font-size: calc(10px + 0.5vw);
   margin: 5px;
 }
+.backgroundColorG{
+  color: gold;
+}
 @media (max-width: 768px) {
   .detail-pic {
     width: 100%;
