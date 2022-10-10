@@ -26,7 +26,7 @@ function Header(props) {
       })
     }
   }
-  
+
   function handleChange(value) {
     props.history.push(`/search_result/${value}`);
   }
@@ -294,21 +294,29 @@ function Header(props) {
             </div>
           </div>
         </div>
-        <Link to="/">
-          <div className="Accounts-my">
-            <div className="Greet-my">
-              <span style={{ color: "#959fa9" }}>Hello, Mohammad </span>
 
-              <b>
-                <span>Account & Lists</span>
-              </b>
-            </div>
-            <i
-              className="bi bi-caret-down-fill"
-              style={{ color: "#959fa9", fontSize: "8px" }}
-            ></i>
+        <div className="Accounts-my">
+          <div className="Greet-my">
+            {
+              props.name ? <Link to="/userInfo">
+                <span>Hi {props.name}</span>
+              </Link> : <Link to="/login">
+                <span style={{ color: "#959fa9" }}> Login first </span>
+              </Link>
+            }
+            <b>
+              {
+                props.name ? <span>Logout</span> : <Link to="/register">
+                  <span>Register</span>
+                </Link>
+              }
+            </b>
           </div>
-        </Link>
+          <i
+            className="bi bi-caret-down-fill"
+            style={{ color: "#959fa9", fontSize: "8px" }}
+          ></i>
+        </div>
         <Link to="/">
           <div className="order-returns-my">
             <p style={{ color: "#959fa9", marginTop: "20px" }}>Returns</p>
@@ -327,45 +335,45 @@ function Header(props) {
         </Link>
       </div>
       <div className="nav-main-my">
-       <div className="inner-nav-main">
-       <Link to="/">
-          <div className="main-belt-item">All</div>
-        </Link>
-        <Link to="/">
-          <div className="main-belt-item">Fresh</div>
-        </Link>
-        <Link to="/">
-          <div className="main-belt-item">Coupon</div>
-        </Link>
-        <Link to="/">
-          <div className="main-belt-item">Amazon Pay</div>
-        </Link>
-        <Link to="/">
-          <div className="main-belt-item">
-            Browsing History <i className="bi bi-caret-down-fill"></i>
-          </div>
-        </Link>
-        <Link to="/">
-          <div className="main-belt-item">Pet Supplies</div>
-        </Link>
-        <Link to="/">
-          <div className="main-belt-item">
-            Prime <i className="bi bi-caret-down-fill"></i>
-          </div>
-        </Link>
-        <Link to="/">
-          <div className="main-belt-item">Mobiles</div>
-        </Link>
-        <Link to="/">
-          <div className="main-belt-item">Buy Again</div>
-        </Link>
-        <Link to="/">
-          <div className="main-belt-item">Gift Ideas</div>
-        </Link>
-        <Link to="/">
-          <div className="main-belt-item">Gift Cards</div>
-        </Link>
-       </div>
+        <div className="inner-nav-main">
+          <Link to="/">
+            <div className="main-belt-item">All</div>
+          </Link>
+          <Link to="/">
+            <div className="main-belt-item">Fresh</div>
+          </Link>
+          <Link to="/">
+            <div className="main-belt-item">Coupon</div>
+          </Link>
+          <Link to="/">
+            <div className="main-belt-item">Amazon Pay</div>
+          </Link>
+          <Link to="/">
+            <div className="main-belt-item">
+              Browsing History <i className="bi bi-caret-down-fill"></i>
+            </div>
+          </Link>
+          <Link to="/">
+            <div className="main-belt-item">Pet Supplies</div>
+          </Link>
+          <Link to="/">
+            <div className="main-belt-item">
+              Prime <i className="bi bi-caret-down-fill"></i>
+            </div>
+          </Link>
+          <Link to="/">
+            <div className="main-belt-item">Mobiles</div>
+          </Link>
+          <Link to="/">
+            <div className="main-belt-item">Buy Again</div>
+          </Link>
+          <Link to="/">
+            <div className="main-belt-item">Gift Ideas</div>
+          </Link>
+          <Link to="/">
+            <div className="main-belt-item">Gift Cards</div>
+          </Link>
+        </div>
         <Link to="/">
           <img
             src="https://i.ibb.co/RbjbNRx/nav-img.jpg"

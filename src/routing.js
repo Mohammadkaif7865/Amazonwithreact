@@ -8,17 +8,19 @@ import Register from "./Component/LoginAuth/register";
 import UserInfo from "./Component/LoginAuth/userInfo";
 import Ghost from "./Component/Ghost";
 import SearchResult from "./Component/SearchResult";
+import { useState } from "react";
 
 const Routing = () => {
+  const [nameAuth, setNameAuth] = useState(sessionStorage.getItem("name") ? sessionStorage.getItem("name") : "");
   return (
     <BrowserRouter>
-      <Header />
+      <Header nameAuth={nameAuth} />
       <Switch>
         <Route exact path="/" component={Home} />
         <Route path='/search_result/:category' component={SearchResult} />
-        <Route path='/login' component={Login}/>
-        <Route path='/userinfo' component={UserInfo}/>
-        <Route path='/register' component={Register}/>
+        <Route path='/login' component={Login} />
+        <Route path='/userinfo' component={UserInfo} setNameAuth={(data) => setNameAuth(data)} />
+        <Route path='/register' component={Register} />
         <Route path='/details/:id' component={Details} />
         <Route path="*" component={Ghost} />
       </Switch>
