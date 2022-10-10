@@ -12,8 +12,6 @@ function Details(props) {
     useEffect(() => {
         fetch(`${url}/${props.match.params.id}`, { method: 'GET' }).then((response) => response.json()).then((data) => setDetails(data));
     }, [props.match.params.id]);
-
-    console.log(details);
     return (
         <>
             <div className='topOfdetail'>
