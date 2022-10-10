@@ -19,7 +19,7 @@ function UserInfo(props) {
                     sessionStorage.setItem('name', data.name);
                     sessionStorage.setItem('email', data.email);
                     sessionStorage.setItem('phone', data.phone);
-                    props.setName(data.name);
+                    props.setNameAuth(data.name);
                 });
         }
         else {
@@ -27,7 +27,7 @@ function UserInfo(props) {
         }
     }, [])
 
-
+    console.log(props);
     return (
         <>
             {

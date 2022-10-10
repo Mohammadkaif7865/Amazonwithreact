@@ -3,7 +3,7 @@
   padding: 0px;
   box-sizing: border-box !important;
 }
-.cursorP{
+.cursorP {
   cursor: pointer;
 }
 body {
@@ -77,7 +77,16 @@ a:hover {
   text-decoration: none;
   color: #0f1111;
 }
-
+.nameAuth {
+  white-space: nowrap;
+  color: rgb(149, 159, 169);
+  padding: 0;
+  margin: 0;
+}
+.logOut {
+  color: white;
+  cursor: pointer;
+}
 .navbar-my a {
   color: white;
 }
@@ -95,7 +104,7 @@ a:hover {
   overflow-y: hidden;
   background-color: #232f3e;
 }
-.inner-nav-main{
+.inner-nav-main {
   display: flex;
 }
 .nav-main-my::-webkit-scrollbar {
@@ -181,7 +190,6 @@ a:hover {
   height: 100%;
   width: 94%;
 }
-
 
 .input-text-my input {
   height: 100%;

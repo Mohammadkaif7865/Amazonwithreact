@@ -37,7 +37,8 @@ function Header(props) {
   }
   useEffect(() => {
     fetch(catUrl, { method: "GET" }).then((response) => response.json()).then((data) => setCat(data));
-  }, [])
+  }, []);
+  console.log(props.nameAuth);
   return (
     <header className="navbar-my">
       <div className="nav-belt-my">
@@ -298,15 +299,15 @@ function Header(props) {
         <div className="Accounts-my">
           <div className="Greet-my">
             {
-              props.name ? <Link to="/userInfo">
-                <span>Hi {props.name}</span>
+              props.nameAuth ? <Link to="/userInfo">
+                <p className="nameAuth">Hi! {props.nameAuth}</p>
               </Link> : <Link to="/login">
-                <span style={{ color: "#959fa9" }}> Login first </span>
+                <p style={{ color: "#959fa9" }}> Login first </p>
               </Link>
             }
             <b>
               {
-                props.name ? <span>Logout</span> : <Link to="/register">
+                props.nameAuth ? <span className="logOut">Logout</span> : <Link to="/register">
                   <span>Register</span>
                 </Link>
               }

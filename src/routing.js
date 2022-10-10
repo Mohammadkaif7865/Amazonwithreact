@@ -19,7 +19,7 @@ const Routing = () => {
         <Route exact path="/" component={Home} />
         <Route path='/search_result/:category' component={SearchResult} />
         <Route path='/login' component={Login} />
-        <Route path='/userinfo' component={UserInfo} setNameAuth={(data) => setNameAuth(data)} />
+        <Route path='/userInfo' >  <UserInfo nameAuth={nameAuth} setNameAuth={(data) => setNameAuth(data)} /> </Route>
         <Route path='/register' component={Register} />
         <Route path='/details/:id' component={Details} />
         <Route path="*" component={Ghost} />
