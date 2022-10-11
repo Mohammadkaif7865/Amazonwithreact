@@ -27,7 +27,6 @@ function UserInfo(props) {
         }
     }, [])
 
-    console.log(props);
     return (
         <>
             {

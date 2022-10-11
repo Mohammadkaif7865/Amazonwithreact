@@ -14,7 +14,7 @@ const Routing = () => {
   const [nameAuth, setNameAuth] = useState(sessionStorage.getItem("name") ? sessionStorage.getItem("name") : "");
   return (
     <BrowserRouter>
-      <Header nameAuth={nameAuth} />
+      <Header nameAuth={nameAuth} setNameAuth={(data) => setNameAuth(data)} />
       <Switch>
         <Route exact path="/" component={Home} />
         <Route path='/search_result/:category' component={SearchResult} />
