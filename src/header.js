@@ -306,7 +306,7 @@ function Header(props) {
           <div className="Greet-my">
             {
               props.nameAuth ? <Link to="/userInfo">
-                <p className="nameAuth">Hi! {props.nameAuth}</p>
+                <p className="nameAuth">Hi ! {props.nameAuth} </p>
               </Link> : <Link to="/login">
                 <p style={{ color: "#959fa9" }} className="nameAuth"> Login first</p>
               </Link>
