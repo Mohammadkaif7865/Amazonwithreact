@@ -114,7 +114,7 @@ function Header(props) {
           </div>
           <div className="offcanvas-body">
             <Link to="/">
-              <h2>
+              <h2 data-bs-dismiss="offcanvas">
                 <b>Amazon Home</b>
                 <i className="bi bi-house-door" style={{ float: "right" }}></i>
               </h2>

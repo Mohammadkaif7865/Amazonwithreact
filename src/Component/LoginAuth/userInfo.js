@@ -32,11 +32,13 @@ function UserInfo(props) {
             {
                 user ? <div className="container">
                     <div className="panel panel-primary">
-                        <div className="panel-heading">User Info</div>
+                    <div className="panel-heading">
+                            <h3>UserInfo</h3>
+                        </div>
                         <div className="panel-body">
-                            <div> <b>Name</b> : {user.name}</div>
-                            <div> <b>Phone Number</b> : {user.phone}</div>
-                            <div> <b>Email</b> : {user.email}</div>
+                            <p> <b>Name</b> : {user.name}</p>
+                            <p> <b>Phone Number</b> : {user.phone}</p>
+                            <p> <b>Email</b> : {user.email}</p>
                         </div>
                         <div className="panel-footer"> <button onClick={() => props.history.go(-2)} className="btn btn-success">Go back</button>
                             <div style={{ textAlign: 'center' }}>

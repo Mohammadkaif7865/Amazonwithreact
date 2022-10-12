@@ -42,7 +42,6 @@ class Login extends Component {
         return(
             <>
                 <div className="container">
-                    <hr/>
                     <div className="panel panel-primary">
                         <div className="panel-heading">
                             <h3>Login</h3>
