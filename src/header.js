@@ -83,9 +83,9 @@ function Header(props) {
 
                 {
                   props.nameAuth ? <Link to="/userInfo">
-                    <p className="nameAuth">Hi ! {props.nameAuth} <i className="bi bi-person-circle"></i></p>
+                    <p className="nameAuth" data-bs-dismiss="offcanvas">Hi ! {props.nameAuth} <i className="bi bi-person-circle"></i></p>
                   </Link> : <Link to="/login">
-                    <p style={{ color: "#959fa9" }} className="nameAuth"> Login first <i className="bi bi-person-circle"></i></p>
+                    <p style={{ color: "#959fa9" }} className="nameAuth" data-bs-dismiss="offcanvas"> Login first <i className="bi bi-person-circle"></i></p>
                   </Link>
                 }
               </span>
@@ -155,8 +155,8 @@ function Header(props) {
 
               <h2>
                 {
-                  props.nameAuth ? <span className="cursorP" onClick={() => logOut()}>Logout <i className="bi bi-box-arrow-in-right"></i></span> : <Link to="/register">
-                    <span>Register</span>
+                  props.nameAuth ? <span className="cursorP" onClick={() => logOut()} data-bs-dismiss="offcanvas">Logout <i className="bi bi-box-arrow-in-right"></i></span> : <Link to="/register">
+                    <span data-bs-dismiss="offcanvas">Register</span>
                   </Link>
                 }
               </h2>
