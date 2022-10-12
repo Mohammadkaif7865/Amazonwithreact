@@ -78,7 +78,7 @@ function SearchResult(props) {
   return (
     <>
       <div className="filter-show" style={{ marginLeft: "5px" }}>
-        <h4 className="top-search-result">{products.length} result for <span className='impo'>"{props.match.params.category}"</span></h4>
+        <h5 className="top-search-result">{products.length} result for <span className='impo'>"{props.match.params.category}"</span></h5>
         <span className='dd cursorP' onClick={() => setFilterShow("block")}>
           <i
             className="bi bi-funnel-fill"
@@ -89,7 +89,7 @@ function SearchResult(props) {
       </div>
       <div className='grid-display'>
         <div className="filter">
-          <b>  <h2>Cost FIlter</h2></b>
+          <b>  <h4>Cost FIlter</h4></b>
           <form>
             <p>
               <input name='costFilter' id='one' type="radio" value={`${Math.round(cheapestCost)}-${Math.round(0.25 * margin + cheapestCost)}`} onChange={(e) => costFilter(e.target.value)} />
@@ -112,14 +112,14 @@ function SearchResult(props) {
               <label className='marginTh' htmlFor="nofilter">no filter</label>
             </p>
           </form>
-          <b><h2>Custmor Rating</h2></b>
+          <b><h4>Custmor Rating</h4></b>
           <div>
             <p className='cursorP' onClick={() => ratingFilter(4)}><i className="bi bi-star-fill colorGold"></i><i className="bi bi-star-fill colorGold"></i><i className="bi bi-star-fill colorGold"></i><i className="bi bi-star-fill colorGold"></i><i className="bi bi-star colorGold"></i> & Up</p>
             <p className='cursorP' onClick={() => ratingFilter(3)}><i className="bi bi-star-fill colorGold"></i><i className="bi bi-star-fill colorGold"></i><i className="bi bi-star-fill colorGold"></i><i className="bi bi-star colorGold"></i><i className="bi bi-star colorGold"></i> & Up</p>
             <p className='cursorP' onClick={() => ratingFilter(2)}><i className="bi bi-star-fill colorGold"></i><i className="bi bi-star-fill colorGold"></i><i className="bi bi-star colorGold"></i><i className="bi bi-star colorGold"></i><i className="bi bi-star colorGold"></i> & Up</p>
             <p className='cursorP' onClick={() => ratingFilter(1)}><i className="bi bi-star-fill colorGold"></i><i className="bi bi-star colorGold"></i><i className="bi bi-star colorGold"></i><i className="bi bi-star colorGold"></i><i className="bi bi-star colorGold"></i> & Up</p>
           </div>
-          <b><h2>Sorted by</h2></b>
+          <b><h4>Sorted by</h4></b>
           <div>
             <p className="cursorP" onClick={() => changeOrder(1)}>Price low to high <i className="bi bi-arrow-up"></i></p>
             <p className="cursorP" onClick={() => changeOrder(-1)}>Price high to low <i className="bi bi-arrow-down"></i></p>
@@ -127,8 +127,8 @@ function SearchResult(props) {
         </div>
         <div className='hiddenFilter' style={{ display: filterShow }}>
           <i className="bi bi-x-lg" style={{ float: "right", fontSize: "40px", cursor: "pointer" }} onClick={() => setFilterShow("none")}></i>
-          <h1>Filter</h1>
-          <b>  <h2>Cost FIlter</h2></b>
+          <h2>Filter</h2>
+          <b>  <h4>Cost FIlter</h4></b>
           <form>
             <p>
               <input name='costFilter2' id='2one' type="radio" value={`${Math.round(cheapestCost)}-${Math.round(0.25 * margin + cheapestCost)}`} onChange={(e) => costFilter(e.target.value)} />
@@ -151,14 +151,14 @@ function SearchResult(props) {
               <label className='marginTh cursorP' onClick={() => setFilterShow("none")} htmlFor="2nofilter">no filter</label>
             </p>
           </form>
-          <b><h2>Custmor Rating</h2></b>
+          <b><h4>Custmor Rating</h4></b>
           <div>
             <p className='cursorP' onClick={() => ratingFilter(4)}><i className="bi bi-star-fill colorGold"></i><i className="bi bi-star-fill colorGold"></i><i className="bi bi-star-fill colorGold"></i><i className="bi bi-star-fill colorGold"></i><i className="bi bi-star colorGold"></i> & Up</p>
             <p className='cursorP' onClick={() => ratingFilter(3)}><i className="bi bi-star-fill colorGold"></i><i className="bi bi-star-fill colorGold"></i><i className="bi bi-star-fill colorGold"></i><i className="bi bi-star colorGold"></i><i className="bi bi-star colorGold"></i> & Up</p>
             <p className='cursorP' onClick={() => ratingFilter(2)}><i className="bi bi-star-fill colorGold"></i><i className="bi bi-star-fill colorGold"></i><i className="bi bi-star colorGold"></i><i className="bi bi-star colorGold"></i><i className="bi bi-star colorGold"></i> & Up</p>
             <p className='cursorP' onClick={() => ratingFilter(1)}><i className="bi bi-star-fill colorGold"></i><i className="bi bi-star colorGold"></i><i className="bi bi-star colorGold"></i><i className="bi bi-star colorGold"></i><i className="bi bi-star colorGold"></i> & Up</p>
           </div>
-          <b><h2>Sorted by</h2></b>
+          <b><h4>Sorted by</h4></b>
           <div>
             <p className="cursorP" onClick={() => changeOrder(1)}>Price low to high <i className="bi bi-arrow-up"></i></p>
             <p className="cursorP" onClick={() => changeOrder(-1)}>Price high to low <i className="bi bi-arrow-down"></i></p>
@@ -166,13 +166,13 @@ function SearchResult(props) {
         </div>
         <div className="products-display">
           {toDisplay.length === 0 ? (
-            <h1>No match found</h1>
+            <h3>No match found</h3>
           ) : (
             toDisplay.map((item, i) => (
               <Link to={`/details/${item.id}`} key={i}>
                 <div className="imgCard" >
                   <img src={item.images.img1.link} alt="img" className="imgInCard" />
-                  <h3 className="dis">{item.name}</h3>
+                  <h5 className="dis">{item.name}</h5>
                   <div className="rating">
                     Rating: {item.rating}{" "}
                     <i className="bi bi-star-fill colorGold"></i>

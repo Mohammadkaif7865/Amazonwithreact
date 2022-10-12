@@ -59,16 +59,16 @@ function Details(props) {
                     </div>
                 </div>
                 <div className="description">
-                    <h1>{details.length > 0 ? details[0].name : "-----"}</h1>
-                    <h2>
+                    <h3>{details.length > 0 ? details[0].name : "-----"}</h3>
+                    <h4>
                         {whichOne === 1 && details.length > 0 && details[0].images.img1 ? details[0].images.img1.description : " "}
                         {whichOne === 2 && details.length > 0 && details[0].images.img2 ? details[0].images.img2.description : " "}
                         {whichOne === 3 && details.length > 0 && details[0].images.img3 ? details[0].images.img3.description : " "}
                         {whichOne === 4 && details.length > 0 && details[0].images.img4 ? details[0].images.img4.description : " "}
-                    </h2>
-                    <h3>
+                    </h4>
+                    <h5>
                         {details.length > 0 ? details[0].rating : "-----"} <i className='bi bi-star-fill colorGold'></i> | {details.length > 0 ? details[0].sales : "-----"} customer reviews
-                    </h3>
+                    </h5>
                     <h1>
                         <sup>₹</sup>{details.length > 0 ? details[0].cost : "-----"}
                     </h1>

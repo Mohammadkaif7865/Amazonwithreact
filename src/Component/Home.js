@@ -361,7 +361,7 @@ export default function Home() {
                 alt="img"
                 className="fit-img"
               />
-              <h5 className="card-item-title">Fresh</h5>
+              <p className="card-item-title">Fresh</p>
             </div>
           </Link>
           <Link to="/">
@@ -371,7 +371,7 @@ export default function Home() {
                 alt="img"
                 className="fit-img"
               />
-              <h5 className="card-item-title">Mobiles</h5>
+              <p className="card-item-title">Mobiles</p>
             </div>
           </Link>
           <Link to="/">
@@ -381,7 +381,7 @@ export default function Home() {
                 alt="img"
                 className="fit-img"
               />
-              <h5 className="card-item-title">Fashion</h5>
+              <p className="card-item-title">Fashion</p>
             </div>
           </Link>
           <Link to="/">
@@ -391,7 +391,7 @@ export default function Home() {
                 alt="img"
                 className="fit-img"
               />
-              <h5 className="card-item-title">Electronics</h5>
+              <p className="card-item-title">Electronics</p>
             </div>
           </Link>
           <Link to="/" className="see-more">
