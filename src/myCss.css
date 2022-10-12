@@ -829,7 +829,7 @@ main a:hover {
 .see-more {
   position: absolute;
   left: 20px;
-  bottom: 20px;
+  bottom: 0px;
   color: rgb(67, 67, 194);
 }
 

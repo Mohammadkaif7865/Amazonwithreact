@@ -42,11 +42,11 @@ class Login extends Component {
         return(
             <>
                 <div className="container">
-                    <div className="panel panel-primary">
-                        <div className="panel-heading">
+                    <div className="card">
+                        <div className="card-title">
                             <h3>Login</h3>
                         </div>
-                        <div className="panel-body">
+                        <div className="card-body">
                             <h3 style={{color:'red'}}>{this.state.message}</h3>
                             <div className="form-group col-md-6">
                                 <label htmlFor="email">Email</label>

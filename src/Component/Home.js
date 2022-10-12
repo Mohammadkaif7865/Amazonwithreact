@@ -217,7 +217,7 @@ export default function Home() {
                 alt="img"
                 className="fit-img"
               />
-              <h5 className="card-item-title">Postpaid bill</h5>
+              <p className="card-item-title">Postpaid bill</p>
             </div>
           </Link>
           <Link to="/">
@@ -227,7 +227,7 @@ export default function Home() {
                 alt="img"
                 className="fit-img"
               />
-              <h5 className="card-item-title">Credit card bill</h5>
+              <p className="card-item-title">Credit card bill</p>
             </div>
           </Link>
           <Link to="/">
@@ -237,7 +237,7 @@ export default function Home() {
                 alt="img"
                 className="fit-img"
               />
-              <h5 className="card-item-title">Google Play recharge</h5>
+              <p className="card-item-title">Google Play recharge</p>
             </div>
           </Link>
           <Link to="/">
@@ -247,11 +247,11 @@ export default function Home() {
                 alt="img"
                 className="fit-img"
               />
-              <h5 className="card-item-title">Pay for subscriptions</h5>
+              <p className="card-item-title">Pay for subscriptions</p>
             </div>
           </Link>
           <Link to="/" className="see-more">
-            <h4>Explore more from Amazon pay</h4>
+            <p>Explore more from Amazon pay</p>
           </Link>
         </div>
         <div className="card-type-two my-card">
@@ -265,7 +265,7 @@ export default function Home() {
                 alt="img"
                 className="fit-img"
               />
-              <h5 className="card-item-title">Electricity Bill</h5>
+              <p className="card-item-title">Electricity Bill</p>
             </div>
           </Link>
           <Link to="/">
@@ -275,7 +275,7 @@ export default function Home() {
                 alt="img"
                 className="fit-img"
               />
-              <h5 className="card-item-title">LPG gas cylinder</h5>
+              <p className="card-item-title">LPG gas cylinder</p>
             </div>
           </Link>
           <Link to="/">
@@ -285,7 +285,7 @@ export default function Home() {
                 alt="img"
                 className="fit-img"
               />
-              <h5 className="card-item-title">Broadband bill</h5>
+              <p className="card-item-title">Broadband bill</p>
             </div>
           </Link>
           <Link to="/">
@@ -295,11 +295,11 @@ export default function Home() {
                 alt="img"
                 className="fit-img"
               />
-              <h5 className="card-item-title">DTH Recharge</h5>
+              <p className="card-item-title">DTH Recharge</p>
             </div>
           </Link>
           <Link to="/" className="see-more">
-            <h4>Explore more from Amazon pay</h4>
+            <p>Explore more from Amazon pay</p>
           </Link>
         </div>
         <div className="card-type-three my-card">
@@ -311,7 +311,7 @@ export default function Home() {
                 alt="img"
                 className="fit-img"
               />
-              <h5 className="card-item-title">Claim your scratch cards</h5>
+              <p className="card-item-title">Claim your scratch cards</p>
             </div>
           </Link>
           <Link to="/">
@@ -321,7 +321,7 @@ export default function Home() {
                 alt="img"
                 className="fit-img"
               />
-              <h5 className="card-item-title">redeem your collected rewards</h5>
+              <p className="card-item-title">redeem your collected rewards</p>
             </div>
           </Link>
           <Link to="/">
@@ -331,9 +331,9 @@ export default function Home() {
                 alt="img"
                 className="fit-img"
               />
-              <h5 className="card-item-title">
+              <p className="card-item-title">
                 Unlock more rewards when you pay or shop
-              </h5>
+              </p>
             </div>
           </Link>
           <Link to="/">
@@ -343,13 +343,13 @@ export default function Home() {
                 alt="img"
                 className="fit-img"
               />
-              <h5 className="card-item-title">
+              <p className="card-item-title">
                 Explore all rewards in one place
-              </h5>
+              </p>
             </div>
           </Link>
           <Link to="/" className="see-more">
-            <h4>See more</h4>
+            <p>See more</p>
           </Link>
         </div>
         <div className="card-type-four my-card">
@@ -395,7 +395,7 @@ export default function Home() {
             </div>
           </Link>
           <Link to="/" className="see-more">
-            <h4>See more</h4>
+            <p>See more</p>
           </Link>
         </div>
       </div>
@@ -417,7 +417,7 @@ export default function Home() {
             </Link>
           </div>
           <Link to="/" className="see-more">
-            <h4>See all upcoming offers</h4>
+            <p>See all upcoming offers</p>
           </Link>
         </div>
         <div className="card-type-two my-card">
@@ -463,7 +463,7 @@ export default function Home() {
             </div>
           </Link>
           <Link to="/" className="see-more">
-            <h4>See more</h4>
+            <p>See more</p>
           </Link>
         </div>
         <div className="card-type-three my-card-2">
@@ -476,7 +476,7 @@ export default function Home() {
             </Link>
           </div>
           <Link to="/" className="see-more">
-            <h4>See more</h4>
+            <p>See more</p>
           </Link>
         </div>
         <div className="card-type-four my-card-3">
