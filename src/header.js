@@ -78,11 +78,18 @@ function Header(props) {
               className="off-cav-head"
               style={{ padding: "10px", margin: "10px", fontSize: "30px" }}
             >
-              <Link to="/">
-                <span>
-                  Hi! Mohammad <i className="bi bi-person-circle"></i>
-                </span>
-              </Link>
+
+              <span>
+
+                {
+                  props.nameAuth ? <Link to="/userInfo">
+                    <p className="nameAuth">Hi ! {props.nameAuth} <i className="bi bi-person-circle"></i></p>
+                  </Link> : <Link to="/login">
+                    <p style={{ color: "#959fa9" }} className="nameAuth"> Login first <i className="bi bi-person-circle"></i></p>
+                  </Link>
+                }
+              </span>
+
             </div>
             <button
               type="button"
@@ -145,11 +152,15 @@ function Header(props) {
               </h3>
             </Link>
             <div style={{ textAlign: "center", margin: "20px" }}>
-              <Link to="/">
-                <h2>
-                  Sign out <i className="bi bi-box-arrow-in-right"></i>
-                </h2>
-              </Link>
+
+              <h2>
+                {
+                  props.nameAuth ? <span className="cursorP" onClick={() => logOut()}>Logout <i className="bi bi-box-arrow-in-right"></i></span> : <Link to="/register">
+                    <span>Register</span>
+                  </Link>
+                }
+              </h2>
+
             </div>
           </div>
         </div>
