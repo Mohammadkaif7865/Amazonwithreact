@@ -283,13 +283,17 @@ input[type="radio"] {
 .order-returns-my {
   min-width: 70px;
   height: 40px;
-  margin-top: 10px;
+  margin-top: 25px;
   margin-bottom: 10px;
   font-size: 13px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   margin-left: 10px;
+}
+.arrowDown {
+  color: #959fa9;
+  font-size: 8px;
 }
 
 .cart-my {

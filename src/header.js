@@ -317,11 +317,16 @@ function Header(props) {
           <div className="Greet-my">
             {
               props.nameAuth ? <Link to="/userInfo">
-                <p className="nameAuth">Hi ! {props.nameAuth} </p>
+                <p className="nameAuth">Hi ! {props.nameAuth}       <i
+                  className="bi bi-caret-down-fill arrowDown"
+                ></i> </p>
               </Link> : <Link to="/login">
-                <p style={{ color: "#959fa9" }} className="nameAuth"> Login first</p>
+                <p style={{ color: "#959fa9" }} className="nameAuth"> Login first       <i
+                  className="bi bi-caret-down-fill arrowDown"
+                ></i></p>
               </Link>
             }
+
             <b>
               {
                 props.nameAuth ? <span className="logOut" onClick={() => logOut()}>Logout</span> : <Link to="/register">
@@ -330,14 +335,13 @@ function Header(props) {
               }
             </b>
           </div>
-          <i
-            className="bi bi-caret-down-fill"
-            style={{ color: "#959fa9", fontSize: "8px" }}
-          ></i>
         </div>
         <Link to="/">
           <div className="order-returns-my">
-            <p style={{ color: "#959fa9", margin: 0 }}>Returns</p>
+            <p style={{ color: "#959fa9", margin: 0 }}>Returns    <i
+              className="bi bi-caret-down-fill arrowDown"
+            ></i></p>
+
             <p style={{ position: "relative" }}>
               <b> & Orders</b>
             </p>
