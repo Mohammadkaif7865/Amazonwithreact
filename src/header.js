@@ -337,8 +337,8 @@ function Header(props) {
         </div>
         <Link to="/">
           <div className="order-returns-my">
-            <p style={{ color: "#959fa9", marginTop: "20px" }}>Returns</p>
-            <p style={{ position: "relative", top: "-10px" }}>
+            <p style={{ color: "#959fa9", margin: 0 }}>Returns</p>
+            <p style={{ position: "relative" }}>
               <b> & Orders</b>
             </p>
           </div>
