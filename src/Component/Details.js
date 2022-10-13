@@ -9,6 +9,17 @@ function Details(props) {
     const [favourites, setFavourites] = useState(false);
     const [addTocart, setAddTocart] = useState(false);
     const [whichOne, setWhichOne] = useState(1);
+    const scrollToTop = () => {
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth",
+            /* you can also use 'auto' behaviour
+                     in place of 'smooth' */
+        });
+    };
+    useEffect(() => {
+        scrollToTop();
+    }, [])
     useEffect(() => {
         fetch(`${url}/${props.match.params.id}`, { method: 'GET' }).then((response) => response.json()).then((data) => setDetails(data));
     }, [props.match.params.id]);
