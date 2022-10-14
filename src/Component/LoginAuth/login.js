@@ -44,10 +44,7 @@ class Login extends Component {
                 <div className="container">
                     <div className="card">
                         <div className="card-body">
-                            <div className="card-title">
-                                Login
-                            </div>
-                            <h3 style={{ color: 'red' }}>{this.state.message}</h3>
+                            <h5 className='bg bg-info' >Login</h5>
                             <div className="form-group col-md-6">
                                 <label htmlFor="email">Email</label>
                                 <input id="email" name="email" className="form-control"
@@ -63,7 +60,6 @@ class Login extends Component {
                     </div>
                 </div>
             </>
-
         )
     }
 }
