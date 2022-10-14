@@ -41,23 +41,22 @@ class Login extends Component {
     render() {
         return (
             <>
-                <div className="container">
-                    <div className="card">
-                        <div className="card-body">
-                            <h5 className='bg bg-info' >Login</h5>
-                            <div className="form-group col-md-6">
-                                <label htmlFor="email">Email</label>
-                                <input id="email" name="email" className="form-control"
-                                    value={this.state.email} onChange={this.handleChange} />
-                            </div>
-                            <div className="form-group col-md-6">
-                                <label htmlFor="fname">Password</label>
-                                <input type="password" id="password" name="password" className="form-control"
-                                    value={this.state.password} onChange={this.handleChange} />
-                            </div>
-                            <button className="btn btn-info" onClick={this.handleSubmit}>Login</button>
+                <div className="container" style={{ backgroundColor: "white" }}>
+                    <form>
+                        <legend className='bg bg-primary' style={{ margin: 0, padding: "10px" , color:'white'}}>Login</legend>
+                        <div className="mb-3">
+                            <label htmlFor="email">Email</label>
+                            <input id="email" name="email" className="form-control"
+                                value={this.state.email} onChange={this.handleChange} />
+                            <div id="emailHelp" className="form-text">We'll never share your email with anyone else.</div>
                         </div>
-                    </div>
+                        <div className="mb-3">
+                            <label htmlFor="fname">Password</label>
+                            <input type="password" id="password" name="password" className="form-control"
+                                value={this.state.password} onChange={this.handleChange} />
+                        </div>
+                        <button className="btn btn-info" type='button' onClick={this.handleSubmit}>Login</button>
+                    </form>
                 </div>
             </>
         )
