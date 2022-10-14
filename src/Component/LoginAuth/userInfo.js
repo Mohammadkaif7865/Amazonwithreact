@@ -30,17 +30,18 @@ function UserInfo(props) {
     return (
         <>
             {
-                user ? <div className="container">
-                    <div className="panel panel-primary">
-                    <div className="panel-heading">
-                            <h3>UserInfo</h3>
-                        </div>
-                        <div className="panel-body">
+                user ? <div className="container" style={{ backgroundColor: "white" }}>
+                    <div >
+
+                        <h3 className='bg bg-primary' style={{ margin: 0, padding: "10px", color: 'white' }}>UserInfo</h3>
+
+                        <div style={{ padding: "10px" }}>
                             <p> <b>Name</b> : {user.name}</p>
                             <p> <b>Phone Number</b> : {user.phone}</p>
                             <p> <b>Email</b> : {user.email}</p>
+                            <button onClick={() => props.history.go(-2)} className="btn btn-success">Go back</button>
                         </div>
-                        <div className="panel-footer"> <button onClick={() => props.history.go(-2)} className="btn btn-success">Go back</button>
+                        <div>
                             <div style={{ textAlign: 'center' }}>
                                 <small>Your info security and <u>privacy</u> is our top priority and we are compeletely <u>responsible</u> for any data breach</small>
                             </div>
