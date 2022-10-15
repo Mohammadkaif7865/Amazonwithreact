@@ -4,6 +4,7 @@ import './detail.css';
 import '../myCss.css';
 const url = 'https://amazoncloneserver.herokuapp.com/details';
 const defaultImg = "https://i.ibb.co/G3gRQ34/defaultimg.jpg";
+const fav = 'https://amazoncloneserver.herokuapp.com/favourites';
 function Details(props) {
     const [details, setDetails] = useState('');
     const [favourites, setFavourites] = useState(false);
@@ -23,6 +24,17 @@ function Details(props) {
     useEffect(() => {
         fetch(`${url}/${props.match.params.id}`, { method: 'GET' }).then((response) => response.json()).then((data) => setDetails(data));
     }, [props.match.params.id]);
+    useEffect(() => {
+        let send = {
+            email: sessionStorage.getItem('email'),
+            itemId: ''
+        }
+        fetch(fav, {
+            method: 'POST',
+            body: JSON.stringify(send),
+        }).then((response) => response.json()).then((data) => console.log(data));
+    }, [favourites]);
+    console.log(details[0].id);
     return (
         <>
             <div className='topOfdetail'>
@@ -51,7 +63,7 @@ function Details(props) {
                         {
                             whichOne === 4 ? <img src={details.length > 0 && details[0].images.img4 ? details[0].images.img4.link : defaultImg} alt="img" /> : null
                         }
-                        <i className="bi bi-heart-fill shareA" onClick={() => setFavourites(true)} style={favourites ? { color: "red" } : null}></i>
+                        <i className="bi bi-heart-fill shareA" onClick={() => { setFavourites(true) }} style={favourites ? { color: "red" } : null}></i>
                         <i className="bi bi-share-fill favourite"></i>
                     </div>
                     <div className="button-pics">
