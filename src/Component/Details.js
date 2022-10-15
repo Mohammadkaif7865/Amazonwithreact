@@ -25,16 +25,16 @@ function Details(props) {
         fetch(`${url}/${props.match.params.id}`, { method: 'GET' }).then((response) => response.json()).then((data) => setDetails(data));
     }, [props.match.params.id]);
     useEffect(() => {
-        let send = {
-            email: sessionStorage.getItem('email'),
-            itemId: ''
-        }
-        fetch(fav, {
-            method: 'POST',
-            body: JSON.stringify(send),
-        }).then((response) => response.json()).then((data) => console.log(data));
+        // let send = {
+        //     email: sessionStorage.getItem('email'),
+        //     itemId: ''
+        // }
+        // fetch(fav, {
+        //     method: 'POST',
+        //     body: JSON.stringify(send),
+        // }).then((response) => response.json()).then((data) => console.log(data));
+        console.log(details);
     }, [favourites]);
-    console.log(details[0].id);
     return (
         <>
             <div className='topOfdetail'>
