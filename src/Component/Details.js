@@ -4,7 +4,7 @@ import './detail.css';
 import '../myCss.css';
 const url = 'https://amazoncloneserver.herokuapp.com/details';
 const defaultImg = "https://i.ibb.co/G3gRQ34/defaultimg.jpg";
-const fav = 'https://amazoncloneserver.herokuapp.com/favourites';
+const fav = 'https://amazoncloneserver.herokuapp.com/favourities';
 function Details(props) {
     const [details, setDetails] = useState('');
     const [favourites, setFavourites] = useState(false);
@@ -25,15 +25,21 @@ function Details(props) {
         fetch(`${url}/${props.match.params.id}`, { method: 'GET' }).then((response) => response.json()).then((data) => setDetails(data));
     }, [props.match.params.id]);
     useEffect(() => {
-        // let send = {
-        //     email: sessionStorage.getItem('email'),
-        //     itemId: ''
-        // }
-        // fetch(fav, {
-        //     method: 'POST',
-        //     body: JSON.stringify(send),
-        // }).then((response) => response.json()).then((data) => console.log(data));
-        console.log(details);
+        let send = [{
+            email: sessionStorage.getItem('email'),
+            itemId: props.match.params.id
+        }];
+        if (favourites) {
+            fetch(fav, {
+                method: 'POST',
+                headers: {
+                    'accept': 'application/json',
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(send),
+            })
+        }
+
     }, [favourites]);
     return (
         <>
