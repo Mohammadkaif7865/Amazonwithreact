@@ -27,7 +27,7 @@ function Details(props) {
     useEffect(() => {
         let send = [{
             email: sessionStorage.getItem('email'),
-            itemId: props.match.params.id
+            itemId: Number(props.match.params.id)
         }];
         if (favourites) {
             fetch(fav, {
