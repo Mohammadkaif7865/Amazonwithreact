@@ -44,12 +44,12 @@ function Header(props) {
     if (props.nameAuth) {
       fetch(`${cartUrl}/${sessionStorage.getItem("email")}`, { method: "GET" }).then((response) => response.json()).then((data) => setCartCount(data.length))
     }
-  }, [props.nameAuth]);
+    console.log("recalling");
+  }, [props.nameAuth, props.refresh]);
   function logOut() {
     sessionStorage.clear();
     props.setNameAuth("");
     props.history.push("/");
-
   }
   return (
     <header className="navbar-my">
