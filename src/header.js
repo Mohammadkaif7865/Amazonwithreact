@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link, withRouter } from "react-router-dom";
 import "./myCss.css";
 const catUrl = "https://amazoncloneserver.herokuapp.com/category";
+const cartUrl = "https://amazoncloneserver.herokuapp.com/cart";
 function Header(props) {
   let [temp, setTemp] = useState("");
   let [city, setCity] = useState("");
@@ -40,15 +41,17 @@ function Header(props) {
     fetch(catUrl, { method: "GET" }).then((response) => response.json()).then((data) => setCat(data));
   }, []);
   useEffect(() => {
-
+    if (props.nameAuth) {
+      fetch(`${cartUrl}/${sessionStorage.getItem("email")}`, { method: "GET" }).then((response) => response.json()).then((data) => setCartCount(data.length))
+    }
   }, [props.nameAuth]);
   function logOut() {
-
     sessionStorage.clear();
     props.setNameAuth("");
     props.history.push("/");
 
   }
+  console.log(cartCount);
   return (
     <header className="navbar-my">
       <div className="nav-belt-my">

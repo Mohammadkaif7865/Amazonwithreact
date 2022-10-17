@@ -12,6 +12,7 @@ import { useState } from "react";
 
 const Routing = () => {
   const [nameAuth, setNameAuth] = useState(sessionStorage.getItem("name") ? sessionStorage.getItem("name") : "");
+  const [refresh, setRefresh] = useState(0);
   return (
     <BrowserRouter>
       <Header nameAuth={nameAuth} setNameAuth={(data) => setNameAuth(data)} />
@@ -21,7 +22,7 @@ const Routing = () => {
         <Route path='/login' component={Login} />
         <Route path='/userInfo' >  <UserInfo nameAuth={nameAuth} setNameAuth={(data) => setNameAuth(data)} /> </Route>
         <Route path='/register' component={Register} />
-        <Route path='/details/:id' component={Details} />
+        <Route path='/details/:id'> <Details refresh={refresh} setRefresh={(data) => setRefresh(data)}></Details> </Route>
         <Route path="*" component={Ghost} />
       </Switch>
       <Footer />
