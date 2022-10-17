@@ -8,6 +8,7 @@ function Header(props) {
   let [src, setSrc] = useState("");
   let [cat, setCat] = useState("");
   let [search, setSearch] = useState("");
+  let [cartCount, setCartCount] = useState(0);
   navigator.geolocation.getCurrentPosition(position);
   async function position(data) {
     const url = `https://api.openweathermap.org/data/2.5/forecast/daily?lat=${data.coords.latitude}&lon=${data.coords.longitude}&mode=json&units=metric&cnt=1&appid=fbf712a5a83d7305c3cda4ca8fe7ef29`;
@@ -38,6 +39,9 @@ function Header(props) {
   useEffect(() => {
     fetch(catUrl, { method: "GET" }).then((response) => response.json()).then((data) => setCat(data));
   }, []);
+  useEffect(() => {
+
+  }, [props.nameAuth]);
   function logOut() {
 
     sessionStorage.clear();
@@ -351,7 +355,7 @@ function Header(props) {
           <div className="cart-my">
             <i className="bi bi-cart2 nn-kk"></i>
             <div className="number-of-items-my" style={{ fontSize: "15px" }}>
-              <b>0</b>
+              <b>{cartCount}</b>
             </div>
           </div>
         </Link>
