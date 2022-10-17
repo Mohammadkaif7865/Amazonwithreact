@@ -5,6 +5,7 @@ import '../myCss.css';
 const url = 'https://amazoncloneserver.herokuapp.com/details';
 const defaultImg = "https://i.ibb.co/G3gRQ34/defaultimg.jpg";
 const fav = 'https://amazoncloneserver.herokuapp.com/favourities';
+const cartUrl = 'https://amazoncloneserver.herokuapp.com/addcart';
 function Details(props) {
     const [details, setDetails] = useState('');
     const [favourites, setFavourites] = useState(false);
@@ -41,6 +42,23 @@ function Details(props) {
         }
 
     }, [favourites]);
+    useEffect(() => {
+        let send = [{
+            email: sessionStorage.getItem('email'),
+            itemId: Number(props.match.params.id)
+        }];
+        if (favourites) {
+            fetch(cartUrl, {
+                method: 'POST',
+                headers: {
+                    'accept': 'application/json',
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(send),
+            })
+        }
+
+    }, [addTocart]);
     return (
         <>
             <div className='topOfdetail'>
