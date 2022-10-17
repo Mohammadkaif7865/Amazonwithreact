@@ -57,7 +57,7 @@ function Details(props) {
                 body: JSON.stringify(send),
             })
         }
-
+        props.setRefresh(props.refresh + 1);
     }, [addTocart]);
     return (
         <>

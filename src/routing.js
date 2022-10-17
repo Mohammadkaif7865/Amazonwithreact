@@ -15,7 +15,7 @@ const Routing = () => {
   const [refresh, setRefresh] = useState(0);
   return (
     <BrowserRouter>
-      <Header nameAuth={nameAuth} setNameAuth={(data) => setNameAuth(data)} />
+      <Header nameAuth={nameAuth} refresh={refresh} setNameAuth={(data) => setNameAuth(data)} />
       <Switch>
         <Route exact path="/" component={Home} />
         <Route path='/search_result/:category' component={SearchResult} />
