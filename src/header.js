@@ -351,7 +351,7 @@ function Header(props) {
           <div className="cart-my">
             <i className="bi bi-cart2 nn-kk"></i>
             <div className="number-of-items-my" style={{ fontSize: "15px" }}>
-              <b>10</b>
+              <b>0</b>
             </div>
           </div>
         </Link>
