@@ -47,7 +47,7 @@ function Details(props) {
             email: sessionStorage.getItem('email'),
             itemId: Number(props.match.params.id)
         }];
-        if (favourites) {
+        if (addTocart) {
             fetch(cartUrl, {
                 method: 'POST',
                 headers: {
