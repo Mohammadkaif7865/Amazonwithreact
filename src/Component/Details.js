@@ -30,7 +30,7 @@ function Details(props) {
             email: sessionStorage.getItem('email'),
             itemId: Number(props.match.params.id)
         }];
-        if (favourites) {
+        if (favourites && sessionStorage.getItem('email')) {
             fetch(fav, {
                 method: 'POST',
                 headers: {
@@ -47,7 +47,7 @@ function Details(props) {
             email: sessionStorage.getItem('email'),
             itemId: Number(props.match.params.id)
         }];
-        if (addTocart) {
+        if (addTocart && sessionStorage.getItem('email')) {
             fetch(cartUrl, {
                 method: 'POST',
                 headers: {
