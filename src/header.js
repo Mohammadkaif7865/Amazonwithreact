@@ -42,7 +42,9 @@ function Header(props) {
   }, []);
   useEffect(() => {
     if (props.nameAuth) {
-      fetch(`${cartUrl}/${sessionStorage.getItem("email")}`, { method: "GET" }).then((response) => response.json()).then((data) => setCartCount(data.length));
+      setTimeout(() => {
+        fetch(`${cartUrl}/${sessionStorage.getItem("email")}`, { method: "GET" }).then((response) => response.json()).then((data) => setCartCount(data.length));
+      }, 500)
     }
   }, [props.nameAuth, props.refresh]);
   function logOut() {
