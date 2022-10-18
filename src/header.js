@@ -42,12 +42,14 @@ function Header(props) {
   }, []);
   useEffect(() => {
     if (props.nameAuth) {
+      console.log('called');
       fetch(`${cartUrl}/${sessionStorage.getItem("email")}`, { method: "GET" }).then((response) => response.json()).then((data) => setCartCount(data.length))
     }
   }, [props.nameAuth, props.refresh]);
   function logOut() {
     sessionStorage.clear();
     props.setNameAuth("");
+    setCartCount(0);
     props.history.push("/");
   }
   console.log(cartCount);
