@@ -43,7 +43,6 @@ function Header(props) {
   useEffect(() => {
     if (props.nameAuth) {
       fetch(`${cartUrl}/${sessionStorage.getItem("email")}`, { method: "GET" }).then((response) => response.json()).then((data) => setCartCount(data.length))
-      console.log(cartCount);
     }
   }, [props.nameAuth, props.refresh]);
   function logOut() {
@@ -51,6 +50,7 @@ function Header(props) {
     props.setNameAuth("");
     props.history.push("/");
   }
+  console.log(cartCount);
   return (
     <header className="navbar-my">
       <div className="nav-belt-my">
