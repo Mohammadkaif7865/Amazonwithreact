@@ -24,11 +24,9 @@ function Details(props) {
         scrollToTop();
     }, [])
     useEffect(() => {
-        console.log('calling without change props.match.params.id');
         fetch(`${url}/${props.match.params.id}`, { method: 'GET' }).then((response) => response.json()).then((data) => setDetails(data));
     }, [props.match.params.id]);
     useEffect(() => {
-        console.log('calling without change of favourites');
         let send = [{
             email: sessionStorage.getItem('email'),
             itemId: Number(props.match.params.id)
@@ -46,7 +44,6 @@ function Details(props) {
 
     }, [favourites]);
     useEffect(() => {
-        console.log('calling without change of addTocart');
         let send = [{
             email: sessionStorage.getItem('email'),
             itemId: Number(props.match.params.id)
