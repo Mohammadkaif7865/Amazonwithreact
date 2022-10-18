@@ -20,7 +20,6 @@ function Details(props) {
         });
     };
     useEffect(() => {
-        console.log('componentdidmount');
         scrollToTop();
     }, [])
     useEffect(() => {
