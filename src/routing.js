@@ -7,6 +7,7 @@ import Login from "./Component/LoginAuth/login";
 import Register from "./Component/LoginAuth/register";
 import UserInfo from "./Component/LoginAuth/userInfo";
 import Ghost from "./Component/Ghost";
+import Cart from "./Component/cart/cart";
 import Fav from "./Component/Favorities/fav";
 import SearchResult from "./Component/SearchResult";
 import { useState } from "react";
@@ -24,6 +25,7 @@ const Routing = () => {
         <Route path='/userInfo' >  <UserInfo nameAuth={nameAuth} setNameAuth={(data) => setNameAuth(data)} /> </Route>
         <Route path='/register' component={Register} />
         <Route path='/favorities' component={Fav} />
+        <Route path='/cart' component={Cart} />
         <Route path='/details/:id'> <Details refresh={refresh} setRefresh={(data) => setRefresh(data)}></Details> </Route>
         <Route path="*" component={Ghost} />
       </Switch>
