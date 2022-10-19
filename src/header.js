@@ -53,6 +53,7 @@ function Header(props) {
     setCartCount(0);
     props.history.push("/");
   }
+  console.log(cartCount);
   return (
     <header className="navbar-my">
       <div className="nav-belt-my">
@@ -344,18 +345,22 @@ function Header(props) {
             </b>
           </div>
         </div>
-        <Link to="/">
-          <div className="order-returns-my">
-            <p style={{ color: "#959fa9", margin: 0 }}>Returns    <i
+
+        <div className="order-returns-my">
+          <Link to="/favorities">
+            <p style={{ color: "#959fa9", margin: 0 }}>favorities    <i
               className="bi bi-caret-down-fill arrowDown"
             ></i></p>
+          </Link>
 
-            <p style={{ position: "relative" }}>
+          <Link to="/orders">
+            <p style={{ position: "relative", color: 'white' }}>
               <b> & Orders</b>
             </p>
-          </div>
-        </Link>
-        <Link to="/">
+          </Link>
+        </div>
+
+        <Link to="/cart">
           <div className="cart-my">
             <i className="bi bi-cart2 nn-kk"></i>
             <div className="number-of-items-my" style={{ fontSize: "15px" }}>
@@ -369,8 +374,8 @@ function Header(props) {
           <Link to="/">
             <div className="main-belt-item">All</div>
           </Link>
-          <Link to="/favorities">
-            <div className="main-belt-item">Favorities</div>
+          <Link to="/">
+            <div className="main-belt-item">Fresh</div>
           </Link>
           <Link to="/">
             <div className="main-belt-item">Coupon</div>
