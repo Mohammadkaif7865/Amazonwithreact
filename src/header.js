@@ -369,8 +369,8 @@ function Header(props) {
           <Link to="/">
             <div className="main-belt-item">All</div>
           </Link>
-          <Link to="/">
-            <div className="main-belt-item">Fresh</div>
+          <Link to="/favorities">
+            <div className="main-belt-item">Favorities</div>
           </Link>
           <Link to="/">
             <div className="main-belt-item">Coupon</div>
