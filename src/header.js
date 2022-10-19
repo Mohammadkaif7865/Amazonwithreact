@@ -53,7 +53,6 @@ function Header(props) {
     setCartCount(0);
     props.history.push("/");
   }
-  console.log(cartCount);
   return (
     <header className="navbar-my">
       <div className="nav-belt-my">
