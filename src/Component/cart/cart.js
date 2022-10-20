@@ -5,6 +5,7 @@ const favUrlspec = 'https://amazoncloneserver.herokuapp.com/spacific';
 function Cart() {
     const [toDisplay, setTodisplay] = useState('');
     const [display, setDisplay] = useState([]);
+    const [show, setShow] = useState('');
     useEffect(() => {
         fetch(`${favUrl}/${sessionStorage.getItem('email')}`, { method: 'GET' }).then(response => response.json()).then(response => setTodisplay(response));
     }, []);
@@ -14,12 +15,11 @@ function Cart() {
                 display.push(item.itemId);
                 return 'ok';
             })
-            console.log(display);
             fetch(`${favUrlspec}/${JSON.stringify(display)}`)
-                .then((response) => response.json()).then((responseData) => setDisplay(responseData));
+                .then((response) => response.json()).then((responseData) => setShow(responseData));
         }
     }, [toDisplay]);
-    // console.log(display);
+    console.log(show);
     return (
         <>
             <h1>This is the Cart part</h1>
