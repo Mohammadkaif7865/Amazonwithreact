@@ -3,19 +3,22 @@ const favUrl = 'https://amazoncloneserver.herokuapp.com/cart';
 const favUrlspec = 'https://amazoncloneserver.herokuapp.com/spacific';
 
 function Cart() {
-    const [toDisplay, setTodisplay] = useState([]);
-    const [display, setDisplay] = useState();
+    const [toDisplay, setTodisplay] = useState('');
+    const [display, setDisplay] = useState([]);
     useEffect(() => {
-        fetch(`${favUrl}/${sessionStorage.getItem('email')}`, { method: 'GET' }).then((response) => response.json()).then((responseData) => responseData.map((item) => setTodisplay(toDisplay.push(item.itemId))));
+        fetch(`${favUrl}/${sessionStorage.getItem('email')}`, { method: 'GET' }).then(response => response.json()).then(response => setTodisplay(response));
     }, []);
     useEffect(() => {
-        if (toDisplay.length > 0) {
-            fetch(`${favUrlspec}/${toDisplay}`)
-                .then((response) => response.json()).then((responseData) => setDisplay(responseData));
-
+        if (toDisplay) {
+            toDisplay.map((item) => {
+                display.push(item.itemId);
+                return 'ok';
+            })
+            fetch(`${favUrlspec}/${display}`)
+                .then((response) => response.json()).then((responseData) => console.log(responseData));
         }
     }, [toDisplay]);
-    console.log(display);
+    // console.log(display);
     return (
         <>
             <h1>This is the Cart part</h1>
