@@ -14,8 +14,9 @@ function Cart() {
                 display.push(item.itemId);
                 return 'ok';
             })
-            fetch(`${favUrlspec}/${display}`)
-                .then((response) => response.json()).then((responseData) => console.log(responseData));
+            console.log(display);
+            fetch(`${favUrlspec}/${JSON.stringify(display)}`)
+                .then((response) => response.json()).then((responseData) => setDisplay(responseData));
         }
     }, [toDisplay]);
     // console.log(display);
