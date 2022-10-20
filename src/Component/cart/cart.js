@@ -9,8 +9,11 @@ function Cart() {
         fetch(`${favUrl}/${sessionStorage.getItem('email')}`, { method: 'GET' }).then((response) => response.json()).then((responseData) => responseData.map((item) => setTodisplay(toDisplay.push(item.itemId))));
     }, []);
     useEffect(() => {
-        fetch(`${favUrlspec}/${toDisplay}`)
-        .then((response) => response.json()).then((responseData) => setDisplay(responseData));
+        if (toDisplay.length > 0) {
+            fetch(`${favUrlspec}/${toDisplay}`)
+                .then((response) => response.json()).then((responseData) => setDisplay(responseData));
+
+        }
     }, [toDisplay]);
     console.log(display);
     return (
