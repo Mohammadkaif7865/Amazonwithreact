@@ -22,7 +22,7 @@ function Cart() {
     console.log(show);
     return (
         <>
-            <h1>This is the Cart part</h1>
+            <h1>This is the Cart page</h1>
         </>
     )
 }

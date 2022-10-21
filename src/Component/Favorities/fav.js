@@ -21,7 +21,7 @@ function Fav() {
     console.log(show);
     return (
         <>
-            <h1>This is the favorities part</h1>
+            <h1>This is the favorities page</h1>
         </>
     )
 }
