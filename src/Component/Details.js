@@ -59,6 +59,9 @@ function Details(props) {
         }
         props.setRefresh(props.refresh + 1);
     }, [addTocart]);
+    function gotoBooking(id){
+        props.history.push(`/booking/${id}`);
+    }
     return (
         <>
             <div className='topOfdetail'>
@@ -120,7 +123,7 @@ function Details(props) {
                         <sup>₹</sup>{details.length > 0 ? details[0].cost : "-----"}
                     </h1>
                     <button className='btn btn-light button-text' onClick={() => setAddTocart(true)}>{addTocart ? <i className="bi bi-check2"></i> : null}Add to cart <i className="bi bi-cart2"></i></button>
-                    <button className='btn btn-warning button-text'>Buy now</button>
+                    <button className='btn btn-warning button-text' onClick={()=> gotoBooking(details[0].id)}>Buy now</button>
                 </div>
             </div>
         </>

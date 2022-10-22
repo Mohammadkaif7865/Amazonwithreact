@@ -1,5 +1,7 @@
 import React from 'react';
-function Booking() {
+import { withRouter } from 'react-router-dom';
+function Booking(props) {
+    console.log(props.match.params.id);
     return (
         <>
             <div className="continer">
@@ -8,4 +10,4 @@ function Booking() {
         </>
     )
 }
-export default Booking;
+export default withRouter(Booking);
