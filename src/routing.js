@@ -24,8 +24,8 @@ const Routing = () => {
         <Route path='/login' component={Login} />
         <Route path='/userInfo' >  <UserInfo nameAuth={nameAuth} setNameAuth={(data) => setNameAuth(data)} /> </Route>
         <Route path='/register' component={Register} />
-        <Route path='/favorities' component={Fav} />
-        <Route path='/cart' component={Cart} />
+        <Route path='/favorities'  > <Fav refresh={refresh} setRefresh={(data) => setRefresh(data)} ></Fav> </Route>
+        <Route path='/cart'> <Cart refresh={refresh} setRefresh={(data) => setRefresh(data)}></Cart> </Route>
         <Route path='/details/:id'> <Details refresh={refresh} setRefresh={(data) => setRefresh(data)}></Details> </Route>
         <Route path="*" component={Ghost} />
       </Switch>

@@ -1,15 +1,22 @@
 import React, { useEffect, useState } from 'react';
+import { withRouter } from 'react-router-dom';
 import './cart.css';
 const cartUrl = 'https://amazoncloneserver.herokuapp.com/cart';
 const favUrlspec = 'https://amazoncloneserver.herokuapp.com/spacific';
 const deletecart = 'https://amazoncloneserver.herokuapp.com/deleteFromCart';
-function Cart() {
+function Cart(props) {
     const [toDisplay, setTodisplay] = useState('');
     const [display, setDisplay] = useState([]);
     const [show, setShow] = useState('');
     useEffect(() => {
         fetch(`${cartUrl}/${sessionStorage.getItem('email')}`, { method: 'GET' }).then(response => response.json()).then(response => setTodisplay(response));
     }, []);
+    useEffect(() => {
+        setTimeout(() => {
+            fetch(`${cartUrl}/${sessionStorage.getItem('email')}`, { method: 'GET' }).then(response => response.json()).then(response => setTodisplay(response));
+            console.log('called');
+        }, 500);
+    }, [props.refresh]);
     useEffect(() => {
         if (toDisplay) {
             toDisplay.map((item) => {
@@ -20,9 +27,9 @@ function Cart() {
                 .then((response) => response.json()).then((responseData) => setShow(responseData));
         }
     }, [toDisplay]);
-
     function deleteFromCart(id) {
         fetch(`${deletecart}/${sessionStorage.getItem('email')}/${id}`, { method: 'DELETE' });
+        props.setRefresh(props.refresh + 1);
     }
     return (
         <>
@@ -50,4 +57,4 @@ function Cart() {
         </>
     )
 }
-export default Cart;
+export default withRouter(Cart);

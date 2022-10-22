@@ -1,15 +1,22 @@
 import React, { useEffect, useState } from 'react';
+import { withRouter } from 'react-router-dom';
 import './fav.css';
 const cartUrl = 'https://amazoncloneserver.herokuapp.com/userfav';
 const favUrlspec = 'https://amazoncloneserver.herokuapp.com/spacific';
 const deletefav = 'https://amazoncloneserver.herokuapp.com/deletefav';
-function Cart() {
+function Cart(props) {
     const [toDisplay, setTodisplay] = useState('');
     const [display, setDisplay] = useState([]);
     const [show, setShow] = useState('');
     useEffect(() => {
         fetch(`${cartUrl}/${sessionStorage.getItem('email')}`, { method: 'GET' }).then(response => response.json()).then(response => setTodisplay(response));
     }, []);
+    useEffect(() => {
+       setTimeout(()=>{
+        fetch(`${cartUrl}/${sessionStorage.getItem('email')}`, { method: 'GET' }).then(response => response.json()).then(response => setTodisplay(response));
+        console.log('called');
+       },500);
+    }, [props.refresh]);
     useEffect(() => {
         if (toDisplay) {
             toDisplay.map((item) => {
@@ -22,6 +29,7 @@ function Cart() {
     }, [toDisplay]);
     function deleteFromfav(id) {
         fetch(`${deletefav}/${sessionStorage.getItem('email')}/${id}`, { method: 'DELETE' });
+        props.setRefresh(props.refresh + 1);
     }
     return (
         <>
@@ -39,7 +47,8 @@ function Cart() {
                             </div>
                             <div className="discription">
                                 <h5>{item.name}</h5>
-                                <button className='btn btn-light'>Remove from wishlist</button>
+                                <button className='btn btn-light'
+                                onClick={() => deleteFromfav(item.id)}>Remove from wishlist</button>
                                 <button className='btn btn-warning'>Buy now</button>
                             </div>
                         </div>
@@ -49,4 +58,4 @@ function Cart() {
         </>
     )
 }
-export default Cart;
+export default withRouter(Cart);
