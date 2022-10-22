@@ -25,8 +25,8 @@ function Cart() {
             <div className="container">
                 {
                     show.length > 0 ? show.map((item, i) => {
-                        return <div className="card" key={i}>
-                            <div className="card-image">
+                        return <div className="cardmy" key={i}>
+                            <div className="cardmy-image">
                                 <img src={item.images.img1.link} alt="img" />
                             </div>
                             <div className="discription">

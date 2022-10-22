@@ -1,0 +1,15 @@
+.cardmy {
+  display: flex;
+  background-color: white;
+}
+.cardmy-image {
+  width: 50%;
+  padding: 5px;
+}
+.cardmy-image img {
+  width: 100%;
+}
+.discription {
+  width: 50%;
+  padding: 5px;
+}
