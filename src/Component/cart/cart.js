@@ -23,6 +23,9 @@ function Cart(props) {
     }, [toDisplay]);
     function deleteFromCart(id) {
         fetch(`${deletecart}/${sessionStorage.getItem('email')}/${id}`, { method: 'DELETE' });
+        setTimeout(()=>{
+            fetch(`${cartUrl}/${sessionStorage.getItem('email')}`, { method: 'GET' }).then(response => response.json()).then(response => setTodisplay(response));
+        },500)
         props.setRefresh(props.refresh + 1);
     }
     console.log(display);
