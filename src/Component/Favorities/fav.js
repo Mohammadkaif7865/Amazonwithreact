@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from 'react';
-const favUrl = 'https://amazoncloneserver.herokuapp.com/userfav';
+import './fav.css';
+const cartUrl = 'https://amazoncloneserver.herokuapp.com/userfav';
 const favUrlspec = 'https://amazoncloneserver.herokuapp.com/spacific';
-function Fav() {
+function Cart() {
     const [toDisplay, setTodisplay] = useState('');
     const [display, setDisplay] = useState([]);
     const [show, setShow] = useState('');
     useEffect(() => {
-        fetch(`${favUrl}/${sessionStorage.getItem('email')}`, { method: 'GET' }).then(response => response.json()).then(response => setTodisplay(response));
+        fetch(`${cartUrl}/${sessionStorage.getItem('email')}`, { method: 'GET' }).then(response => response.json()).then(response => setTodisplay(response));
     }, []);
     useEffect(() => {
         if (toDisplay) {
@@ -21,8 +22,23 @@ function Fav() {
     console.log(show);
     return (
         <>
-            <h1>This is the favorities page</h1>
+            <div className="container">
+                {
+                    show.length > 0 ? show.map((item, i) => {
+                        return <div className="cardmy" key={i}>
+                            <div className="cardmy-image">
+                                <img src={item.images.img1.link} alt="img" />
+                            </div>
+                            <div className="discription">
+                                <h5>{item.name}</h5>
+                                <button className='btn btn-light'>Delete</button>
+                                <button className='btn btn-warning'>Buy now</button>
+                            </div>
+                        </div>
+                    }) : <h2>Nothing in your cart</h2>
+                }
+            </div>
         </>
     )
 }
-export default Fav;
+export default Cart;

@@ -35,7 +35,7 @@ function Cart() {
                                 <button className='btn btn-warning'>Buy now</button>
                             </div>
                         </div>
-                    }) : <h5>Nothing in your cart</h5>
+                    }) : <h2>Nothing in your cart</h2>
                 }
             </div>
         </>
