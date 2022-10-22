@@ -10,7 +10,7 @@ function Cart(props) {
     const [show, setShow] = useState('');
     useEffect(() => {
         fetch(`${cartUrl}/${sessionStorage.getItem('email')}`, { method: 'GET' }).then(response => response.json()).then(response => setTodisplay(response));
-    }, [props.refresh]);
+    }, []);
     useEffect(() => {
         if (toDisplay) {
             toDisplay.map((item) => {
