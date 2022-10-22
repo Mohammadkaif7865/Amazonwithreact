@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
+import './cart.css';
 const cartUrl = 'https://amazoncloneserver.herokuapp.com/cart';
 const favUrlspec = 'https://amazoncloneserver.herokuapp.com/spacific';
-
 function Cart() {
     const [toDisplay, setTodisplay] = useState('');
     const [display, setDisplay] = useState([]);
@@ -22,7 +22,20 @@ function Cart() {
     console.log(show);
     return (
         <>
-            <h1>This is the Cart page</h1>
+            <div className="container">
+                {
+                    show.length > 0 ? show.map((item, i) => {
+                        return <div className="card" key={i}>
+                            <div className="card-image">
+                                <img src={item.images.img1.link} alt="img" />
+                            </div>
+                            <div className="discription">
+                                <h2>{item.name}</h2>
+                            </div>
+                        </div>
+                    }) : <h2>Nothing in your cart</h2>
+                }
+            </div>
         </>
     )
 }
