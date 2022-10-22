@@ -347,7 +347,7 @@ function Header(props) {
 
         <div className="order-returns-my">
           <Link to="/favorities">
-            <p style={{ color: "#959fa9", margin: 0 }}>favorities    <i
+            <p style={{ color: "#959fa9", margin: 0 }}>wishlist    <i
               className="bi bi-caret-down-fill arrowDown"
             ></i></p>
           </Link>
