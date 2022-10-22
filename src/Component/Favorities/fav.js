@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { withRouter } from 'react-router-dom';
+import { withRouter, Link } from 'react-router-dom';
 import './fav.css';
 const cartUrl = 'https://amazoncloneserver.herokuapp.com/userfav';
 const favUrlspec = 'https://amazoncloneserver.herokuapp.com/spacific';
@@ -40,7 +40,9 @@ function Cart(props) {
                     show.length > 0 ? show.map((item, i) => {
                         return <div className="cardmy" key={i}>
                             <div className="cardmy-image">
-                                <img src={item.images.img1.link} alt="img" />
+                                <Link to={`/details/${item.id}`}>
+                                    <img src={item.images.img1.link} alt="img" />
+                                </Link>
                             </div>
                             <div className="discription">
                                 <h5>{item.name}</h5>
