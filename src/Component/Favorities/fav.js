@@ -19,7 +19,6 @@ function Cart() {
                 .then((response) => response.json()).then((responseData) => setShow(responseData));
         }
     }, [toDisplay]);
-    console.log(show);
     return (
         <>
             <div className="container">
@@ -31,11 +30,11 @@ function Cart() {
                             </div>
                             <div className="discription">
                                 <h5>{item.name}</h5>
-                                <button className='btn btn-light'>Delete</button>
+                                <button className='btn btn-light'>Remove from wishlist</button>
                                 <button className='btn btn-warning'>Buy now</button>
                             </div>
                         </div>
-                    }) : <h2>Nothing in your cart</h2>
+                    }) : <h2>Nothing in your favourites</h2>
                 }
             </div>
         </>

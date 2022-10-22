@@ -17,3 +17,12 @@
   width: 60%;
   padding: 5px;
 }
+@media (max-width: 768px) {
+  .cardmy-image{
+      width: 100%;
+  }
+  .discription{
+      width: 100%;
+  }
+}
+
