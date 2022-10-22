@@ -10,12 +10,6 @@ function Cart(props) {
     const [show, setShow] = useState('');
     useEffect(() => {
         fetch(`${cartUrl}/${sessionStorage.getItem('email')}`, { method: 'GET' }).then(response => response.json()).then(response => setTodisplay(response));
-    }, []);
-    useEffect(() => {
-       setTimeout(()=>{
-        fetch(`${cartUrl}/${sessionStorage.getItem('email')}`, { method: 'GET' }).then(response => response.json()).then(response => setTodisplay(response));
-        console.log('called');
-       },500);
     }, [props.refresh]);
     useEffect(() => {
         if (toDisplay) {
@@ -31,6 +25,7 @@ function Cart(props) {
         fetch(`${deletefav}/${sessionStorage.getItem('email')}/${id}`, { method: 'DELETE' });
         props.setRefresh(props.refresh + 1);
     }
+    console.log(toDisplay);
     return (
         <>
             <div className="container">
