@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import './fav.css';
 const cartUrl = 'https://amazoncloneserver.herokuapp.com/userfav';
 const favUrlspec = 'https://amazoncloneserver.herokuapp.com/spacific';
+const deletefav = 'https://amazoncloneserver.herokuapp.com/deletefav';
 function Cart() {
     const [toDisplay, setTodisplay] = useState('');
     const [display, setDisplay] = useState([]);
@@ -19,6 +20,9 @@ function Cart() {
                 .then((response) => response.json()).then((responseData) => setShow(responseData));
         }
     }, [toDisplay]);
+    function deleteFromfav(id) {
+        fetch(`${deletefav}/${sessionStorage.getItem('email')}/${id}`, { method: 'DELETE' });
+    }
     return (
         <>
             <div className="container">

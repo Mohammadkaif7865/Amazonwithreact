@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import './cart.css';
 const cartUrl = 'https://amazoncloneserver.herokuapp.com/cart';
 const favUrlspec = 'https://amazoncloneserver.herokuapp.com/spacific';
+const deletecart = 'https://amazoncloneserver.herokuapp.com/deleteFromCart';
 function Cart() {
     const [toDisplay, setTodisplay] = useState('');
     const [display, setDisplay] = useState([]);
@@ -19,10 +20,14 @@ function Cart() {
                 .then((response) => response.json()).then((responseData) => setShow(responseData));
         }
     }, [toDisplay]);
+
+    function deleteFromCart(id) {
+        fetch(`${deletecart}/${sessionStorage.getItem('email')}/${id}`, { method: 'DELETE' });
+    }
     return (
         <>
             <div className="container">
-            {
+                {
                     show ? null : <div className="spinner-border text-warning" role="status">
                         <span className="visually-hidden">Loading...</span>
                     </div>
@@ -35,7 +40,7 @@ function Cart() {
                             </div>
                             <div className="discription">
                                 <h5>{item.name}</h5>
-                                <button className='btn btn-light'>Delete</button>
+                                <button className='btn btn-light' onClick={() => deleteFromCart(item.id)}>Delete</button>
                                 <button className='btn btn-warning'>check out</button>
                             </div>
                         </div>
