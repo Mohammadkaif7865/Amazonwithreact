@@ -30,10 +30,12 @@ function Cart() {
                                 <img src={item.images.img1.link} alt="img" />
                             </div>
                             <div className="discription">
-                                <h2>{item.name}</h2>
+                                <h5>{item.name}</h5>
+                                <button className='btn btn-light'>Delete</button>
+                                <button className='btn btn-warning'>Buy now</button>
                             </div>
                         </div>
-                    }) : <h2>Nothing in your cart</h2>
+                    }) : <h5>Nothing in your cart</h5>
                 }
             </div>
         </>
