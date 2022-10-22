@@ -22,6 +22,11 @@ function Cart() {
     return (
         <>
             <div className="container">
+            {
+                    show ? null : <div className="spinner-border text-warning" role="status">
+                        <span className="visually-hidden">Loading...</span>
+                    </div>
+                }
                 {
                     show.length > 0 ? show.map((item, i) => {
                         return <div className="cardmy" key={i}>

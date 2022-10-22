@@ -23,6 +23,11 @@ function Cart() {
         <>
             <div className="container">
                 {
+                    show ? null : <div className="spinner-border text-warning" role="status">
+                        <span className="visually-hidden">Loading...</span>
+                    </div>
+                }
+                {
                     show.length > 0 ? show.map((item, i) => {
                         return <div className="cardmy" key={i}>
                             <div className="cardmy-image">
@@ -34,7 +39,7 @@ function Cart() {
                                 <button className='btn btn-warning'>Buy now</button>
                             </div>
                         </div>
-                    }) : <h2>Nothing in your favourites</h2>
+                    }) : <h2>Nothing in your WishList</h2>
                 }
             </div>
         </>
