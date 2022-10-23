@@ -28,6 +28,9 @@ function Cart(props) {
         }, 300);
         props.setRefresh(props.refresh + 1);
     }
+    function gotoBooking(id) {
+        props.history.push(`/booking/${id}`);
+    }
     return (
         <>
             <div className="container">
@@ -48,7 +51,7 @@ function Cart(props) {
                                 <h5>{item.name}</h5>
                                 <button className='btn btn-light'
                                     onClick={() => deleteFromfav(item.id)}>Remove from wishlist</button>
-                                <button className='btn btn-warning'>Buy now</button>
+                                <button className='btn btn-warning' onClick={() => gotoBooking(item.id)}>Buy now</button>
                             </div>
                         </div>
                     }) : <h2>Nothing in your WishList</h2>
