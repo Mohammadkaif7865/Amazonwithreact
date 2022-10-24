@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { withRouter } from 'react-router-dom';
 const purl = 'https://amazoncloneserver.herokuapp.com/placeorder';
+const url = 'https://amazoncloneserver.herokuapp.com/details';
 function Booking(props) {
     let [id, setId] = useState('');
     let [productName, setProductName] = useState('');
@@ -9,6 +10,9 @@ function Booking(props) {
     let [phone, setPhone] = useState(sessionStorage.getItem('phone') ? sessionStorage.getItem('phone') : '');
     let [address, setAddress] = useState('');
     let [cost, setCost] = useState('');
+    useEffect(() => {
+        fetch(`${url}/${props.match.params.id}`, { method: 'GET' }).then((response) => response.json()).then((data) => setProductName(data[0].name));
+    }, [props.match.params.id]);
     let checkout = () => {
         setId(Math.floor(Math.random() * 100000));
         let obj = {
@@ -26,6 +30,7 @@ function Booking(props) {
             body: JSON.stringify(obj)
         })
     }
+    console.log(productName);
     return (
         <>
             <div className="container">
