@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { withRouter } from 'react-router-dom';
 const purl = 'https://amazoncloneserver.herokuapp.com/placeorder';
 function Booking(props) {
-    let [id, setId] = useState(Math.floor(Math.random() * 100000));
+    let [id, setId] = useState('');
     let [productName, setProductName] = useState('');
     let [name, setName] = useState(sessionStorage.getItem('name') ? sessionStorage.getItem('name') : '');
     let [email, setEmail] = useState(sessionStorage.getItem('email') ? sessionStorage.getItem('email') : '');
@@ -10,6 +10,7 @@ function Booking(props) {
     let [address, setAddress] = useState('');
     let [cost, setCost] = useState('');
     let checkout = () => {
+        setId(Math.floor(Math.random() * 100000));
         let obj = {
             id: id,
             productName: productName,
