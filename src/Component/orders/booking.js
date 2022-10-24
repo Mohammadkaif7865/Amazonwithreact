@@ -11,16 +11,21 @@ function Booking(props) {
     let [address, setAddress] = useState('');
     let [cost, setCost] = useState('');
     useEffect(() => {
-        fetch(`${url}/${props.match.params.id}`, { method: 'GET' }).then((response) => response.json()).then((data) => setProductName(data[0].name));
+        fetch(`${url}/${props.match.params.id}`, { method: 'GET' }).then((response) => response.json()).then((data) => {
+            setProductName(data[0].name);
+            setCost(data[0].cost);
+        });
     }, [props.match.params.id]);
     let checkout = () => {
         setId(Math.floor(Math.random() * 100000));
-        let obj = {
+        let obj = [{
             id: id,
             productName: productName,
             name: name,
             cost : cost,
-        }
+            email: email,
+            address: address,
+        }]
         fetch(purl, {
             method: 'POST',
             headers: {
@@ -30,7 +35,6 @@ function Booking(props) {
             body: JSON.stringify(obj)
         })
     }
-    console.log(productName);
     return (
         <>
             <div className="container">
