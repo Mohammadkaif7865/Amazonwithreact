@@ -27,7 +27,7 @@ function Booking(props) {
     }
     return (
         <>
-            <div className="continer">
+            <div className="container">
                 <form action="https://amazonpayment.herokuapp.com/paynow" method="POST">
                     <input type="hidden" name="cost" value={cost} />
                     <input type="hidden" name="id" value={id} />
