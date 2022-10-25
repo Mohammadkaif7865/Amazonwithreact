@@ -26,7 +26,7 @@ const Routing = () => {
         <Route path='/login' component={Login} />
         <Route path='/userInfo' >  <UserInfo nameAuth={nameAuth} setNameAuth={(data) => setNameAuth(data)} /> </Route>
         <Route path='/register' component={Register} />
-        <Route path='/viewOrder' component={ViewOrder} />
+        <Route path='/viewBooking' component={ViewOrder} />
         <Route path='/booking/:id'> <Booking></Booking> </Route>
         <Route path='/favorities'  > <Fav refresh={refresh} setRefresh={(data) => setRefresh(data)} ></Fav> </Route>
         <Route path='/cart'> <Cart refresh={refresh} setRefresh={(data) => setRefresh(data)}></Cart> </Route>

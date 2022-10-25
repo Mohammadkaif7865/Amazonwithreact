@@ -29,7 +29,7 @@ class ViewOrder extends Component {
         }
         return (
             <>
-
+                <h1>This is viewBooking page</h1>
             </>
         )
     }
