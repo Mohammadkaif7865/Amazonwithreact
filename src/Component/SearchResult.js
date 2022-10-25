@@ -153,15 +153,15 @@ function SearchResult(props) {
           </form>
           <b><h4>Custmor Rating</h4></b>
           <div>
-            <p className='cursorP' onClick={() => ratingFilter(4)}><i className="bi bi-star-fill colorGold"></i><i className="bi bi-star-fill colorGold"></i><i className="bi bi-star-fill colorGold"></i><i className="bi bi-star-fill colorGold"></i><i className="bi bi-star colorGold"></i> & Up</p>
-            <p className='cursorP' onClick={() => ratingFilter(3)}><i className="bi bi-star-fill colorGold"></i><i className="bi bi-star-fill colorGold"></i><i className="bi bi-star-fill colorGold"></i><i className="bi bi-star colorGold"></i><i className="bi bi-star colorGold"></i> & Up</p>
-            <p className='cursorP' onClick={() => ratingFilter(2)}><i className="bi bi-star-fill colorGold"></i><i className="bi bi-star-fill colorGold"></i><i className="bi bi-star colorGold"></i><i className="bi bi-star colorGold"></i><i className="bi bi-star colorGold"></i> & Up</p>
-            <p className='cursorP' onClick={() => ratingFilter(1)}><i className="bi bi-star-fill colorGold"></i><i className="bi bi-star colorGold"></i><i className="bi bi-star colorGold"></i><i className="bi bi-star colorGold"></i><i className="bi bi-star colorGold"></i> & Up</p>
+            <p className='cursorP' onClick={() => { ratingFilter(4); setFilterShow("none"); }}><i className="bi bi-star-fill colorGold"></i><i className="bi bi-star-fill colorGold"></i><i className="bi bi-star-fill colorGold"></i><i className="bi bi-star-fill colorGold"></i><i className="bi bi-star colorGold"></i> & Up</p>
+            <p className='cursorP' onClick={() => { ratingFilter(3); setFilterShow("none"); }}><i className="bi bi-star-fill colorGold"></i><i className="bi bi-star-fill colorGold"></i><i className="bi bi-star-fill colorGold"></i><i className="bi bi-star colorGold"></i><i className="bi bi-star colorGold"></i> & Up</p>
+            <p className='cursorP' onClick={() => { ratingFilter(2); setFilterShow("none"); }}><i className="bi bi-star-fill colorGold"></i><i className="bi bi-star-fill colorGold"></i><i className="bi bi-star colorGold"></i><i className="bi bi-star colorGold"></i><i className="bi bi-star colorGold"></i> & Up</p>
+            <p className='cursorP' onClick={() => { ratingFilter(1); setFilterShow("none"); }}><i className="bi bi-star-fill colorGold"></i><i className="bi bi-star colorGold"></i><i className="bi bi-star colorGold"></i><i className="bi bi-star colorGold"></i><i className="bi bi-star colorGold"></i> & Up</p>
           </div>
           <b><h4>Sorted by</h4></b>
           <div>
-            <p className="cursorP" onClick={() => changeOrder(1)}>Price low to high <i className="bi bi-arrow-up"></i></p>
-            <p className="cursorP" onClick={() => changeOrder(-1)}>Price high to low <i className="bi bi-arrow-down"></i></p>
+            <p className="cursorP" onClick={() => { changeOrder(1); setFilterShow("none"); }}>Price low to high <i className="bi bi-arrow-up"></i></p>
+            <p className="cursorP" onClick={() => { changeOrder(-1); setFilterShow("none"); }}>Price high to low <i className="bi bi-arrow-down"></i></p>
           </div>
         </div>
         <div className="products-display">
