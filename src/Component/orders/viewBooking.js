@@ -58,7 +58,7 @@ class ViewOrder extends Component {
                         'Content-Type': 'application/json'
                     },
                     body: JSON.stringify(data)
-                })
+                }).then((response) => response.json()).then((responseData) => console.log(responseData));
             }
         }
         // ! onw sec delay beacuse of api ping
