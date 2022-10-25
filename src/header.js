@@ -128,7 +128,7 @@ function Header(props) {
               </h2>
             </Link>
             <Link to="/">
-              <h3>
+              <h3 data-bs-dismiss="offcanvas">
                 Change language & country
                 <span className="glyphicon glyphicon-chevron-right"></span>
                 <img
@@ -137,25 +137,25 @@ function Header(props) {
                 />
               </h3>
             </Link>
-            <Link to="/">
-              <h3>
-                Orders and returns
+            <Link to="/viewBooking">
+              <h3 data-bs-dismiss="offcanvas">
+                Orders 
+                <span className="glyphicon glyphicon-chevron-right"></span>
+              </h3>
+            </Link>
+            <Link to="/favorities">
+              <h3 data-bs-dismiss="offcanvas">
+                wishlist
                 <span className="glyphicon glyphicon-chevron-right"></span>
               </h3>
             </Link>
             <Link to="/">
-              <h3>
-                Accounts
-                <span className="glyphicon glyphicon-chevron-right"></span>
-              </h3>
-            </Link>
-            <Link to="/">
-              <h3>
+              <h3 data-bs-dismiss="offcanvas">
                 Help <span className="glyphicon glyphicon-chevron-right"></span>
               </h3>
             </Link>
-            <Link to="/">
-              <h3>
+            <Link to="/cart">
+              <h3 data-bs-dismiss="offcanvas">
                 Cart <span className="glyphicon glyphicon-chevron-right"></span>
               </h3>
             </Link>
