@@ -14,12 +14,13 @@ function Booking(props) {
         fetch(`${url}/${props.match.params.id}`, { method: 'GET' }).then((response) => response.json()).then((data) => {
             setProductName(data[0].name);
             setCost(data[0].cost);
+            setId(Math.floor(Math.random() * 100000));
         });
     }, [props.match.params.id]);
     let checkout = () => {
-        setId(Math.floor(Math.random() * 100000));
         let obj = [{
             id: id,
+            productId: props.match.params.id,
             productName: productName,
             name: name,
             cost : cost,
