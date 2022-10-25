@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { withRouter } from 'react-router-dom';
+import './booking.css';
 const purl = 'https://amazoncloneserver.herokuapp.com/placeorder';
 const url = 'https://amazoncloneserver.herokuapp.com/details';
 function Booking(props) {
@@ -39,6 +40,7 @@ function Booking(props) {
     return (
         <>
             <div className="container">
+                <h4 className='bookhead bg bg-success'>Your order for {productName}</h4>
                 <form action="https://amazonpayment.herokuapp.com/paynow" method="POST">
                     <input type="hidden" name="cost" value={cost} />
                     <input type="hidden" name="id" value={id} />
@@ -64,7 +66,7 @@ function Booking(props) {
                             value={address} onChange={(e) => setAddress(e.target.value)} />
                     </div>
                     <h2>Total Price is ₹{cost}</h2>
-                    <button className="btn btn-success" onClick={checkout} type="submit">PlaceOrder</button>
+                    <button className="btn btn-warning" onClick={checkout} type="submit">PlaceOrder</button>
                 </form>
             </div>
         </>
