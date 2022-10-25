@@ -17,7 +17,10 @@ class ViewOrder extends Component {
         }
     }
     deleteOrder = (id) => {
-        fetch(deleteUrl, { method: 'DELETE' }).then((response) => response.json()).then((response) => console.log(response));
+        fetch(`${deleteUrl}/${id}`, { method: 'DELETE' });
+        setTimeout(() => {
+            axios.get(`${url}?email=${sessionStorage.getItem('email')}`).then((res) => { this.setState({ orders: res.data }) })
+        }, 1000);
     }
     render() {
         if (!sessionStorage.getItem('name')) {
