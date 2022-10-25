@@ -13,6 +13,14 @@ class ViewOrder extends Component {
             orders: ''
         }
     }
+    scrollToTop = () => {
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth",
+            /* you can also use 'auto' behaviour
+                     in place of 'smooth' */
+        });
+    };
     deleteOrder = (id) => {
         fetch(`${deleteUrl}/${id}`, { method: 'DELETE' });
         setTimeout(() => {
@@ -96,6 +104,7 @@ class ViewOrder extends Component {
         setTimeout(() => {
             axios.get(`${url}?email=${sessionStorage.getItem('email')}`).then((res) => { this.setState({ orders: res.data }) })
         }, 1000);
+        this.scrollToTop();
 
     }
 }
