@@ -55,6 +55,7 @@ class ViewOrder extends Component {
                                     <h5>Booking Id : {item.id}</h5>
                                     <h5>Booking Time :{item.date}</h5>
                                     <h5>Payment Status :  {item.status}</h5>
+                                    <h5>bank_name :  {item.bank_name}</h5>
                                     <h5>Cost : ₹ {item.cost}</h5>
                                     <h5>Delivery Address :  {item.address}</h5>
                                     <button className='btn btn-danger' onClick={() => this.deleteOrder(item.id)}>Cancel Order</button>
@@ -91,7 +92,7 @@ class ViewOrder extends Component {
                         'Content-Type': 'application/json'
                     },
                     body: JSON.stringify(data)
-                }).then((response) => response.json()).then((responseData) => console.log(responseData));
+                });
             }
         }
         // ! onw sec delay beacuse of api ping
