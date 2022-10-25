@@ -1,9 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
-
-// http://localhost:9100/orders
-// https://restaurantmysite.herokuapp.com/orders
 const url = 'https://amazoncloneserver.herokuapp.com/orderplaced';
 const updateUrl = "https://amazoncloneserver.herokuapp.com/updateOrder"
 const deleteUrl = "https://amazoncloneserver.herokuapp.com/deleteOrder"
