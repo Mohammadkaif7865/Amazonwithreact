@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import { withRouter } from 'react-router-dom';
+import { withRouter, Link } from 'react-router-dom';
 import './booking.css';
 const purl = 'https://amazoncloneserver.herokuapp.com/placeorder';
 const url = 'https://amazoncloneserver.herokuapp.com/details';
 function Booking(props) {
     let [id, setId] = useState('');
+    let [img, setImg] = useState('');
     let [productName, setProductName] = useState('');
     let [name, setName] = useState(sessionStorage.getItem('name') ? sessionStorage.getItem('name') : '');
     let [email, setEmail] = useState(sessionStorage.getItem('email') ? sessionStorage.getItem('email') : '');
@@ -15,6 +16,7 @@ function Booking(props) {
         fetch(`${url}/${props.match.params.id}`, { method: 'GET' }).then((response) => response.json()).then((data) => {
             setProductName(data[0].name);
             setCost(data[0].cost);
+            setImg(data[0].images.img1.link)
             setId(Math.floor(Math.random() * 100000));
         });
     }, [props.match.params.id]);
@@ -24,7 +26,7 @@ function Booking(props) {
             productId: props.match.params.id,
             productName: productName,
             name: name,
-            cost : cost,
+            cost: cost,
             email: email,
             address: address,
         }]
@@ -39,7 +41,7 @@ function Booking(props) {
     }
     return (
         <>
-            <div className="container">
+            <div className="container nook">
                 <h4 className='bookhead bg bg-success'>Your order for {productName}</h4>
                 <form action="https://amazonpayment.herokuapp.com/paynow" method="POST">
                     <input type="hidden" name="cost" value={cost} />
@@ -65,6 +67,9 @@ function Booking(props) {
                         <input id="address" name="address" className="form-control"
                             value={address} onChange={(e) => setAddress(e.target.value)} />
                     </div>
+                    <Link to={`/details/${props.match.params.id}`}>
+                        <img src={img} className='smallBook' alt="img" />
+                    </Link>
                     <h2>Total Price is ₹{cost}</h2>
                     <button className="btn btn-warning" onClick={checkout} type="submit">PlaceOrder</button>
                 </form>

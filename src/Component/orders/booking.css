@@ -1,5 +1,12 @@
-.bookhead{
-    padding: 5px;
-    color: white;
-    border-radius: 10px;
+.bookhead {
+  padding: 20px;
+  color: white;
+  border-radius: 10px;
+}
+.nook {
+  background-color: white;
+  padding: 10px;
+}
+.smallBook {
+  width: calc(200px + 2vw);
 }
