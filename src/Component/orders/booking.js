@@ -27,6 +27,7 @@ function Booking(props) {
             productName: productName,
             name: name,
             cost: cost,
+            img: img,
             email: email,
             address: address,
         }]

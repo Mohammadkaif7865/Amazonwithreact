@@ -15,7 +15,6 @@ class ViewOrder extends Component {
         }
     }
     render() {
-        console.log(this.state.orders);
         if (!sessionStorage.getItem('name')) {
             return (
                 <div>
@@ -29,7 +28,9 @@ class ViewOrder extends Component {
         }
         return (
             <>
-                <h1>This is viewBooking page</h1>
+               <div className="container">
+                  <h1>This is the ViewOrder</h1>
+                </div> 
             </>
         )
     }
