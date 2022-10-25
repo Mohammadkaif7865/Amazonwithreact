@@ -17,7 +17,14 @@ class Login extends Component {
     handleChange = (event) => {
         this.setState({ [event.target.name]: event.target.value })
     }
-
+    scrollToTop = () => {
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth",
+            /* you can also use 'auto' behaviour
+                     in place of 'smooth' */
+        });
+    };
     handleSubmit = () => {
         fetch(url, {
             method: 'POST',
@@ -37,13 +44,15 @@ class Login extends Component {
                 }
             })
     }
-
+    componentDidMount() {
+        this.scrollToTop();
+    }
     render() {
         return (
             <>
                 <div className="container" style={{ backgroundColor: "white" }}>
                     <form>
-                        <legend className='bg bg-primary' style={{ margin: 0, padding: "10px" , color:'white'}}>Login</legend>
+                        <legend className='bg bg-primary' style={{ margin: 0, padding: "10px", color: 'white' }}>Login</legend>
                         <div className="mb-3">
                             <label htmlFor="email">Email</label>
                             <input id="email" name="email" className="form-control"

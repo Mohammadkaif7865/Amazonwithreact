@@ -4,6 +4,14 @@ import {
 } from "react-router-dom";
 const url = "https://authmdkaif.herokuapp.com/api/auth/getInfo";
 function UserInfo(props) {
+    const scrollToTop = () => {
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth",
+            /* you can also use 'auto' behaviour
+                     in place of 'smooth' */
+        });
+    };
     const [user, setUser] = useState("");
     useEffect(() => {
         if (sessionStorage.getItem('x-access-token')) {
@@ -25,6 +33,7 @@ function UserInfo(props) {
         else {
             console.log('Invalid token');
         }
+        scrollToTop();
     }, [])
 
     return (

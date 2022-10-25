@@ -12,6 +12,14 @@ function Booking(props) {
     let [phone, setPhone] = useState(sessionStorage.getItem('phone') ? sessionStorage.getItem('phone') : '');
     let [address, setAddress] = useState('');
     let [cost, setCost] = useState('');
+    const scrollToTop = () => {
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth",
+            /* you can also use 'auto' behaviour
+                     in place of 'smooth' */
+        });
+    };
     useEffect(() => {
         fetch(`${url}/${props.match.params.id}`, { method: 'GET' }).then((response) => response.json()).then((data) => {
             setProductName(data[0].name);
@@ -19,6 +27,7 @@ function Booking(props) {
             setImg(data[0].images.img1.link)
             setId(Math.floor(Math.random() * 100000));
         });
+        scrollToTop();
     }, [props.match.params.id]);
     let checkout = () => {
         let obj = [{

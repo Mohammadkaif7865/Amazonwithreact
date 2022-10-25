@@ -18,6 +18,14 @@ class Register extends Component {
     handleChange = (event) => {
         this.setState({ [event.target.name]: event.target.value })
     }
+    scrollToTop = () => {
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth",
+            /* you can also use 'auto' behaviour
+                     in place of 'smooth' */
+        });
+    };
 
     handleSubmit = () => {
         fetch(url, {
@@ -30,7 +38,9 @@ class Register extends Component {
         })
             .then(this.props.history.push('/login'))
     }
-
+    componentDidMount() {
+        this.scrollToTop();
+    }
     render() {
         return (
             <>

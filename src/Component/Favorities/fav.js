@@ -7,8 +7,17 @@ const deletefav = 'https://amazoncloneserver.herokuapp.com/deletefav';
 function Cart(props) {
     const [toDisplay, setTodisplay] = useState('');
     const [show, setShow] = useState('');
+    const scrollToTop = () => {
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth",
+            /* you can also use 'auto' behaviour
+                     in place of 'smooth' */
+        });
+    };
     useEffect(() => {
         fetch(`${cartUrl}/${sessionStorage.getItem('email')}`, { method: 'GET' }).then(response => response.json()).then(response => setTodisplay(response));
+        scrollToTop();
     }, []);
     useEffect(() => {
         let temp = [];
