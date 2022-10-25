@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 
 // http://localhost:9100/orders
 // https://restaurantmysite.herokuapp.com/orders
@@ -28,9 +29,32 @@ class ViewOrder extends Component {
         }
         return (
             <>
-               <div className="container">
-                  <h1>This is the ViewOrder</h1>
-                </div> 
+                <div className="container">
+                    {
+                        this.state.orders ? null : <div className="spinner-border text-warning" role="status">
+                            <span className="visually-hidden">Loading...</span>
+                        </div>
+                    }
+                    {
+                        this.state.orders ? this.state.orders.map((item, i) => {
+                            return <div className="cardmy" key={i}>
+                                <div className="cardmy-image">
+                                    <Link to={`/details/${Number(item.productId)}`}>
+                                        <img src={item.img} alt="img" />
+                                    </Link>
+                                </div>
+                                <div className="discription">
+                                    <h3>{item.productName}</h3>
+                                    <h5>Booking Id : {item.id}</h5>
+                                    <h5>Booking Time :{item.date}</h5>
+                                    <h5>Payment Status :  {item.status}</h5>
+                                    <h5>Cost : ₹ {item.cost}</h5>
+                                    <h5>Delivery Address :  {item.address}</h5>
+                                </div>
+                            </div>
+                        }) : <h2>Nothing in your cart</h2>
+                    }
+                </div>
             </>
         )
     }
