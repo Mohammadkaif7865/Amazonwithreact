@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 // https://restaurantmysite.herokuapp.com/orders
 const url = 'https://amazoncloneserver.herokuapp.com/orderplaced';
 const updateUrl = "https://amazoncloneserver.herokuapp.com/updateOrder"
+const deleteUrl = "https://amazoncloneserver.herokuapp.com/deleteOrder"
 
 class ViewOrder extends Component {
     constructor(props) {
@@ -14,6 +15,9 @@ class ViewOrder extends Component {
         this.state = {
             orders: ''
         }
+    }
+    deleteOrder = (id) => {
+        fetch(deleteUrl, { method: 'DELETE' }).then((response) => response.json()).then((response) => console.log(response));
     }
     render() {
         if (!sessionStorage.getItem('name')) {
@@ -50,6 +54,7 @@ class ViewOrder extends Component {
                                     <h5>Payment Status :  {item.status}</h5>
                                     <h5>Cost : ₹ {item.cost}</h5>
                                     <h5>Delivery Address :  {item.address}</h5>
+                                    <button className='btn btn-danger' onClick={() => this.deleteOrder(item.id)}>Cancel Order</button>
                                 </div>
                             </div>
                         }) : <h2>Nothing in your cart</h2>
