@@ -352,7 +352,7 @@ function Header(props) {
             ></i></p>
           </Link>
 
-          <Link to="/orders">
+          <Link to="/viewBooking">
             <p style={{ position: "relative", color: 'white' }}>
               <b> & Orders</b>
             </p>
