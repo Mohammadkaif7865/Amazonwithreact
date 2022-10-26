@@ -57,6 +57,7 @@ function SearchResult(props) {
     })
     setToDisplay(newProducts);
   }
+  // # for no filter function
   function noFilter(value) {
     fetch(`${url}/${props.match.params.category}`, { method: 'GET' })
       .then((response) => response.json())
