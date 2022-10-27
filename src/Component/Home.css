@@ -39,7 +39,7 @@
     position: relative;
 }
 
-.coupon video {
+.coupon img {
     object-fit: cover;
 }
 .edit-button {
