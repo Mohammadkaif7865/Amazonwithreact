@@ -8,3 +8,37 @@
     margin: auto;
     object-fit: contain;
   }
+   
+  .coupon-container {
+    position: fixed;
+    z-index: 100;
+    width: 100%;
+    top: 15vh;
+    left: 0;
+}
+
+.coupon-big-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 99;
+    background-color: black;
+    opacity: 0.6;
+    width: 100vw;
+    height: 100vh;
+}
+
+.coupon {
+    width: 60vw;
+    min-width: 320px;
+    min-height: 240px;
+    height: 45vw;
+    max-width: 800px;
+    max-height: 600px;
+    margin: auto;
+    position: relative;
+}
+
+.coupon video {
+    object-fit: cover;
+}

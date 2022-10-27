@@ -44,6 +44,14 @@ export default function Home() {
   }
   return (
     <main>
+      <div className="coupon-container" id="coupon">
+        <div className="coupon">
+          <img src="https://i.ibb.co/QPmm0Xk/amazon.gif" alt="img" id="myVideo" width="100%" height="100%" />
+          <button type="button" className="edit-button" onclick="close_coupon();"><i className="bi bi-x-lg"></i></button>
+        </div>
+      </div>
+      <div className="coupon-big-container" id="coupon-2">
+      </div>
       <div id="myCarousel" className="carousel slide" data-bs-ride="carousel">
         <div className="carousel-inner">
           <div className="carousel-item active">
