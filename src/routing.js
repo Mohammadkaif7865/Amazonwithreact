@@ -17,11 +17,12 @@ import { useState } from "react";
 const Routing = () => {
   const [nameAuth, setNameAuth] = useState(sessionStorage.getItem("name") ? sessionStorage.getItem("name") : "");
   const [refresh, setRefresh] = useState(0);
+  const [showCoupon, setShowCoupon] = useState('block');
   return (
     <BrowserRouter>
       <Header nameAuth={nameAuth} refresh={refresh} setNameAuth={(data) => setNameAuth(data)} />
       <Switch>
-        <Route exact path="/" component={Home} />
+        <Route exact path="/"><Home showCoupon={showCoupon} setShowCoupon={(data) => setShowCoupon(data)}></Home></Route>
         <Route path='/search_result/:category' component={SearchResult} />
         <Route path='/login' component={Login} />
         <Route path='/userInfo' >  <UserInfo nameAuth={nameAuth} setNameAuth={(data) => setNameAuth(data)} /> </Route>
