@@ -12,6 +12,7 @@ function Booking(props) {
     let [phone, setPhone] = useState(sessionStorage.getItem('phone') ? sessionStorage.getItem('phone') : '');
     let [address, setAddress] = useState('');
     let [cost, setCost] = useState('');
+    let [totalCost, setTotalCost] = useState('');
     const scrollToTop = () => {
         window.scrollTo({
             top: 0,
@@ -23,6 +24,7 @@ function Booking(props) {
     useEffect(() => {
         fetch(`${url}/${props.match.params.id}`, { method: 'GET' }).then((response) => response.json()).then((data) => {
             setProductName(data[0].name);
+            setTotalCost(data[0].cost * props.match.params.quantity);
             setCost(data[0].cost);
             setImg(data[0].images.img1.link)
             setId(Math.floor(Math.random() * 100000));
@@ -35,7 +37,7 @@ function Booking(props) {
             productId: props.match.params.id,
             productName: productName,
             name: name,
-            cost: cost,
+            cost: totalCost,
             img: img,
             email: email,
             address: address,
@@ -81,7 +83,7 @@ function Booking(props) {
                         <img src={img} className='smallBook' alt="img" />
                     </Link>
                     <h2>Quantity : {props.match.params.quantity}</h2>
-                    <h2>Total Price is ₹{cost}</h2>
+                    <h2>Total Price is {props.match.params.quantity} X {cost} : ₹{cost} </h2>
                     <button className="btn btn-warning" onClick={checkout} type="submit">PlaceOrder</button>
                 </form>
             </div>

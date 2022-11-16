@@ -60,7 +60,7 @@ function Details(props) {
         }
         props.setRefresh(props.refresh + 1);
     }, [addTocart]);
-    function gotoBooking(id){
+    function gotoBooking(id) {
         props.history.push(`/booking/${id}/${quantity}`);
     }
     return (
@@ -123,8 +123,10 @@ function Details(props) {
                     <h1>
                         <sup>₹</sup>{details.length > 0 ? details[0].cost : "-----"}
                     </h1>
+                    <label htmlFor="quantity">Quantity</label>
+                    <input value={quantity} onChange={(e) => setquantity(e.target.value)} type="number" />
                     <button className='btn btn-light button-text' onClick={() => setAddTocart(true)}>{addTocart ? <i className="bi bi-check2"></i> : null}Add to cart <i className="bi bi-cart2"></i></button>
-                    <button className='btn btn-warning button-text' onClick={()=> gotoBooking(details[0].id)}>Buy now</button>
+                    <button className='btn btn-warning button-text' onClick={() => gotoBooking(details[0].id)}>Buy now</button>
                 </div>
             </div>
         </>
