@@ -35,6 +35,7 @@ function Booking(props) {
         let obj = [{
             id: id,
             productId: props.match.params.id,
+            quantity: props.match.params.quantity,
             productName: productName,
             name: name,
             cost: totalCost,
@@ -51,12 +52,13 @@ function Booking(props) {
             body: JSON.stringify(obj)
         })
     }
+    console.log(totalCost);
     return (
         <>
             <div className="container nook">
                 <h4 className='bookhead bg bg-success'>Your order for {productName}</h4>
                 <form action="https://amazonpayment.herokuapp.com/paynow" method="POST">
-                    <input type="hidden" name="cost" value={cost} />
+                    <input type="hidden" name="cost" value={totalCost} />
                     <input type="hidden" name="id" value={id} />
                     <input type="hidden" name="hotel_name" value={productName} />
                     <div className="form-group col-md-6">
@@ -83,7 +85,7 @@ function Booking(props) {
                         <img src={img} className='smallBook' alt="img" />
                     </Link>
                     <h2>Quantity : {props.match.params.quantity}</h2>
-                    <h2>Total Price is {props.match.params.quantity} X {cost} : ₹{cost} </h2>
+                    <h2>Total Price is {props.match.params.quantity} X {cost} : ₹{totalCost} </h2>
                     <button className="btn btn-warning" onClick={checkout} type="submit">PlaceOrder</button>
                 </form>
             </div>
