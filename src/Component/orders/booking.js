@@ -80,6 +80,7 @@ function Booking(props) {
                     <Link to={`/details/${props.match.params.id}`}>
                         <img src={img} className='smallBook' alt="img" />
                     </Link>
+                    <h2>Quantity : {props.match.params.quantity}</h2>
                     <h2>Total Price is ₹{cost}</h2>
                     <button className="btn btn-warning" onClick={checkout} type="submit">PlaceOrder</button>
                 </form>
