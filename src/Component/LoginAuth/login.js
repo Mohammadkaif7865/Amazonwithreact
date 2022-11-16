@@ -53,6 +53,7 @@ class Login extends Component {
                 <div className="container" style={{ backgroundColor: "white" }}>
                     <form>
                         <legend className='bg bg-primary' style={{ margin: 0, padding: "10px", color: 'white' }}>Login</legend>
+                        <h3 style={{ color: 'red' }}>{this.state.message}</h3>
                         <div className="mb-3">
                             <label htmlFor="email">Email</label>
                             <input id="email" name="email" className="form-control"
