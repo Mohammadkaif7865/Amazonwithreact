@@ -35,7 +35,7 @@ function Booking(props) {
         let obj = [{
             id: id,
             productId: props.match.params.id,
-            quantity: props.match.params.quantity,
+            quantity: Number(props.match.params.quantity),
             productName: productName,
             name: name,
             cost: totalCost,

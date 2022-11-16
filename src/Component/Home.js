@@ -46,7 +46,7 @@ function Home(props) {
     <main>
       <div className="coupon-container" id="coupon" style={{ display: props.showCoupon }} >
         <div className="coupon">
-          <img src="https://i.ibb.co/QPmm0Xk/amazon.gif" alt="img" id="myVideo" width="100%" height="100%" />
+          <img src="https://i.ibb.co/JCXJ9B1/amazon.gif" alt="img" id="myVideo" width="100%" height="100%" />
           <button type="button" className="edit-button" onClick={() => props.setShowCoupon("none")} ><i className="bi bi-x-lg"></i></button>
         </div>
       </div>

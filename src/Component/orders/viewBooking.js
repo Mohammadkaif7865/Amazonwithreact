@@ -62,6 +62,7 @@ class ViewOrder extends Component {
                                     <h5>Payment Status :  {item.status}</h5>
                                     <h5>bank_name :  {item.bank_name}</h5>
                                     <h5>Cost : ₹ {item.cost}</h5>
+                                    <h5>Quantity : ₹ {item.quantity}</h5>
                                     <h5>Delivery Address :  {item.address}</h5>
                                     <button className='btn btn-danger' onClick={() => this.deleteOrder(item.id)}>Cancel Order</button>
                                 </div>
