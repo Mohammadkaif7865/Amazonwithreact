@@ -11,6 +11,7 @@ function Details(props) {
     const [favourites, setFavourites] = useState(false);
     const [addTocart, setAddTocart] = useState(false);
     const [whichOne, setWhichOne] = useState(1);
+    const [quantity, setquantity] = useState(1);
     const scrollToTop = () => {
         window.scrollTo({
             top: 0,
@@ -60,7 +61,7 @@ function Details(props) {
         props.setRefresh(props.refresh + 1);
     }, [addTocart]);
     function gotoBooking(id){
-        props.history.push(`/booking/${id}`);
+        props.history.push(`/booking/${id}/${quantity}`);
     }
     return (
         <>
