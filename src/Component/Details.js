@@ -2,10 +2,10 @@ import React, { useEffect, useState } from 'react';
 import { withRouter } from 'react-router-dom';
 import './detail.css';
 import '../myCss.css';
-const url = 'https://amazoncloneserver.herokuapp.com/details';
+const url = 'https://renderamazon.onrender.com/details';
 const defaultImg = "https://i.ibb.co/G3gRQ34/defaultimg.jpg";
-const fav = 'https://amazoncloneserver.herokuapp.com/favourities';
-const cartUrl = 'https://amazoncloneserver.herokuapp.com/addcart';
+const fav = 'https://renderamazon.onrender.com/favourities';
+const cartUrl = 'https://renderamazon.onrender.com/addcart';
 function Details(props) {
     const [details, setDetails] = useState('');
     const [favourites, setFavourites] = useState(false);

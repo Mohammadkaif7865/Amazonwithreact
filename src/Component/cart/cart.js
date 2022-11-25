@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { withRouter, Link } from 'react-router-dom';
 import './cart.css';
-const cartUrl = 'https://amazoncloneserver.herokuapp.com/cart';
-const favUrlspec = 'https://amazoncloneserver.herokuapp.com/spacific';
-const deletecart = 'https://amazoncloneserver.herokuapp.com/deleteFromCart';
+const cartUrl = 'https://renderamazon.onrender.com/cart';
+const favUrlspec = 'https://renderamazon.onrender.com/spacific';
+const deletecart = 'https://renderamazon.onrender.com/deleteFromCart';
 function Cart(props) {
     const [toDisplay, setTodisplay] = useState('');
     const [show, setShow] = useState('');
