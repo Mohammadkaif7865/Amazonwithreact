@@ -9,12 +9,13 @@ function Cart(props) {
     const [show, setShow] = useState('');
     const scrollToTop = () => {
         window.scrollTo({
-          top: 0,
-          behavior: "smooth",
-          /* you can also use 'auto' behaviour
-                   in place of 'smooth' */
+            top: 0,
+            behavior: "smooth",
+            /* you can also use 'auto' behaviour
+                     in place of 'smooth' */
         });
-      };
+    };
+    const quantity = 1;
     useEffect(() => {
         fetch(`${cartUrl}/${sessionStorage.getItem('email')}`, { method: 'GET' }).then(response => response.json()).then(response => setTodisplay(response));
         scrollToTop();
@@ -37,8 +38,8 @@ function Cart(props) {
         }, 300);
         props.setRefresh(props.refresh + 1);
     }
-    function gotoBooking(id){
-        props.history.push(`/booking/${id}`);
+    function gotoBooking(id) {
+        props.history.push(`/booking/${id}/${quantity}`);
     }
     return (
         <>
@@ -59,7 +60,7 @@ function Cart(props) {
                             <div className="discription">
                                 <h5>{item.name}</h5>
                                 <button className='btn btn-light' onClick={() => deleteFromCart(item.id)}>Delete</button>
-                                <button className='btn btn-warning' onClick={()=> gotoBooking(item.id)}>check out</button>
+                                <button className='btn btn-warning' onClick={() => gotoBooking(item.id)}>check out</button>
                             </div>
                         </div>
                     }) : <h2>Nothing in your cart</h2>
