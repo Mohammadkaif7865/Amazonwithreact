@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { withRouter, Link } from 'react-router-dom';
 import './booking.css';
-const purl = 'https://amazoncloneserver.herokuapp.com/placeorder';
-const url = 'https://amazoncloneserver.herokuapp.com/details';
+const purl = 'https://renderamazon.onrender.com/placeorder';
+const url = 'https://renderamazon.onrender.com/details';
 function Booking(props) {
     let [id, setId] = useState('');
     let [img, setImg] = useState('');

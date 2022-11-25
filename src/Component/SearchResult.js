@@ -2,8 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import './ShowResult.css';
 import '../myCss.css';
-const url = 'https://amazoncloneserver.herokuapp.com/products_match';
-const url2 = 'https://amazoncloneserver.herokuapp.com/products_match_with_sort';
+const url = 'https://renderamazon.onrender.com/products_match';
+const url2 = 'https://renderamazon.onrender.com/products_match_with_sort';
 function SearchResult(props) {
   let [products, setProducts] = useState("");
   let [toDisplay, setToDisplay] = useState("");

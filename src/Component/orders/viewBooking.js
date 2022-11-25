@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
-const url = 'https://amazoncloneserver.herokuapp.com/orderplaced';
-const updateUrl = "https://amazoncloneserver.herokuapp.com/updateOrder"
-const deleteUrl = "https://amazoncloneserver.herokuapp.com/deleteOrder"
+const url = 'https://renderamazon.onrender.com/orderplaced';
+const updateUrl = "https://renderamazon.onrender.com/updateOrder"
+const deleteUrl = "https://renderamazon.onrender.com/deleteOrder"
 
 class ViewOrder extends Component {
     constructor(props) {
