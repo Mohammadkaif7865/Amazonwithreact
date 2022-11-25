@@ -57,7 +57,7 @@ function Booking(props) {
         <>
             <div className="container nook">
                 <h4 className='bookhead bg bg-success'>Your order for {productName}</h4>
-                <form action="https://amazonpayment.herokuapp.com/paynow" method="POST">
+                <form action="https://renderamazon.onrender.com/paynow" method="POST">
                     <input type="hidden" name="cost" value={totalCost} />
                     <input type="hidden" name="id" value={id} />
                     <input type="hidden" name="hotel_name" value={productName} />
