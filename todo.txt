@@ -1,1 +1,4 @@
 implementation of redux and redux tool kit
+const senderAddress = 'rpc4XWw2ip5QfGXsGLiTvDkPSKPdWLkZwT';
+const senderSecret = 'sEdVQZuPpng9TzUo4BcitxLEHXiqB5h'; // The secret key of the sender wallet
+const recipientAddress = 'r3f2pDNcZP8KpB4RTCfNgyNni6QVcvNQPQ';
