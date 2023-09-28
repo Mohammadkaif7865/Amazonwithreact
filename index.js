@@ -1,12 +1,13 @@
-const RippleAPI = require('ripple-lib').RippleAPI
+const RippleAPI = require('ripple-lib').RippleAPI;
+const { Wallet } = require('ripple-lib');
 // TESTNET ADDRESS 1
 // const ADDRESS_1 = "rDAvqFiGyYdZ8hQwYVwK5n4qdVT5hsE4iG"
 // const SECRET_1 = "sa9MF8ep3bupHx1D2uSmG514BBtB8"
 // // TESTNET ADDRESS 2
 // const ADDRESS_2 = "rfUaVzRmNhj6QnEBAwEeZ68tKQcwMWvarx"
-const ADDRESS_1 = 'rpc4XWw2ip5QfGXsGLiTvDkPSKPdWLkZwT';
-const SECRET_1 = 'sEdVQZuPpng9TzUo4BcitxLEHXiqB5h'; // The secret key of the sender wallet
-const ADDRESS_2 = 'r3f2pDNcZP8KpB4RTCfNgyNni6QVcvNQPQ';
+const ADDRESS_1 = 'rGbD7manzL1ck9gKx97PDJorcjDuQBKQL6';
+const SECRET_1 = 'sEdSJorRENax8UKbY2p7uRtEuLAYfYg'; // The secret key of the sender wallet
+const ADDRESS_2 = 'rhxQLwDDRTcumXmQioU1JNzNPJK5GmvZWQ';
 const instructions = {maxLedgerVersionOffset: 5}
 const currency = 'XRP'
 const amount = '0.01'
